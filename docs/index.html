@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +64,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -115,7 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="cnfg/style.css" type="text/css" />
+<link rel="stylesheet" href="cnfg\style.css" type="text/css" />
 </head>
 
 <body>
@@ -175,11 +177,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Plan experimental (PLEX)</h1>
 <p class="author"><em>Flavio Lozano-Isla <span class="math inline">\(^{1*}\)</span></em></p>
 <p class="author"><em><span class="math inline">\(^{1}\)</span> Agr. MSc, E-mail: <a href="mailto:flavjack@gmail.com" class="email">flavjack@gmail.com</a></em></p>
-<p class="date"><em>28 Nov 2019 07:34:15 PM</em></p>
+<p class="date"><em>28 Nov. 2019 22:20:08</em></p>
 </div>
 <div id="introducción" class="section level1">
 <h1><span class="header-section-number">1</span> Introducción</h1>
-<div class="rmdimportant">
+<div class="rmd-warning">
+<!-- caution - important - note - tip - warning -->
 <p>
 Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no dejes de escribir a mi correo: <a href="mailto:flavjack@gmail.com" class="email">flavjack@gmail.com</a>. Disculpen por los errores ortográficos, los cuales ire corrigiendo a medida que vaya avanzando el documento, primero deseo que la ideas fluyan. Mencionar tambien que lo estoy escribiendo por la consola en R por lo que no es fácil de acceder al corrector ortográfico :), gracias por su comprension. Voy asustituir la “Ñ” por la “NH” por que los teclados alemanes no posee esa caracter xD.
 </p>
@@ -188,7 +191,7 @@ Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no d
 <p>Con frecuencia estudiantes me escriben ya que tienen dudas para iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones, tales como: Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo para ayudarme, no se como iniciar mi trabajo, estoy perdido ingeniero, etc… y la verdad me gustaria apoyarlos de forma personalizada a cada uno de ellos y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer este manual que puede servir de guía a los que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones para los que ya tiene experiencia.</p>
 <p>Ser investigador es un trabajo basado en la disciplina, perseverancia y la mejora continua que se va ganando con el tiempo y la experiencia y muchas veces se logra a base de prueba y error y horrores tambien xD, así que no te sientas aturdido o decepcionados si recien estas comenzando… recuerda que para que un arbol sea grande y fuerte en algun momento fue un pequenho retonho que tuvo que luchar contra muchas condiciones adversas… Trataré en este documento ser lo mas breve y conciso para no ser cansativo con los que deseen leer el manual.</p>
 <p>A traves de este documento tengo planeado mostrarles (ire escribiendo poco a poco): i) Como plantear una idea de investigación, ii) Como hacer un libro de campo para coletar la información, iii) El uso de herramientas libres para la redacción, iv) Como redactar un documento o un articulo técnico científico. Tambien ire inclueyendo videos y links de material para ayudar al desarrollo de los trabajos de una manera más eficiente y rápida. El manuscrito lo disponibilizaré en formato epub para los que deseen leerlo en sus celulares o tablets.</p>
-<p>Este manul esta basado en el documento que mi asesor del doctorado compartió en algun comento conmigo <span class="citation">(Kamoun <a href="#ref-kamoun2013GOHREP">2013</a>)</span> el cual me parecio muy interesante y en base a eso hice algunas modificaciones y lo traducí al espanhol para los estudiantes que trabajan conmigo en Perú. Recuerda que este documento es una recomendación en el planeamiento inicial de un trabajo de investigación y puede servir como base para el desarrollo de una idea experimental. Por lo que esta guía puede ayudar a nuevos investigadores a como generar su proyecto de investigación y organiyar su información de manera adecuada donde cualquier otra persona envuelta en el trabajo pueda entender y analizar siempre con la concepcion de un trabajo de investigación muchas veces se trata de un trabajo en equipo.</p>
+<p>Este manul esta basado en el documento que mi asesor del doctorado compartió en algun comento conmigo <span class="citation">(Kamoun <a href="#ref-kamoun2013GOHREP" role="doc-biblioref">2013</a>)</span> el cual me parecio muy interesante y en base a eso hice algunas modificaciones y lo traducí al espanhol para los estudiantes que trabajan conmigo en Perú. Recuerda que este documento es una recomendación en el planeamiento inicial de un trabajo de investigación y puede servir como base para el desarrollo de una idea experimental. Por lo que esta guía puede ayudar a nuevos investigadores a como generar su proyecto de investigación y organiyar su información de manera adecuada donde cualquier otra persona envuelta en el trabajo pueda entender y analizar siempre con la concepcion de un trabajo de investigación muchas veces se trata de un trabajo en equipo.</p>
 <p>Espero que este pequenho manual sea de gran utilidad para los que lo lean y el autor esta dispuesto a recibir todo tipo de criticas (destructivas y constructivas), ya que la crítica es la base de la mejora continua :).</p>
 </div>
 <h3> References</h3>
@@ -234,7 +237,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Flavjack/rticles/blob/master/index.Rmd",
+"link": "https://github.com/Flavjack/plex/blob/master/index.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -245,7 +248,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": [["files.zip", "files"]],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +64,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -115,7 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="cnfg/style.css" type="text/css" />
+<link rel="stylesheet" href="cnfg\style.css" type="text/css" />
 </head>
 
 <body>
@@ -173,19 +175,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="planeamiento-de-experimentos" class="section level1">
 <h1><span class="header-section-number">4</span> Planeamiento de experimentos</h1>
-<div class="rmdcaution">
+<div class="rmd-important">
+<!-- caution - important - note - tip - warning -->
 <p>
 En esta sección se utilizará algunas terminologías en ingles, asi que si tienes algunas dudas puedes usar el traductor, recuerda que si deseas ser un investigador por lo menos debes manejar algunos terminos básicos en ingles y mejor si puedes aprenderlo, esto te ayudará a tener a la mano mucha información reciente.
 </p>
 </div>
 <p>El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi que se realice un plan de trabajo acontencen diferentes imprevistos. Para ayudar a la reducción del caos introduciremos el termino <strong>fieldbook</strong> que significa “libro de campo” y sera desarrollada en una hoja de calculo virtual, el cual contiene pestanhas con los datos mínimos que son necesarios para tu trabajo de investigación, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.</p>
-<div class="rmdimportant">
+<div class="rmd-note">
+<!-- caution - important - note - tip - warning -->
 <p>
-Muchas veces organizamos los información de manera que es más facil para nuestro comprension “humana”, lo que al final genera problemas ya que debemos reorganizar toda la información ya que la coputadoras presentan una estructura especial para analizar los datos.
+Muchas veces organizamos los información de manera que es más facil para nuestra comprension “humana”, lo que al final genera problemas ya que debemos reorganizar toda la información ya que la coputadoras presentan una estructura especial para analizar los datos.
 </p>
 </div>
 <div id="libro-de-campo-fieldbook" class="section level2">
 <h2><span class="header-section-number">4.1</span> Libro de campo “Fieldbook”</h2>
+<div class="rmd-important">
+<!-- caution - important - note - tip - warning -->
+<p>
+Google sheets: <a href="https://docs.google.com/spreadsheets/u/0/" class="uri">https://docs.google.com/spreadsheets/u/0/</a>
+</p>
+</div>
 <div id="nombre-del-libro-de-campo" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Nombre del libro de campo</h3>
 <p>En primer lugar iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque paresca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algun tiempo se nos dificulta encotrarlo. Para nombrar los libros de campos se sugiere usar la siguiente nomenclatura.</p>
@@ -195,7 +205,8 @@ Muchas veces organizamos los información de manera que es más facil para nuest
 <li><p>Breve descripción: Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre paretesis y no muy extenso.</p></li>
 </ol>
 <p>El nombre del libro de campo debe ser sustituir el nombre actual de la plantilla donde esta escrito como “fieldbook (template)”.</p>
-<div class="rmdnote">
+<div class="rmd-note">
+<!-- caution - important - note - tip - warning -->
 <p>
 Ejemplo:
 </p>
@@ -209,7 +220,8 @@ Interpretacion:
 Experimento de germinación en quinua realizado en Camacani el 19 de agosto de 2017.
 </p>
 </div>
-<div class="rmdnote">
+<div class="rmd-tip">
+<!-- caution - important - note - tip - warning -->
 <p>
 Es muy común que al revisar la base de datos de algunos investigadores y estudiantes me encuentro usualemente con que este problema, terminan con varios archivos con diferentes copias de los datos y varios archivos con pasos intermedios.
 </p>
@@ -257,12 +269,13 @@ Si estás trabajando con datos, debió haber en algun momento en el que tenías 
 <ol style="list-style-type: decimal">
 <li><p>Informacion (info). Esta pestanha es clave y debe ser completada en su totalidad. Al inicio del plan experimental y revisarla a la conclusión. Esta información es valiosa al momento de redactar algun reporte o escribir un artículo ya que permite tener toda la información a la mano, asi como tambien es muy importante ya que contiene los objetivos del trabajo lo que permitirá a otros colaboradores entender el trabajo.</p></li>
 <li><p>Variables (var). Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, asi como estandarizar las variables y hacerlas fácil de colectar. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).</p></li>
-<li><p>Libro de campo (fb). Pestanha que contendra el disenho o la base de datos de la información a colectar. Se puede introducir el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cual puede ser generado con el paquete agricolae <span class="citation">(de Mendiburu <a href="#ref-R-agricolae">2019</a>)</span> en el software estadistico R <span class="citation">(R Core Team <a href="#ref-R-base">2019</a>)</span>.</p></li>
+<li><p>Libro de campo (fb). Pestanha que contendra el disenho o la base de datos de la información a colectar. Se puede introducir el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cual puede ser generado con el paquete agricolae <span class="citation">(de Mendiburu <a href="#ref-R-agricolae" role="doc-biblioref">2019</a>)</span> en el software estadistico R <span class="citation">(R Core Team <a href="#ref-R-base" role="doc-biblioref">2019</a>)</span>.</p></li>
 <li><p>Disenho de campo (fds). Será utilizado en caso de algun distribución espacil de un disenho estadistico (ie. DCA, DBCA, DCL) lo que permitira guiarse durante las actividades como tambien para imprimir el croquist del trabajo.</p></li>
 </ol>
-<div class="rmdimportant">
+<div class="rmd-tip">
+<!-- caution - important - note - tip - warning -->
 <p>
-Se recomienda modificar la hojas excel y no introducir el disenho como una imagen.
+Se recomienda modificar el diseño de campo en la misma hoja virtual y no introducir el disenho como una imagen. Ya que dificultará la exportación de disenho para su uso como croquis.
 </p>
 </div>
 <ol style="list-style-type: decimal">
@@ -273,15 +286,11 @@ Se recomienda modificar la hojas excel y no introducir el disenho como una image
 <blockquote>
 <p>Ejemplo de planilla modelo de libro de campo (Fieldbook)</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">shiny<span class="op">::</span><span class="kw">HTML</span>(</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="st">&#39;</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="st">&lt;iframe src=&quot;https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213&quot; style=&quot;width: 100%; height: 450px&quot; scrolling=&quot;no&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; frameborder=&quot;0&quot; vspace=&quot;0&quot; hspace=&quot;0&quot;&gt;&lt;/iframe&gt;</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="st">&#39;</span>  </a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">)</a></code></pre></div>
 
 <iframe src="https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
 
-<div class="rmdwarning">
+<div class="rmd-warning">
+<!-- caution - important - note - tip - warning -->
 <p>
 No es recomendable crear diversas hoja de calculo para un experimento, es mejor adicionar pestañas al libro de campo, de esta forma toda tu información estará en un solo documento, y será facil de compartir entre colaboradores.
 </p>
@@ -348,7 +357,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Flavjack/rticles/blob/master/index.Rmd",
+"link": "https://github.com/Flavjack/plex/blob/master/index.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -359,7 +368,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": [["files.zip", "files"]],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

@@ -1,4 +1,4 @@
-book_filename: "rticles"
+book_filename: "plex"
 output_dir: docs
 rmd_files: ["index.Rmd", "cnfg/ref.Rmd"]
 

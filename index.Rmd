@@ -10,9 +10,8 @@ favicon: img/icon.png
 site: bookdown::bookdown_site
 documentclass: book
 bookdown::gitbook:
-output:
-  bookdown::word_document2:
-    reference_docx: cnfg/style_article.docx
+output: 
+  bookdown::html_document2: default
 always_allow_html: yes
 link-citations: true
 colorlinks: yes
@@ -20,7 +19,7 @@ bibliography: [cnfg/book.bib, cnfg/pkgs.bib]
 csl: https://www.zotero.org/styles/iica-catie
 ---
 
-```{r dataset, eval=FALSE, include=FALSE}
+```{r dataset}
 # source("cnfg/debug.r")
 source("cnfg/setup.r")
 
@@ -31,9 +30,12 @@ gs <- as_sheets_id(url)
 
 ```
 
+
 # Introducción
 
-```{block, echo = T, type='rmdcaution'}
+```{block, echo = T, type='rmd-warning'}
+
+<!-- caution - important - note - tip - warning -->
 
 Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no dejes de escribir a mi correo: flavjack@gmail.com. Disculpen por los errores ortográficos, los cuales ire corrigiendo a medida que vaya avanzando el documento,  primero deseo que la ideas fluyan. Mencionar tambien que lo estoy escribiendo por la consola en R por lo que no es fácil de acceder al corrector ortográfico :), gracias por su comprension. Voy asustituir la "Ñ" por la "NH" por que los teclados alemanes no posee esa caracter xD.
 
@@ -81,7 +83,9 @@ Luego del desarrollo de los puntos mencionados en la estructura del plan experim
 
 # Planeamiento de experimentos
 
-```{block, echo = T, type='rmdcaution'}
+```{block, echo = T, type='rmd-important'}
+
+<!-- caution - important - note - tip - warning -->
 
 En esta sección se utilizará algunas terminologías en ingles, asi que si tienes algunas dudas puedes usar el traductor, recuerda que si deseas ser un investigador por lo menos debes manejar algunos terminos básicos en ingles y mejor si puedes aprenderlo, esto te ayudará a tener a la mano mucha información reciente.
 
@@ -89,13 +93,25 @@ En esta sección se utilizará algunas terminologías en ingles, asi que si tien
 
 El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi que se realice un plan de trabajo acontencen diferentes imprevistos. Para ayudar a la reducción del caos introduciremos el termino **fieldbook** que significa “libro de campo” y sera desarrollada en una hoja de calculo virtual, el cual contiene pestanhas con los datos mínimos que son necesarios para tu trabajo de investigación, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.
 
-```{block, echo = T, type='rmdimportant' }
+```{block, echo = T, type='rmd-note' }
 
-Muchas veces organizamos los información de manera que es más facil para nuestro comprension "humana", lo que al final genera problemas ya que debemos reorganizar toda la información ya que la coputadoras presentan una estructura especial para analizar los datos.
+<!-- caution - important - note - tip - warning -->
+
+Muchas veces organizamos los información de manera que es más facil para nuestra comprension "humana", lo que al final genera problemas ya que debemos reorganizar toda la información ya que la coputadoras presentan una estructura especial para analizar los datos.
 
 ```
 
 ## Libro de campo "Fieldbook"
+
+```{block, echo = T, type='rmd-important' }
+
+<!-- caution - important - note - tip - warning -->
+
+Google sheets: <https://docs.google.com/spreadsheets/u/0/>
+
+```
+
+
 
 ### Nombre del libro de campo
 
@@ -109,7 +125,9 @@ En primer lugar iniciaremos con definir el nombre del libro de campo, ya que muc
 
 El nombre del libro de campo debe ser sustituir el nombre actual de la plantilla donde esta escrito como "fieldbook (template)".
 
-```{block, echo = T, type='rmdnote' }
+```{block, echo = T, type='rmd-note' }
+
+<!-- caution - important - note - tip - warning -->
 
 Ejemplo:
 
@@ -121,7 +139,9 @@ Experimento de germinación en quinua realizado en Camacani el 19 de agosto de 2
 
 ```
 
-```{block, echo = T, type='rmdnote'}
+```{block, echo = T, type='rmd-tip'}
+
+<!-- caution - important - note - tip - warning -->
 
 Es muy común que al revisar la base de datos de algunos investigadores y estudiantes me encuentro usualemente con que este problema, terminan con varios archivos con diferentes copias de los datos y varios archivos con pasos intermedios. 
   
@@ -154,8 +174,12 @@ A continuación se realizará una descripción de lo que debe contener cada pest
 
 1. Disenho de campo (fds). Será utilizado en caso de algun distribución espacil de un disenho estadistico (ie. DCA, DBCA, DCL) lo que permitira guiarse durante las actividades como tambien para imprimir el croquist del trabajo. 
 
-```{block, echo = T, type='rmdimportant' }
-Se recomienda modificar la hojas excel y no introducir el disenho como una imagen.
+```{block, echo = T, type='rmd-tip' }
+
+<!-- caution - important - note - tip - warning -->
+
+Se recomienda modificar el diseño de campo en la misma hoja virtual y no introducir el disenho como una imagen. Ya que dificultará la exportación de disenho para su uso como croquis.
+
 ```
 
 1. Cronograma (crn). Se generará el calendario de evaluaciones y actividades para poder organizar las acciones durante el experimento (ie. uso de materiales, pretamos de equipos, disponibilidad de espacios, etc)
@@ -174,7 +198,9 @@ shiny::HTML(
 )
 ```
 
-```{block, echo = T, type='rmdwarning'}
+```{block, echo = T, type='rmd-warning'}
+
+<!-- caution - important - note - tip - warning -->
 
 No es recomendable crear diversas hoja de calculo para un experimento, es mejor adicionar pestañas al libro de campo, de esta forma toda tu información estará en un solo documento, y será facil de compartir entre colaboradores.
 
