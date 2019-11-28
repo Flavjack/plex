@@ -20,12 +20,12 @@ bibliography: [cnfg/book.bib, cnfg/pkgs.bib]
 csl: https://www.zotero.org/styles/iica-catie
 ---
 
-```{r dataset, eval=FALSE, include=FALSE}
+```{r dataset}
 # source("cnfg/debug.r")
 source("cnfg/setup.r")
 
 sheets_auth(T)
-url <- ""
+url <- "https://docs.google.com/spreadsheets/d/1iIGsgXU_IBjmwqJ_Vo0sICUZpuTzZ_JGwD5ZgBG1jlk/edit#gid=0"
 gs <- as_sheets_id(url)
 # browseURL(url)
 
@@ -33,13 +33,28 @@ gs <- as_sheets_id(url)
 
 # Introducción
 
-Antes de iniciar a escribir algun proyecto de investigación deberia tomar estas recomendaciones para estructurar tú plan experimental, este documento esta basado en @kamoun2013GOHREP.
+```{block2, echo = T, type='rmdimportant'}
 
-Recuerda que este documento es una recomendación en el planeamiento incial de un trabajo de investigación y puede servir como base para el desarrollo de una idea experimental.
+Antes de iniciar, si tienen alguna duda o sugerencia no dejen de escribir a mi correo: flavjack@gmail.com. Disculpen por lo errores ortograficos los ire corrigiendo a medida que vaya avanzando primero deseo que la ideas fluyan para poder escribir esta manual. Mencionar tambien que lo estoy escribiendo por la consola y no tiene corrector ortografico :), gracias por su comprension. Tambien voy asustituir la "Ñ" por la "NH" por que los teclados alemanes no tiene esa letra xD.
 
-# Estructura 
+```
 
-Un plan experimental debe contener como mínimo la siguiente estrúctura. Inicialmente para la formulación de la idea no es necesario incluir ninguna referencia y puede ser escrita con tus propias palabras e ideas. A medida que la idea se va tornando más estructurada se puede ir incluyendo referencias para sustentar la idea.
+Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida y la segunda es por que mientras escribia mi proyecto de doctorado y organizaba la información de varios anho para el mismo, me paso dias organizando datos de estudiantes que ayudaron a colectar la información y mas que organizar parece que estoy leyendo jeroglificos que solo el que lo escribio sabe que significa lo que consume mucho tiempo y recursos. Por lo que esta guía puede ayudar a nuevos estudiantes a como generar su proyecto de investigación y organiyar su información de manera adecuada donde cualquier otra persona envuelta en el trabajo pueda entender, recuerda que muchas veces la investigación no se trata de una persona, se trata de un equipo de trabajo.
+
+Muchos estudiantes tienen muchas dudas al iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones como... Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo, no se como iniciar mi trabajo, estoy perdido ingeniero, etc...  y la verdad me gustaria apoyarlos de forma personaliyada y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer un manual que puede servir de guía a lo que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones que üueden ser tomadas en cuenta para los que ya tiene experiencia.
+
+La verdad ser investigador es un trabajo basado en la disciplina y la mejora constante que se va ganando con el tiempo y muchas veces se logra a base de mucho errores y horrores tambien xD, así que no te sientas aturdido si recien estas comenzando... recuerda que para que un arbol sea grande y fuerte en algun momento fue un pequenho retonho que tuvo que luchar contra muchas condiciones adversas... Trataré en este documento ser lo mas breve y conciso para no ser cansativo con los que deseen leer el manual.
+
+
+A traves del documento tengo planeado mostrarles (ire escribiendo poco a poco): i) Como plantear una idea de investigación, ii) Como hacer un libro de campo para coletar la información, iii) Herramientas libres para la redacción, iv) Como redactar un documento o un articulo. En el transcurso del desarrollo del libro tambien ire inclueyendo videos y links de herramientas para ayudar al desarrollo de los trabajos mas facil y de forma eficiente. Lo disponibiliyare tambien en formato epub para los que deseen llevarlo en sus celulares y leerlos.
+
+Este manul esta basado en el documento que mi asesor del doctorado compartió en algun comento conmigo [@kamoun2013GOHREP] el cual me parecio muy interesante y en base a eso hice algunas modificaciones y lo traducí a espanhol para los estudiantes que trabajan conmigo en Perú. Recuerda que este documento es una recomendación en el planeamiento incial de un trabajo de investigación y puede servir como base para el desarrollo de una idea experimental.
+
+Espero que este pequenho manual sea de gran utilidad para lo que lo lean y el autor esta dispuesto a recibir todo tipo de criticas (destructivas y constructivas) ya que es la base de la mejora continua. 
+
+# Estructura del plan experimental
+
+Inicialmente para la formulación de la idea no es necesario incluir referencias y puede ser escrita con tus propias palabras. A medida que la idea se va tornando más estructurada se puede ir incluyendo referencias para sustentar la idea. Para estructurar la idea de un plan experimental o trabajo de investigación que tenemos en mente debe contener como mínimo la siguiente estrúctura. 
 
 ## Meta
 
@@ -61,14 +76,106 @@ Las acciones o pasos para llegar al cumplimiento de la meta. Deber ser escrita e
 
 Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de investigación. Esto será la base para el desarrollo de los Materiales y Métodos del trabajo de investigación.
 
-# Base para un proyecto de investigación
+# Bases para un proyecto de investigación
 
-Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se estructurará el plan de trabajo, las cuales pueden posteriormente plasmarse en un proyecto de investigación.
-
-
+Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se va construir el plan de trabajo, las cuales pueden posteriormente plasmarse en un proyecto de investigación para una tesis o artículo.
 
 
+# Planeamiento de experimentos
+
+```{block, echo = T, type='rmdcaution'}
+
+En esta sección se utilizará algunas terminologías en ingles, asi que si tienes algunas dudas puedes usar el traductor, recuerda que si deseas ser un investigador debes manejar terminos básicos en ingles y mejor si puedes aprenderlo, esto te ayudará a tener a la mano mucha información reciente que otros no tienen acceso.
+
+```
 
 
+El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi cuando se realice un plan de trabajo, acontencen imprevistos. Para ayudar en esta tarea introduciremos el termino **fieldbook** que significa “libro de campo” y sera desarrollado en una hoja de calculo, el cual contiene los datos mínimos que son necesarios para tu experimento, de esta manera ahorrar tiempo en el procesamiento de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.
 
+```{block2, echo = T, type='rmdimportant' }
 
+Muchas veces organizamos los información de manera que es más facil para nuestro comprension "humana", lo que al final genera problemas ya que debemos reorganizar toda la información ya que la coputadoras presentan una estructura especial para analizar los datos.
+
+```
+
+## Libro de campo "Fieldbook"
+
+### Nombre del libro de campo
+
+Muchas veces colocar un nombres a un documento es un gran reto, y luego de transcurrido un tiempo se nos dificulta encotrarlo. Se sugiere usar la siguiente nomenclatura para nombrar tus libros de campo.
+
+1. Fecha: En el fomrato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo.
+
+1. Abreviacion de lugar: Permite la facil identificacion de donde se realizo el experimento.
+
+1. Breve descripción: Ayuda memoria para recordar de que trata el trabajo
+
+```{block2, echo = T, type='rmdnote' }
+
+> Ejemplo: 
+
+20170819LM (germinacion quinua)
+
+> Interpretacion: 
+
+Experimento de germinación en quinua realizado en Lima el 19 de agosto de 2017.
+
+```
+
+```{block2, echo = T, type='rmdnote'}
+
+Normalmente un científico o cualquier persona que trabaja con datos terminará con varios archivos con diferentes copias de los datos y varios archivos con pasos intermedios. Si estás trabajando con datos, debería haber habido un momento en el que tenías un archivo con nombre único, pero ahora probablemente tienes:
+  
+- data
+- data_V01
+- data_V02
+- data_V02_1
+- data_DDMMYY
+- lastdata
+- finaldata
+- veryfinaldata 
+- and some others.
+
+> StatTools & datasharing (Github), 2014
+
+```
+
+### Pestanhas en el libro de campo
+
+El libro de campo esta constituido por cuatro partes esenciales (las cuales pueden ser incrementadas de acuerdo a las necesidades (ie. Diseño de campo, informacion metereologica, planilla de riego, etc) de cualquier tipo de experimento.
+
+1. Informacion. Se introducira la informacion del proyecto, como lugar de ejecución, tipo de diseño experimental, colaboradores, georeferencia, fecha de inicio y tambien los objetivos del trabajo.
+
+1. Variables. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja de diseño estadístico.
+
+1. Diseño estadistico. Se introducira el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cuales pueden ser generados con el paquete agricolae (de Mendiburu, 2017).
+
+1. Calendario. Se generará el calendario de evaluaciones y actividades para poder organizar las acciones durante el experimento (ie. uso de materiales, pretamos de equipos, disponibilidad de espacios, etc)
+
+1. Diario. Se recolectara informacion de lo que va aconteciendo en el experimento, se registrara el dia y el conteo en dias despues del inicio del experimento, las observaciones, asi como comentarios personales.
+
+> Ejemplo de planilla modelo de libro de campo (Fieldbook)
+
+```{r fieldbook}
+shiny::HTML(
+'
+<iframe src="https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
+'  
+)
+```
+
+```{block2, echo = T, type='rmdwarning'}
+
+No es recomendable crear diversas hoja de calculo para un experimento, es mejor adicionar pestañas al libro de campo, de esta forma toda tu información estará en un solo documento, y será facil de compartir entre colaboradores.
+
+```
+
+## Colecta de datos
+
+### Etiquetas de unidades experimentales
+
+El etiquetado de los datos es una actividad que siempre se deja de lado, y muchas veces por el trabajo que genera. Pues piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto.
+
+### Evaluacion de las variables
+
+Independientemente del tipo de diseño que hayas elegido, este será utilizado para analizar los datos, la informacion sera tomada e inserida al libro de campo para cada unidad experimental.

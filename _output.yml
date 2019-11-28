@@ -15,13 +15,13 @@ bookdown::gitbook:
       family: sans
       size: 2
     search: yes
-    info: no
     edit:
       link: https://github.com/Flavjack/rticles/blob/master/%s
       text: "Edit"
-    download: 
-      - ["rticles.docx", "word"]
-      - ["files.zip", "files"]
+#    download: 
+#      - ["rticles.docx", "word"]
+#      - ["files.zip", "files"]
+    info: no
     sharing:
       github: yes
       twitter: no
