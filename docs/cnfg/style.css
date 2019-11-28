@@ -4,19 +4,19 @@
   background: #f5f5f5 5px center/3em no-repeat;
 }
 .rmdcaution {
-  background-image: url("img/caution.png");
+  background-image: url("icons/caution.png");
 }
 .rmdimportant {
-  background-image: url("img/important.png");
+  background-image: url("icons/important.png");
 }
 .rmdnote {
-  background-image: url("img/note.png");
+  background-image: url("icons/note.png");
 }
 .rmdtip {
-  background-image: url("img/tip.png");
+  background-image: url("icons/tip.png");
 }
 .rmdwarning {
-  background-image: url("img/warning.png");
+  background-image: url("icons/warning.png");
 }
 p.caption {
   color: #777;

@@ -11,7 +11,7 @@ options(
   OutDec= ".", # Use "." insted of "," in the decimal values
   scipen = 99, # Avoid use "6e-04"
   knitr.kable.NA = '', # NA values will appear as empty cell
-  knitr.table.format = "pandoc", # Format for export tables
+  # knitr.table.format = "pandoc", # Format for export tables
   citr.use_betterbiblatex = FALSE, # For zotero addin 
   gargle_oob_default = TRUE # Googlesheets4 auth process
   ) 

@@ -13,14 +13,14 @@ bookdown::gitbook:
 output:
   bookdown::word_document2:
     reference_docx: cnfg/style_article.docx
-always_allow_html: yes
+# always_allow_html: yes
 link-citations: true
 colorlinks: yes
 bibliography: [cnfg/book.bib, cnfg/pkgs.bib]
 csl: https://www.zotero.org/styles/iica-catie
 ---
 
-```{r dataset}
+```{r dataset, eval=FALSE, include=FALSE}
 # source("cnfg/debug.r")
 source("cnfg/setup.r")
 
@@ -33,40 +33,39 @@ gs <- as_sheets_id(url)
 
 # Introducción
 
-```{block2, echo = T, type='rmdimportant'}
+```{block, echo = T, type='rmdimportant'}
 
-Antes de iniciar, si tienen alguna duda o sugerencia no dejen de escribir a mi correo: flavjack@gmail.com. Disculpen por lo errores ortograficos los ire corrigiendo a medida que vaya avanzando primero deseo que la ideas fluyan para poder escribir esta manual. Mencionar tambien que lo estoy escribiendo por la consola y no tiene corrector ortografico :), gracias por su comprension. Tambien voy asustituir la "Ñ" por la "NH" por que los teclados alemanes no tiene esa letra xD.
+Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no dejes de escribir a mi correo: flavjack@gmail.com. Disculpen por los errores ortográficos, los cuales ire corrigiendo a medida que vaya avanzando el documento,  primero deseo que la ideas fluyan. Mencionar tambien que lo estoy escribiendo por la consola en R por lo que no es fácil de acceder al corrector ortográfico :), gracias por su comprension. Voy asustituir la "Ñ" por la "NH" por que los teclados alemanes no posee esa caracter xD.
 
 ```
 
-Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida y la segunda es por que mientras escribia mi proyecto de doctorado y organizaba la información de varios anho para el mismo, me paso dias organizando datos de estudiantes que ayudaron a colectar la información y mas que organizar parece que estoy leyendo jeroglificos que solo el que lo escribio sabe que significa lo que consume mucho tiempo y recursos. Por lo que esta guía puede ayudar a nuevos estudiantes a como generar su proyecto de investigación y organiyar su información de manera adecuada donde cualquier otra persona envuelta en el trabajo pueda entender, recuerda que muchas veces la investigación no se trata de una persona, se trata de un equipo de trabajo.
+Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida, y la segunda por que mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios anho, me pasé dias ordenando bases de datos de otros estudiantes que ayudaron a colectar la información durante todo ese tiempo (2011-2019) y mas que organizar parece que estará tratano de descifrar jeroglificos, ya que parece que solo él que lo escribio sabe que significa, lo que consume mucho tiempo y es cansativo, por lo que decidí darme una pausa y escribir este manual.
 
-Muchos estudiantes tienen muchas dudas al iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones como... Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo, no se como iniciar mi trabajo, estoy perdido ingeniero, etc...  y la verdad me gustaria apoyarlos de forma personaliyada y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer un manual que puede servir de guía a lo que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones que üueden ser tomadas en cuenta para los que ya tiene experiencia.
+Con frecuencia estudiantes me escriben ya que tienen dudas para iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones, tales como: Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo para ayudarme, no se como iniciar mi trabajo, estoy perdido ingeniero, etc...  y la verdad me gustaria apoyarlos de forma personalizada a cada uno de ellos y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer este manual que puede servir de guía a los que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones para los que ya tiene experiencia.
 
-La verdad ser investigador es un trabajo basado en la disciplina y la mejora constante que se va ganando con el tiempo y muchas veces se logra a base de mucho errores y horrores tambien xD, así que no te sientas aturdido si recien estas comenzando... recuerda que para que un arbol sea grande y fuerte en algun momento fue un pequenho retonho que tuvo que luchar contra muchas condiciones adversas... Trataré en este documento ser lo mas breve y conciso para no ser cansativo con los que deseen leer el manual.
+Ser investigador es un trabajo basado en la disciplina, perseverancia y la mejora continua que se va ganando con el tiempo y la experiencia y muchas veces se logra a base de prueba y error y horrores tambien xD, así que no te sientas aturdido o decepcionados si recien estas comenzando... recuerda que para que un arbol sea grande y fuerte en algun momento fue un pequenho retonho que tuvo que luchar contra muchas condiciones adversas... Trataré en este documento ser lo mas breve y conciso para no ser cansativo con los que deseen leer el manual.
 
+A traves de este documento tengo planeado mostrarles (ire escribiendo poco a poco): i) Como plantear una idea de investigación, ii) Como hacer un libro de campo para coletar la información, iii) El uso de herramientas libres para la redacción, iv) Como redactar un documento o un articulo técnico científico. Tambien ire inclueyendo videos y links de material para ayudar al desarrollo de los trabajos de una manera más eficiente y rápida. El manuscrito lo disponibilizaré en formato epub para los que deseen leerlo en sus celulares o tablets.
 
-A traves del documento tengo planeado mostrarles (ire escribiendo poco a poco): i) Como plantear una idea de investigación, ii) Como hacer un libro de campo para coletar la información, iii) Herramientas libres para la redacción, iv) Como redactar un documento o un articulo. En el transcurso del desarrollo del libro tambien ire inclueyendo videos y links de herramientas para ayudar al desarrollo de los trabajos mas facil y de forma eficiente. Lo disponibiliyare tambien en formato epub para los que deseen llevarlo en sus celulares y leerlos.
+Este manul esta basado en el documento que mi asesor del doctorado compartió en algun comento conmigo [@kamoun2013GOHREP] el cual me parecio muy interesante y en base a eso hice algunas modificaciones y lo traducí al espanhol para los estudiantes que trabajan conmigo en Perú. Recuerda que este documento es una recomendación en el planeamiento inicial de un trabajo de investigación y puede servir como base para el desarrollo de una idea experimental. Por lo que esta guía puede ayudar a nuevos investigadores a como generar su proyecto de investigación y organiyar su información de manera adecuada donde cualquier otra persona envuelta en el trabajo pueda entender y analizar siempre con la concepcion de un trabajo de investigación muchas veces se trata de un trabajo en equipo.
 
-Este manul esta basado en el documento que mi asesor del doctorado compartió en algun comento conmigo [@kamoun2013GOHREP] el cual me parecio muy interesante y en base a eso hice algunas modificaciones y lo traducí a espanhol para los estudiantes que trabajan conmigo en Perú. Recuerda que este documento es una recomendación en el planeamiento incial de un trabajo de investigación y puede servir como base para el desarrollo de una idea experimental.
-
-Espero que este pequenho manual sea de gran utilidad para lo que lo lean y el autor esta dispuesto a recibir todo tipo de criticas (destructivas y constructivas) ya que es la base de la mejora continua. 
+Espero que este pequenho manual sea de gran utilidad para los que lo lean y el autor esta dispuesto a recibir todo tipo de criticas (destructivas y constructivas), ya que la crítica es la base de la mejora continua :). 
 
 # Estructura del plan experimental
 
-Inicialmente para la formulación de la idea no es necesario incluir referencias y puede ser escrita con tus propias palabras. A medida que la idea se va tornando más estructurada se puede ir incluyendo referencias para sustentar la idea. Para estructurar la idea de un plan experimental o trabajo de investigación que tenemos en mente debe contener como mínimo la siguiente estrúctura. 
+Inicialmente para la formulación de la idea del trabajo no es necesario incluir referencias y puede ser escrita con tus propias palabras. A medida que la idea se va tornando más estructurada se puede ir incluyendo referencias para sustentarlas. Para estructurar la idea de un plan experimental o trabajo de investigación se sugiere que debe contener como mínimo la siguiente estrúctura. 
 
 ## Meta
 
-El objetivo principal del trabajo, debe ser escrita como un título provisional de la investigación. 
+El objetivo principal del trabajo, debe ser escrita como un título provisional de la investigación. Conteniendo la mayor cantidad de informacion posible en la oración
 
 ## Hipótesis
 
-Es la pregunta de investigación escrita en un parrafo, la cual debe ser redactada como una pregunta o como una afirmación.
+Es la pregunta de investigación escrita en un parrafo, la cual debe ser redactada como una pregunta o como una afirmación a la idea que se desea proponer.
 
 ## Fundamento
 
-Escribir los fundamento que sustentan la viabilidad de la idea. Pueden ser las razones lógicas para sostener la idea, posteriormente se puede sustentar con documentos o artículos cientificos introducidas en forma de cita.
+Escribir los fundamento o razones lógicas para sustentar la idea. Posteriormente se puede adicionar afirmaciones o descubirmientos contenidos en documentos o artículos cientificos a los fundamentos en forma de cita bibliográfica.
 
 ## Objetivos 
 
@@ -74,25 +73,23 @@ Las acciones o pasos para llegar al cumplimiento de la meta. Deber ser escrita e
 
 ## Plan experimental
 
-Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de investigación. Esto será la base para el desarrollo de los Materiales y Métodos del trabajo de investigación.
+Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de investigación. Esto será la base para el desarrollo de los Materiales y Métodos que encontramos en los trabajo de investigación.
 
-# Bases para un proyecto de investigación
+# Proyecto de investigación
 
-Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se va construir el plan de trabajo, las cuales pueden posteriormente plasmarse en un proyecto de investigación para una tesis o artículo.
-
+Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se construirá el flujo de tranajo lo que puede posteriormente plasmarse en un proyecto de investigación para un trabajo de tesis o artículo.
 
 # Planeamiento de experimentos
 
 ```{block, echo = T, type='rmdcaution'}
 
-En esta sección se utilizará algunas terminologías en ingles, asi que si tienes algunas dudas puedes usar el traductor, recuerda que si deseas ser un investigador debes manejar terminos básicos en ingles y mejor si puedes aprenderlo, esto te ayudará a tener a la mano mucha información reciente que otros no tienen acceso.
+En esta sección se utilizará algunas terminologías en ingles, asi que si tienes algunas dudas puedes usar el traductor, recuerda que si deseas ser un investigador por lo menos debes manejar algunos terminos básicos en ingles y mejor si puedes aprenderlo, esto te ayudará a tener a la mano mucha información reciente.
 
 ```
 
+El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi que se realice un plan de trabajo acontencen diferentes imprevistos. Para ayudar a la reducción del caos introduciremos el termino **fieldbook** que significa “libro de campo” y sera desarrollada en una hoja de calculo virtual, el cual contiene pestanhas con los datos mínimos que son necesarios para tu trabajo de investigación, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.
 
-El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi cuando se realice un plan de trabajo, acontencen imprevistos. Para ayudar en esta tarea introduciremos el termino **fieldbook** que significa “libro de campo” y sera desarrollado en una hoja de calculo, el cual contiene los datos mínimos que son necesarios para tu experimento, de esta manera ahorrar tiempo en el procesamiento de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.
-
-```{block2, echo = T, type='rmdimportant' }
+```{block, echo = T, type='rmdimportant' }
 
 Muchas veces organizamos los información de manera que es más facil para nuestro comprension "humana", lo que al final genera problemas ya que debemos reorganizar toda la información ya que la coputadoras presentan una estructura especial para analizar los datos.
 
@@ -102,57 +99,70 @@ Muchas veces organizamos los información de manera que es más facil para nuest
 
 ### Nombre del libro de campo
 
-Muchas veces colocar un nombres a un documento es un gran reto, y luego de transcurrido un tiempo se nos dificulta encotrarlo. Se sugiere usar la siguiente nomenclatura para nombrar tus libros de campo.
+En primer lugar iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque paresca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algun tiempo se nos dificulta encotrarlo. Para nombrar los libros de campos se sugiere usar la siguiente nomenclatura.
 
-1. Fecha: En el fomrato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo.
+1. Fecha: En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo y una forma facil de filtrar si tenemos varios trabajos durante el mismo anho.
 
-1. Abreviacion de lugar: Permite la facil identificacion de donde se realizo el experimento.
+1. Abreviacion de lugar: Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
 
-1. Breve descripción: Ayuda memoria para recordar de que trata el trabajo
+1. Breve descripción: Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre paretesis y no muy extenso.
 
-```{block2, echo = T, type='rmdnote' }
+El nombre del libro de campo debe ser sustituir el nombre actual de la plantilla donde esta escrito como "fieldbook (template)".
 
-> Ejemplo: 
+```{block, echo = T, type='rmdnote' }
 
-20170819LM (germinacion quinua)
+Ejemplo:
 
-> Interpretacion: 
+Nombre de libro de campo: 20170819CMC (germinacion quinua)
 
-Experimento de germinación en quinua realizado en Lima el 19 de agosto de 2017.
+Interpretacion: 
+
+Experimento de germinación en quinua realizado en Camacani el 19 de agosto de 2017.
 
 ```
 
-```{block2, echo = T, type='rmdnote'}
+```{block, echo = T, type='rmdnote'}
 
-Normalmente un científico o cualquier persona que trabaja con datos terminará con varios archivos con diferentes copias de los datos y varios archivos con pasos intermedios. Si estás trabajando con datos, debería haber habido un momento en el que tenías un archivo con nombre único, pero ahora probablemente tienes:
+Es muy común que al revisar la base de datos de algunos investigadores y estudiantes me encuentro usualemente con que este problema, terminan con varios archivos con diferentes copias de los datos y varios archivos con pasos intermedios. 
   
-- data
+- datos
+- datos_originales
+- datos_V01
+- datos_V02
 - data_V01
-- data_V02
-- data_V02_1
 - data_DDMMYY
-- lastdata
-- finaldata
-- veryfinaldata 
-- and some others.
+- final_data
+- ultima_data
+- datos_sin_outliers
+- y muchos otros...
 
-> StatTools & datasharing (Github), 2014
+Si estás trabajando con datos, debió haber en algun momento en el que tenías un archivo con un nombre único, pero ahora probablemente tiene varias copias. Es una práctica que debemos evitar y solo deberiamos tener una base de datos organizada con multiples pestanhas.
 
 ```
 
 ### Pestanhas en el libro de campo
 
-El libro de campo esta constituido por cuatro partes esenciales (las cuales pueden ser incrementadas de acuerdo a las necesidades (ie. Diseño de campo, informacion metereologica, planilla de riego, etc) de cualquier tipo de experimento.
+El libro de campo (fieldbook) se sugiere que al menos esté constituido por 7 pestanhas ensenciales, las cuales pueden ser incrementadas de acuerdo a las necesidades de cada experimento (i.e. informacion metereologica, planilla de riego, análisis de suelo, etc).
 
-1. Informacion. Se introducira la informacion del proyecto, como lugar de ejecución, tipo de diseño experimental, colaboradores, georeferencia, fecha de inicio y tambien los objetivos del trabajo.
+A continuación se realizará una descripción de lo que debe contener cada pestanha
 
-1. Variables. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja de diseño estadístico.
+1. Informacion (info). Esta pestanha es clave y debe ser completada en su totalidad. Al inicio del plan experimental y revisarla a la conclusión. Esta información es valiosa al momento de redactar algun reporte o escribir un artículo ya que permite tener toda la información a la mano, asi como tambien es muy importante ya que contiene los objetivos del trabajo lo que permitirá a otros colaboradores entender el trabajo.
 
-1. Diseño estadistico. Se introducira el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cuales pueden ser generados con el paquete agricolae (de Mendiburu, 2017).
+1. Variables (var). Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, asi como estandarizar las variables y hacerlas fácil de colectar. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).
 
-1. Calendario. Se generará el calendario de evaluaciones y actividades para poder organizar las acciones durante el experimento (ie. uso de materiales, pretamos de equipos, disponibilidad de espacios, etc)
+1. Libro de campo (fb). Pestanha que contendra el disenho o la base de datos de la información a colectar. Se puede introducir el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cual puede ser generado con el paquete agricolae [@R-agricolae] en el software estadistico R [@R-base].
+
+1. Disenho de campo (fds). Será utilizado en caso de algun distribución espacil de un disenho estadistico (ie. DCA, DBCA, DCL) lo que permitira guiarse durante las actividades como tambien para imprimir el croquist del trabajo. 
+
+```{block, echo = T, type='rmdimportant' }
+Se recomienda modificar la hojas excel y no introducir el disenho como una imagen.
+```
+
+1. Cronograma (crn). Se generará el calendario de evaluaciones y actividades para poder organizar las acciones durante el experimento (ie. uso de materiales, pretamos de equipos, disponibilidad de espacios, etc)
 
 1. Diario. Se recolectara informacion de lo que va aconteciendo en el experimento, se registrara el dia y el conteo en dias despues del inicio del experimento, las observaciones, asi como comentarios personales.
+
+1. Presupuesto.
 
 > Ejemplo de planilla modelo de libro de campo (Fieldbook)
 
@@ -164,7 +174,7 @@ shiny::HTML(
 )
 ```
 
-```{block2, echo = T, type='rmdwarning'}
+```{block, echo = T, type='rmdwarning'}
 
 No es recomendable crear diversas hoja de calculo para un experimento, es mejor adicionar pestañas al libro de campo, de esta forma toda tu información estará en un solo documento, y será facil de compartir entre colaboradores.
 
