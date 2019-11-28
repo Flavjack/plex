@@ -13,7 +13,7 @@ bookdown::gitbook:
 output:
   bookdown::word_document2:
     reference_docx: cnfg/style_article.docx
-# always_allow_html: yes
+always_allow_html: yes
 link-citations: true
 colorlinks: yes
 bibliography: [cnfg/book.bib, cnfg/pkgs.bib]
@@ -33,7 +33,7 @@ gs <- as_sheets_id(url)
 
 # Introducción
 
-```{block, echo = T, type='rmdimportant'}
+```{block, echo = T, type='rmdcaution'}
 
 Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no dejes de escribir a mi correo: flavjack@gmail.com. Disculpen por los errores ortográficos, los cuales ire corrigiendo a medida que vaya avanzando el documento,  primero deseo que la ideas fluyan. Mencionar tambien que lo estoy escribiendo por la consola en R por lo que no es fácil de acceder al corrector ortográfico :), gracias por su comprension. Voy asustituir la "Ñ" por la "NH" por que los teclados alemanes no posee esa caracter xD.
 
