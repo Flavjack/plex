@@ -77,11 +77,11 @@ Las acciones o pasos para llegar al cumplimiento de la meta. Deber ser escrita e
 
 Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de investigación. Esto será la base para el desarrollo de los Materiales y Métodos que encontramos en los trabajo de investigación.
 
-# Proyecto de investigación
+## Proyecto de investigación {-}
 
 Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se construirá el flujo de tranajo lo que puede posteriormente plasmarse en un proyecto de investigación para un trabajo de tesis o artículo.
 
-# Planeamiento de experimentos
+# Diseño experimental
 
 ```{block, echo = T, type='rmd-important'}
 
@@ -91,7 +91,7 @@ En esta sección se utilizará algunas terminologías en ingles, asi que si tien
 
 ```
 
-El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi que se realice un plan de trabajo acontencen diferentes imprevistos. Para ayudar a la reducción del caos introduciremos el termino **fieldbook** que significa “libro de campo” y sera desarrollada en una hoja de calculo virtual, el cual contiene pestanhas con los datos mínimos que son necesarios para tu trabajo de investigación, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.
+El planeamineto de un experimento es parte crusial para definir el éxito de un trabajo experimental, mismo asi que se realice un plan de trabajo acontencen diferentes imprevistos. Para ayudar a la reducción del caos introduciremos el termino **fieldbook** que significa **“libro de campo”** y sera desarrollada en una hoja de calculo virtual, el cual contiene pestanhas con los datos mínimos que son necesarios para tu trabajo de investigación, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la reorganizacion de los datos colectados.
 
 ```{block, echo = T, type='rmd-note' }
 
@@ -107,21 +107,36 @@ Muchas veces organizamos los información de manera que es más facil para nuest
 
 <!-- caution - important - note - tip - warning -->
 
+Para esta sección haremos uso de hojas cálculo, y por experiencia propia les recomiendo dejar de usar excel para colectar los datos de experimentos, en este caso es mejor hacer uso de las hojas de cálculo virtuales, especificamente las de google spread sheets. Por que presentan algunas ventajas que enumeraré a continuación:
+
+1. Permite manejar y visualizar el historial de cambio durante la colecta de datos.
+1. Permite guardar diferentes versiones del documento en una misma línea de tiempo.
+1. Se puede trabar en forma grupal sin generar conflictos entre los usarios.
+1. Se puede colectar la información directamente haciendo uso de los celulares.
+1. Se puede importar directamente a R con el paquete googlesheet4 [@R-googlesheets4].
+1. Permite descargar en disversos formatos (pdf, xslx, csv, etc).
+
 Google sheets: <https://docs.google.com/spreadsheets/u/0/>
 
 ```
 
-
-
-### Nombre del libro de campo
+## Nombre del libro de campo
 
 En primer lugar iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque paresca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algun tiempo se nos dificulta encotrarlo. Para nombrar los libros de campos se sugiere usar la siguiente nomenclatura.
 
-1. Fecha: En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo y una forma facil de filtrar si tenemos varios trabajos durante el mismo anho.
+### Fecha
 
-1. Abreviacion de lugar: Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
+En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo y una forma facil de filtrar si tenemos varios trabajos durante el mismo anho.
 
-1. Breve descripción: Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre paretesis y no muy extenso.
+### Abreviacion de lugar
+
+Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
+
+### Breve descripción
+
+Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre paretesis y no muy extenso.
+
+### Ejemplo {-}
 
 El nombre del libro de campo debe ser sustituir el nombre actual de la plantilla donde esta escrito como "fieldbook (template)".
 
@@ -129,11 +144,11 @@ El nombre del libro de campo debe ser sustituir el nombre actual de la plantilla
 
 <!-- caution - important - note - tip - warning -->
 
-Ejemplo:
+**Nombre de libro de campo:** 
 
-Nombre de libro de campo: 20170819CMC (germinacion quinua)
+20170819CMC (germinacion quinua)
 
-Interpretacion: 
+**Interpretacion:**
 
 Experimento de germinación en quinua realizado en Camacani el 19 de agosto de 2017.
 
@@ -160,19 +175,57 @@ Si estás trabajando con datos, debió haber en algun momento en el que tenías 
 
 ```
 
-### Pestanhas en el libro de campo
+## Pestanhas en el libro de campo
 
-El libro de campo (fieldbook) se sugiere que al menos esté constituido por 7 pestanhas ensenciales, las cuales pueden ser incrementadas de acuerdo a las necesidades de cada experimento (i.e. informacion metereologica, planilla de riego, análisis de suelo, etc).
+```{block, echo = T, type='rmd-warning'}
+
+<!-- caution - important - note - tip - warning -->
+
+No es recomendable crear diversas hoja de calculo para un experimento, es mejor adicionar pestanhas al libro de campo, de esta forma toda tu información estará en un solo documento, y será facil de manejar y compartir entre tus colaboradores.
+
+```
+
+Para el libro de campo (fieldbook) se sugiere que por lo menos esté constituido por 7 pestanhas ensenciales, las cuales pueden ser incrementadas de acuerdo a las necesidades de cada experimento (i.e. informacion metereologica, planilla de riego, análisis de suelo, etc).
 
 A continuación se realizará una descripción de lo que debe contener cada pestanha
 
-1. Informacion (info). Esta pestanha es clave y debe ser completada en su totalidad. Al inicio del plan experimental y revisarla a la conclusión. Esta información es valiosa al momento de redactar algun reporte o escribir un artículo ya que permite tener toda la información a la mano, asi como tambien es muy importante ya que contiene los objetivos del trabajo lo que permitirá a otros colaboradores entender el trabajo.
+### Informacion (info)
 
-1. Variables (var). Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, asi como estandarizar las variables y hacerlas fácil de colectar. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).
+Esta pestanha es clave y debe ser completada en su totalidad. Al inicio del plan experimental y revisarla a la conclusión. Esta información es valiosa al momento de redactar algun reporte o escribir un artículo ya que permite tener toda la información a la mano, asi como tambien es muy importante ya que contiene los objetivos del trabajo lo que permitirá a otros colaboradores entender el trabajo.
 
-1. Libro de campo (fb). Pestanha que contendra el disenho o la base de datos de la información a colectar. Se puede introducir el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cual puede ser generado con el paquete agricolae [@R-agricolae] en el software estadistico R [@R-base].
+```{r fbinfo, fig.cap= "Datos mínimos y obligatorios en el hoja de información (info) del libro de campo (fieldbook)"}
+include_graphics("img/fb_info.png")
+```
 
-1. Disenho de campo (fds). Será utilizado en caso de algun distribución espacil de un disenho estadistico (ie. DCA, DBCA, DCL) lo que permitira guiarse durante las actividades como tambien para imprimir el croquist del trabajo. 
+### Variables (var)
+
+Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, asi como estandarizar las variables y hacerlas fácil de colectar. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).
+
+```{r fbvar, fig.cap="Ejemplo de como debe estructurarse la pestaña de las variables (var)"}
+include_graphics("img/fb_var.png")
+```
+  
+```{block2, echo = T, type='rmd-note' }
+
+Todo trabajo que este relacionado con descripción de plantas siempre se debe tener en cuenta el uso de descriptores como patron para determinar los nombres y mucho mejor si se puede trabajar con los nombres en ingles. 
+
+**Ejemplo** 
+  
+Lista de variables para el cultivo de quinua [@bioversityinternational2013Descriptores]
+
+En la figura \@ref(fig:fbvar) en la columna *Description* esta el nombre de la variable en espanhol (tal como se me ocurrio sin consultar el descriptor), basado en ese nombre se busco el nombre en ingles de la variable y en la columna *Variable* esta el nombre de acuerdo al descriptor y junto a esa columna *Descriptor* que corresponde al número de la variable dentro del descriptor del cultivo (para facilitar su busqueda posterior y otros puedan encontrarlo sin ningun problema). En base a la columna *Descriptor* se le asignó una abreviación ( columna "*Abbreviation*"), la cual será utilizada en el libro de campo (fb) para recolectar la información. Toda variable dentro del libro de campo se le debe asignar las unidades de medición o el tipo devarible que se esta colectando, esta columna esta como *Unit/Class*.
+
+Esta es la estructura básica sugerida para hacer la pestanha de variables en un libro de campo y es importante para que los otros mimbros del equipo puedan entender como fue tomada la información.
+
+```
+  
+### Libro de campo (fb)
+
+Pestanha que contendra el disenho o la base de datos de la información a colectar. Se puede introducir el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cual puede ser generado con el paquete agricolae [@R-agricolae] en el software estadistico R [@R-base].
+
+### Disenho de campo (fds)
+
+Será utilizado en caso de algun distribución espacil de un disenho estadistico (ie. DCA, DBCA, DCL) lo que permitira guiarse durante las actividades como tambien para imprimir el croquist del trabajo. 
 
 ```{block, echo = T, type='rmd-tip' }
 
@@ -182,15 +235,23 @@ Se recomienda modificar el diseño de campo en la misma hoja virtual y no introd
 
 ```
 
-1. Cronograma (crn). Se generará el calendario de evaluaciones y actividades para poder organizar las acciones durante el experimento (ie. uso de materiales, pretamos de equipos, disponibilidad de espacios, etc)
+### Cronograma (crn)
 
-1. Diario. Se recolectara informacion de lo que va aconteciendo en el experimento, se registrara el dia y el conteo en dias despues del inicio del experimento, las observaciones, asi como comentarios personales.
+Pestanha dedicada al planeamiento de la cronología de las evaluaciones y actividades y así poder organizar las acciones durante el experimento (ie. uso de materiales, prestamos de equipos, disponibilidad de espacios, etc).
 
-1. Presupuesto.
+### Diario (dry)
 
-> Ejemplo de planilla modelo de libro de campo (Fieldbook)
+Es la bitácora del investigador, donde se informacion de lo que va aconteciendo durante el desarrollo del experimento (lo bueno, lo malo y lo feo). Se sugiere registrar el día y el conteo en dias despues del inicio del experimento.
 
-```{r fieldbook}
+### Presupuesto (bdg)
+
+Muchos investigadores omiten esta parte durante la planificación de sus proyectos, si bien el experimentos puede llevarse acabo dentro de una institución de investigación que cubra todo los gasto y materiales, es recomendable tener una estimación de los costos ya que en el futuro podras planear tus trabajos con costos realistas y no quedarse sin fondos durante la ejecución del proyecto (problema usual con muchos investigadores).
+
+## Plantilla de libro de campo (Fieldbook)
+
+Para poder acceder a la plantilla del libro de campo deben hacer una copia del documento para ustedes mismos. Con esto tendran acceso al documento y podran modificar de acuerdo a sus necesidades.
+
+```{r}
 shiny::HTML(
 '
 <iframe src="https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
@@ -198,15 +259,20 @@ shiny::HTML(
 )
 ```
 
-```{block, echo = T, type='rmd-warning'}
+### Cómo crear una copia de la plantilla?
 
-<!-- caution - important - note - tip - warning -->
+1. Ir a link: <https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213>
+1. Ir a *archivos*
+1. *Crear una copia*
+1. Renombrar el archivo
 
-No es recomendable crear diversas hoja de calculo para un experimento, es mejor adicionar pestañas al libro de campo, de esta forma toda tu información estará en un solo documento, y será facil de compartir entre colaboradores.
+```{r figtmpl, fig.cap="Proceso de como crear una copia propia de la plantilla del libro de campo (fieldbook)"}
+
+include_graphics("img/fb_tmpl.png")
 
 ```
 
-## Colecta de datos
+# Colecta de datos
 
 ### Etiquetas de unidades experimentales
 
