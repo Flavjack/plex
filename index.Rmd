@@ -24,12 +24,11 @@ csl: https://www.zotero.org/styles/iica-catie
 source("cnfg/setup.r")
 
 sheets_auth(T)
-url <- "https://docs.google.com/spreadsheets/d/1iIGsgXU_IBjmwqJ_Vo0sICUZpuTzZ_JGwD5ZgBG1jlk/edit#gid=0"
+url <- "https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232"
 gs <- as_sheets_id(url)
 # browseURL(url)
 
 ```
-
 
 # Introducción
 
@@ -41,7 +40,7 @@ Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no d
 
 ```
 
-Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida, y la segunda por que mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios anho, me pasé dias ordenando bases de datos de otros estudiantes que ayudaron a colectar la información durante todo ese tiempo (2011-2019) y mas que organizar parece que estará tratano de descifrar jeroglificos, ya que parece que solo él que lo escribio sabe que significa, lo que consume mucho tiempo y es cansativo, por lo que decidí darme una pausa y escribir este manual.
+Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida, y la segunda por que mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios anho, me pasé dias ordenando bases de datos de otros estudiantes ayudaron a colectar y más que organizar parece que hubiese estado tratano de descifrar jeroglíficos, ya que parece que solo él que lo escribió sabe que significa, lo que consume mucho tiempo y es cansativo, por lo que decidí darme una pausa y escribir.
 
 Con frecuencia estudiantes me escriben ya que tienen dudas para iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones, tales como: Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo para ayudarme, no se como iniciar mi trabajo, estoy perdido ingeniero, etc...  y la verdad me gustaria apoyarlos de forma personalizada a cada uno de ellos y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer este manual que puede servir de guía a los que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones para los que ya tiene experiencia.
 
@@ -80,6 +79,62 @@ Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de inves
 ## Proyecto de investigación {-}
 
 Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se construirá el flujo de tranajo lo que puede posteriormente plasmarse en un proyecto de investigación para un trabajo de tesis o artículo.
+
+
+# Plex :: ejemplo 
+
+Para ejemplicar todo lo que estamos desarrollando en este manual vamos usar un trabajo que presenté como una publicación para la revista de la Universidad Agraria la Molina [@lozano-isla2017Germination].
+
+## Caso de la vida real!
+
+### Idea
+
+Mientras me encontraba trabajando en mi proyecto de tesis para la maestria en Brasil tenia que hacer algunos cursos y uno de ellos era "Fisiología de las semillas" que era dictado por mi asesor el Dr. Francisco Pompelli, el curso consistia en el desarrollo de un pequeño experimento y la redacción de un mini-paper como trabajo final.
+
+Durante el curso el profesor presentó el tema de la influencia de la imbibición de la semillas en el proceso de germinación lo que me pareció interesante y que un experimento en eso no iria a tomar mucho tiempo ya que solo tenia 3 meses para hacer todo el experimento y redactar mi reporte.
+
+Estaba trabajando con el cultivo de *Jatropha curcas* un planta con potencial para bio-combustible y entonces me pregunte si el tiempo de imbibición de la semillas le causaria algun daño fisiologico durante la germinación dando inicio la idea del trabajo.
+
+### Meta
+
+Evaluar el proceso de germinación de *Jatropha curcas* bajo diferentes tiempos de imbibición.
+
+### Hipótesis
+
+Cuál sera el maximo tiempo de imbibición que puede soportar las semillas de *jatropha curcas* sin que presenten daños a nivel fisiológico durante la germinación.
+
+### Fundamento
+
+La mayoria de semillas presentan un tiempo máximo de imbibición y si es superado puede generar daños fisilógicos durante la germinación reducciendo el porcentaje de germinación y tiempo de germinación.
+
+### Objetivos 
+
+- Determinar el mejor tiempo de imbibición para semillas de *Jatropha curcas*.
+- Evaluar la germinación de semillas de *Jatropha curcas* sometidas a distintos tiempos de imbibición.
+- Evaluar las caracteristicas morfologicas y fisiológicas durante la imbición de semillas de *Jatropha curcas*.
+
+### Plan experimental
+
+1. Material
+    - Biológico. Semillas de *Jatropha curcas*.
+    - Laboratorio. Agua destilada, vasos plasticos.
+    - Invernadero. Arena, bandejas de plastico.
+
+1. Diseño experimental. Diseño en Bloques Completos al Azar con 4 repeticiones y 13 tiempos de imbibición de 0 a 24 horas con intervalos de 2 horas entre cada tratamiento.
+
+1. Metodología. Se pondra semillas de *Jatropha curcas* en distintos tiempos de imbibición en laboratorio y luego de cada tiempo de imbibicón las semillas se pondran en bandejas para evaluar la germinación en invernadero.
+
+1. Variables a evaluar
+    - pH de la solución de imbibición.
+    - Conductividad electrica de la solución de imbibición (mS)
+    - Contenido relativo de agua de las semillas (%)
+    - Porcentaje de germinación (%)
+    - Tiempo medio de germinación (días)
+    
+1. Manos a la obra!
+
+Teniendo esta información como base del plan experimental se procederá al desarrollo del libro de campo o fieldbook.
+
 
 # Diseño experimental
 
@@ -272,12 +327,97 @@ include_graphics("img/fb_tmpl.png")
 
 ```
 
-# Colecta de datos
+# Colecta y organización de datos
 
-### Etiquetas de unidades experimentales
+## Exportar plantilla de evaluación
 
-El etiquetado de los datos es una actividad que siempre se deja de lado, y muchas veces por el trabajo que genera. Pues piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto.
+Vamos a crear el diseño experimental de nuestra idea de investigación haciendo uso del paquete agricolae [@R-agricolae] que permité hacer el diseño de varios modelos para experimentos agricolas.
 
-### Evaluacion de las variables
+En base a nuestro plan experimental tenemos la siguiente información
+
+```{r dse}
+
+tibble::tribble(
+           ~Variables, ~Abbreviation, ~"Units/Class",                         ~Description,
+     "Identificacion",          "ID",     "Factor",  "Unique identification for each EU",
+         "Repetition",         "RPT",     "Factor",                      "4 repetitions",
+    "Imbibition time",         "IBT",     "Factor",    "13 imbibition time each 2 hours"
+  ) %>% 
+  kable(caption = "Información básica para el experimento")
+
+```
+
+Con la información de la tabla \ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
+
+```{r, echo = TRUE}
+library(agricolae)
+
+imb <- seq(from = 0, to = 24, by = 2)
+rep <- 4
+
+fbd <- design.rcbd(trt = imb,
+                  r = rep,
+                  seed = 20, 
+                  serie = 2)
+
+fb <- fbd$book %>% 
+  rename(
+    ID = plots,
+    Block = block,
+    IBTH = imb) %>% 
+  mutate(IBT = paste0(IBTH, "hrs")) %>% 
+  mutate(Block = recode(Block,
+                        "1" = "I",
+                        "2" = "II",
+                        "3" = "III",
+                        "4" = "IV"))
+
+fds <- zigzag(fbd)
+fds <- matrix(fds[,1],byrow=TRUE,ncol=13) %>% 
+  as.data.frame()
+
+```
+
+Libro de campo para colecta de información, el cual sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos para evaluar los experimentos con nuestra tablet o celular.
+
+```{r}
+web_table(fb, title = "Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental")
+```
+
+La distribución de nuestro experimento en el campo o invernadero seria la siguiente.
+
+```{r}
+web_table(fds, title = "Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)")
+```
+
+## Etiquetas de unidades experimentales
+
+El etiquetado de las unidades experimentales es una actividad que siempre se deja de lado, y muchas veces por el trabajo que genera. Pues piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto.
+
+
+## Libro de colecta de datos
+
+Diseño de libro de colecta de datos.
+
+
+## Evaluacion de experimentos
 
 Independientemente del tipo de diseño que hayas elegido, este será utilizado para analizar los datos, la informacion sera tomada e inserida al libro de campo para cada unidad experimental.
+
+Los materiales que necesitamos son los siguientes:
+
+1. Libro de campo o fieldbook (fb)
+1. Libro de colecta de datos impreso
+1. Tablet o celular
+1. ScanPet app <https://play.google.com/store/apps/details?id=com.maiko.xscanpet&hl=es-419>
+
+
+# Plex :: ejemplo
+
+```{r}
+shiny::HTML(
+'
+<iframe src="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
+'  
+)
+```

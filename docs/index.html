@@ -50,6 +50,23 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.10/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="libs/jszip-1.10.19/jszip.min.js"></script>
+<link href="libs/dt-ext-buttons-1.10.19/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.10.19/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
+<link href="libs/dt-ext-scroller-1.10.19/css/scroller.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-scroller-1.10.19/js/dataTables.scroller.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -142,32 +159,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="estructura-del-plan-experimental.html"><a href="estructura-del-plan-experimental.html#plan-experimental"><i class="fa fa-check"></i><b>2.5</b> Plan experimental</a></li>
 <li class="chapter" data-level="" data-path="estructura-del-plan-experimental.html"><a href="estructura-del-plan-experimental.html#proyecto-de-investigación"><i class="fa fa-check"></i>Proyecto de investigación</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="diseño-experimental.html"><a href="diseño-experimental.html"><i class="fa fa-check"></i><b>3</b> Diseño experimental</a><ul>
-<li class="chapter" data-level="3.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#libro-de-campo-fieldbook"><i class="fa fa-check"></i><b>3.1</b> Libro de campo “Fieldbook”</a></li>
-<li class="chapter" data-level="3.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#nombre-del-libro-de-campo"><i class="fa fa-check"></i><b>3.2</b> Nombre del libro de campo</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#fecha"><i class="fa fa-check"></i><b>3.2.1</b> Fecha</a></li>
-<li class="chapter" data-level="3.2.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#abreviacion-de-lugar"><i class="fa fa-check"></i><b>3.2.2</b> Abreviacion de lugar</a></li>
-<li class="chapter" data-level="3.2.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#breve-descripción"><i class="fa fa-check"></i><b>3.2.3</b> Breve descripción</a></li>
+<li class="chapter" data-level="3" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html"><i class="fa fa-check"></i><b>3</b> Plex :: ejemplo</a><ul>
+<li class="chapter" data-level="3.1" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#caso-de-la-vida-real"><i class="fa fa-check"></i><b>3.1</b> Caso de la vida real!</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#idea"><i class="fa fa-check"></i><b>3.1.1</b> Idea</a></li>
+<li class="chapter" data-level="3.1.2" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#meta-1"><i class="fa fa-check"></i><b>3.1.2</b> Meta</a></li>
+<li class="chapter" data-level="3.1.3" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#hipótesis-1"><i class="fa fa-check"></i><b>3.1.3</b> Hipótesis</a></li>
+<li class="chapter" data-level="3.1.4" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#fundamento-1"><i class="fa fa-check"></i><b>3.1.4</b> Fundamento</a></li>
+<li class="chapter" data-level="3.1.5" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#objetivos-1"><i class="fa fa-check"></i><b>3.1.5</b> Objetivos</a></li>
+<li class="chapter" data-level="3.1.6" data-path="plex-ejemplo.html"><a href="plex-ejemplo.html#plan-experimental-1"><i class="fa fa-check"></i><b>3.1.6</b> Plan experimental</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="diseño-experimental.html"><a href="diseño-experimental.html"><i class="fa fa-check"></i><b>4</b> Diseño experimental</a><ul>
+<li class="chapter" data-level="4.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#libro-de-campo-fieldbook"><i class="fa fa-check"></i><b>4.1</b> Libro de campo “Fieldbook”</a></li>
+<li class="chapter" data-level="4.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#nombre-del-libro-de-campo"><i class="fa fa-check"></i><b>4.2</b> Nombre del libro de campo</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#fecha"><i class="fa fa-check"></i><b>4.2.1</b> Fecha</a></li>
+<li class="chapter" data-level="4.2.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#abreviacion-de-lugar"><i class="fa fa-check"></i><b>4.2.2</b> Abreviacion de lugar</a></li>
+<li class="chapter" data-level="4.2.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#breve-descripción"><i class="fa fa-check"></i><b>4.2.3</b> Breve descripción</a></li>
 <li class="chapter" data-level="" data-path="diseño-experimental.html"><a href="diseño-experimental.html#ejemplo"><i class="fa fa-check"></i>Ejemplo</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#pestanhas-en-el-libro-de-campo"><i class="fa fa-check"></i><b>3.3</b> Pestanhas en el libro de campo</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#informacion-info"><i class="fa fa-check"></i><b>3.3.1</b> Informacion (info)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#variables-var"><i class="fa fa-check"></i><b>3.3.2</b> Variables (var)</a></li>
-<li class="chapter" data-level="3.3.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#libro-de-campo-fb"><i class="fa fa-check"></i><b>3.3.3</b> Libro de campo (fb)</a></li>
-<li class="chapter" data-level="3.3.4" data-path="diseño-experimental.html"><a href="diseño-experimental.html#disenho-de-campo-fds"><i class="fa fa-check"></i><b>3.3.4</b> Disenho de campo (fds)</a></li>
-<li class="chapter" data-level="3.3.5" data-path="diseño-experimental.html"><a href="diseño-experimental.html#cronograma-crn"><i class="fa fa-check"></i><b>3.3.5</b> Cronograma (crn)</a></li>
-<li class="chapter" data-level="3.3.6" data-path="diseño-experimental.html"><a href="diseño-experimental.html#diario-dry"><i class="fa fa-check"></i><b>3.3.6</b> Diario (dry)</a></li>
-<li class="chapter" data-level="3.3.7" data-path="diseño-experimental.html"><a href="diseño-experimental.html#presupuesto-bdg"><i class="fa fa-check"></i><b>3.3.7</b> Presupuesto (bdg)</a></li>
+<li class="chapter" data-level="4.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#pestanhas-en-el-libro-de-campo"><i class="fa fa-check"></i><b>4.3</b> Pestanhas en el libro de campo</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#informacion-info"><i class="fa fa-check"></i><b>4.3.1</b> Informacion (info)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#variables-var"><i class="fa fa-check"></i><b>4.3.2</b> Variables (var)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#libro-de-campo-fb"><i class="fa fa-check"></i><b>4.3.3</b> Libro de campo (fb)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="diseño-experimental.html"><a href="diseño-experimental.html#disenho-de-campo-fds"><i class="fa fa-check"></i><b>4.3.4</b> Disenho de campo (fds)</a></li>
+<li class="chapter" data-level="4.3.5" data-path="diseño-experimental.html"><a href="diseño-experimental.html#cronograma-crn"><i class="fa fa-check"></i><b>4.3.5</b> Cronograma (crn)</a></li>
+<li class="chapter" data-level="4.3.6" data-path="diseño-experimental.html"><a href="diseño-experimental.html#diario-dry"><i class="fa fa-check"></i><b>4.3.6</b> Diario (dry)</a></li>
+<li class="chapter" data-level="4.3.7" data-path="diseño-experimental.html"><a href="diseño-experimental.html#presupuesto-bdg"><i class="fa fa-check"></i><b>4.3.7</b> Presupuesto (bdg)</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="diseño-experimental.html"><a href="diseño-experimental.html#plantilla-de-libro-de-campo-fieldbook"><i class="fa fa-check"></i><b>3.4</b> Plantilla de libro de campo (Fieldbook)</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#cómo-crear-una-copia-de-la-plantilla"><i class="fa fa-check"></i><b>3.4.1</b> Cómo crear una copia de la plantilla?</a></li>
+<li class="chapter" data-level="4.4" data-path="diseño-experimental.html"><a href="diseño-experimental.html#plantilla-de-libro-de-campo-fieldbook"><i class="fa fa-check"></i><b>4.4</b> Plantilla de libro de campo (Fieldbook)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#cómo-crear-una-copia-de-la-plantilla"><i class="fa fa-check"></i><b>4.4.1</b> Cómo crear una copia de la plantilla?</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="colecta-de-datos.html"><a href="colecta-de-datos.html"><i class="fa fa-check"></i><b>4</b> Colecta de datos</a><ul>
-<li class="chapter" data-level="4.0.1" data-path="colecta-de-datos.html"><a href="colecta-de-datos.html#etiquetas-de-unidades-experimentales"><i class="fa fa-check"></i><b>4.0.1</b> Etiquetas de unidades experimentales</a></li>
-<li class="chapter" data-level="4.0.2" data-path="colecta-de-datos.html"><a href="colecta-de-datos.html#evaluacion-de-las-variables"><i class="fa fa-check"></i><b>4.0.2</b> Evaluacion de las variables</a></li>
+<li class="chapter" data-level="5" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html"><i class="fa fa-check"></i><b>5</b> Colecta y organización de datos</a><ul>
+<li class="chapter" data-level="5.1" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#exportar-plantilla-de-evaluación"><i class="fa fa-check"></i><b>5.1</b> Exportar plantilla de evaluación</a></li>
+<li class="chapter" data-level="5.2" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#etiquetas-de-unidades-experimentales"><i class="fa fa-check"></i><b>5.2</b> Etiquetas de unidades experimentales</a></li>
+<li class="chapter" data-level="5.3" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#libro-de-colecta-de-datos"><i class="fa fa-check"></i><b>5.3</b> Libro de colecta de datos</a></li>
+<li class="chapter" data-level="5.4" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#evaluacion-de-experimentos"><i class="fa fa-check"></i><b>5.4</b> Evaluacion de experimentos</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+<li class="chapter" data-level="6" data-path="plex-ejemplo-1.html"><a href="plex-ejemplo-1.html"><i class="fa fa-check"></i><b>6</b> Plex :: ejemplo</a></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
 <li class="divider"></li>
 <li> <a href="https://www.zotero.org/flavjack" target="blank"> ZOTERO </a> </li>
 
@@ -192,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Plan experimental (PLEX)</h1>
 <p class="author"><em>Flavio Lozano-Isla <span class="math inline">\(^{1*}\)</span></em></p>
 <p class="author"><em><span class="math inline">\(^{1}\)</span> Agr. MSc, E-mail: <a href="mailto:flavjack@gmail.com" class="email">flavjack@gmail.com</a></em></p>
-<p class="date"><em>29 Nov. 2019 02:21:12</em></p>
+<p class="date"><em>23 Dic. 2019 02:42:23</em></p>
 </div>
 <div id="introducción" class="section level1">
 <h1><span class="header-section-number">1</span> Introducción</h1>
@@ -202,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no dejes de escribir a mi correo: <a href="mailto:flavjack@gmail.com" class="email">flavjack@gmail.com</a>. Disculpen por los errores ortográficos, los cuales ire corrigiendo a medida que vaya avanzando el documento, primero deseo que la ideas fluyan. Mencionar tambien que lo estoy escribiendo por la consola en R por lo que no es fácil de acceder al corrector ortográfico :), gracias por su comprension. Voy asustituir la “Ñ” por la “NH” por que los teclados alemanes no posee esa caracter xD.
 </p>
 </div>
-<p>Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida, y la segunda por que mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios anho, me pasé dias ordenando bases de datos de otros estudiantes que ayudaron a colectar la información durante todo ese tiempo (2011-2019) y mas que organizar parece que estará tratano de descifrar jeroglificos, ya que parece que solo él que lo escribio sabe que significa, lo que consume mucho tiempo y es cansativo, por lo que decidí darme una pausa y escribir este manual.</p>
+<p>Me interesé en escribir el presente manual por 2 razones, la primera para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida, y la segunda por que mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios anho, me pasé dias ordenando bases de datos de otros estudiantes ayudaron a colectar y más que organizar parece que hubiese estado tratano de descifrar jeroglíficos, ya que parece que solo él que lo escribió sabe que significa, lo que consume mucho tiempo y es cansativo, por lo que decidí darme una pausa y escribir.</p>
 <p>Con frecuencia estudiantes me escriben ya que tienen dudas para iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones, tales como: Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo para ayudarme, no se como iniciar mi trabajo, estoy perdido ingeniero, etc… y la verdad me gustaria apoyarlos de forma personalizada a cada uno de ellos y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer este manual que puede servir de guía a los que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones para los que ya tiene experiencia.</p>
 <p>Ser investigador es un trabajo basado en la disciplina, perseverancia y la mejora continua que se va ganando con el tiempo y la experiencia y muchas veces se logra a base de prueba y error y horrores tambien xD, así que no te sientas aturdido o decepcionados si recien estas comenzando… recuerda que para que un arbol sea grande y fuerte en algun momento fue un pequenho retonho que tuvo que luchar contra muchas condiciones adversas… Trataré en este documento ser lo mas breve y conciso para no ser cansativo con los que deseen leer el manual.</p>
 <p>A traves de este documento tengo planeado mostrarles (ire escribiendo poco a poco): i) Como plantear una idea de investigación, ii) Como hacer un libro de campo para coletar la información, iii) El uso de herramientas libres para la redacción, iv) Como redactar un documento o un articulo técnico científico. Tambien ire inclueyendo videos y links de material para ayudar al desarrollo de los trabajos de una manera más eficiente y rápida. El manuscrito lo disponibilizaré en formato epub para los que deseen leerlo en sus celulares o tablets.</p>

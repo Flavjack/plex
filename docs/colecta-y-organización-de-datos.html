@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Estructura del plan experimental | Plan experimental (PLEX)</title>
+  <title>5 Colecta y organización de datos | Plan experimental (PLEX)</title>
   <meta name="description" content="Plan experimental" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Estructura del plan experimental | Plan experimental (PLEX)" />
+  <meta property="og:title" content="5 Colecta y organización de datos | Plan experimental (PLEX)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="flavjack/plex/issues" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Estructura del plan experimental | Plan experimental (PLEX)" />
+  <meta name="twitter:title" content="5 Colecta y organización de datos | Plan experimental (PLEX)" />
   
   <meta name="twitter:description" content="Plan experimental" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
-<link rel="prev" href="index.html"/>
-<link rel="next" href="plex-ejemplo.html"/>
+<link rel="prev" href="diseño-experimental.html"/>
+<link rel="next" href="plex-ejemplo-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -218,32 +218,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estructura-del-plan-experimental" class="section level1">
-<h1><span class="header-section-number">2</span> Estructura del plan experimental</h1>
-<p>Inicialmente para la formulación de la idea del trabajo no es necesario incluir referencias y puede ser escrita con tus propias palabras. A medida que la idea se va tornando más estructurada se puede ir incluyendo referencias para sustentarlas. Para estructurar la idea de un plan experimental o trabajo de investigación se sugiere que debe contener como mínimo la siguiente estrúctura.</p>
-<div id="meta" class="section level2">
-<h2><span class="header-section-number">2.1</span> Meta</h2>
-<p>El objetivo principal del trabajo, debe ser escrita como un título provisional de la investigación. Conteniendo la mayor cantidad de informacion posible en la oración</p>
+<div id="colecta-y-organización-de-datos" class="section level1">
+<h1><span class="header-section-number">5</span> Colecta y organización de datos</h1>
+<div id="exportar-plantilla-de-evaluación" class="section level2">
+<h2><span class="header-section-number">5.1</span> Exportar plantilla de evaluación</h2>
+<p>Vamos a crear el diseño experimental de nuestra idea de investigación haciendo uso del paquete agricolae <span class="citation">(de Mendiburu <a href="#ref-R-agricolae" role="doc-biblioref">2019</a>)</span> que permité hacer el diseño de varios modelos para experimentos agricolas.</p>
+<p>En base a nuestro plan experimental tenemos la siguiente información</p>
+<table>
+<caption>
+<span id="tab:dse">Table 5.1: </span>Información básica para el experimento
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variables
+</th>
+<th style="text-align:left;">
+Abbreviation
+</th>
+<th style="text-align:left;">
+Units/Class
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Identificacion
+</td>
+<td style="text-align:left;">
+ID
+</td>
+<td style="text-align:left;">
+Factor
+</td>
+<td style="text-align:left;">
+Unique identification for each EU
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Repetition
+</td>
+<td style="text-align:left;">
+RPT
+</td>
+<td style="text-align:left;">
+Factor
+</td>
+<td style="text-align:left;">
+4 repetitions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Imbibition time
+</td>
+<td style="text-align:left;">
+IBT
+</td>
+<td style="text-align:left;">
+Factor
+</td>
+<td style="text-align:left;">
+13 imbibition time each 2 hours
+</td>
+</tr>
+</tbody>
+</table>
+<p>Con la información de la tabla (tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="colecta-y-organización-de-datos.html#cb20-1"></a><span class="kw">library</span>(agricolae)</span>
+<span id="cb20-2"><a href="colecta-y-organización-de-datos.html#cb20-2"></a></span>
+<span id="cb20-3"><a href="colecta-y-organización-de-datos.html#cb20-3"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb20-4"><a href="colecta-y-organización-de-datos.html#cb20-4"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb20-5"><a href="colecta-y-organización-de-datos.html#cb20-5"></a></span>
+<span id="cb20-6"><a href="colecta-y-organización-de-datos.html#cb20-6"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
+<span id="cb20-7"><a href="colecta-y-organización-de-datos.html#cb20-7"></a>                  <span class="dt">r =</span> rep,</span>
+<span id="cb20-8"><a href="colecta-y-organización-de-datos.html#cb20-8"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
+<span id="cb20-9"><a href="colecta-y-organización-de-datos.html#cb20-9"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
+<span id="cb20-10"><a href="colecta-y-organización-de-datos.html#cb20-10"></a></span>
+<span id="cb20-11"><a href="colecta-y-organización-de-datos.html#cb20-11"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-12"><a href="colecta-y-organización-de-datos.html#cb20-12"></a><span class="st">  </span><span class="kw">rename</span>(</span>
+<span id="cb20-13"><a href="colecta-y-organización-de-datos.html#cb20-13"></a>    <span class="dt">ID =</span> plots,</span>
+<span id="cb20-14"><a href="colecta-y-organización-de-datos.html#cb20-14"></a>    <span class="dt">Block =</span> block,</span>
+<span id="cb20-15"><a href="colecta-y-organización-de-datos.html#cb20-15"></a>    <span class="dt">IBTH =</span> imb) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-16"><a href="colecta-y-organización-de-datos.html#cb20-16"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">IBT =</span> <span class="kw">paste0</span>(IBTH, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-17"><a href="colecta-y-organización-de-datos.html#cb20-17"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Block =</span> <span class="kw">recode</span>(Block,</span>
+<span id="cb20-18"><a href="colecta-y-organización-de-datos.html#cb20-18"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
+<span id="cb20-19"><a href="colecta-y-organización-de-datos.html#cb20-19"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
+<span id="cb20-20"><a href="colecta-y-organización-de-datos.html#cb20-20"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
+<span id="cb20-21"><a href="colecta-y-organización-de-datos.html#cb20-21"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>))</span>
+<span id="cb20-22"><a href="colecta-y-organización-de-datos.html#cb20-22"></a></span>
+<span id="cb20-23"><a href="colecta-y-organización-de-datos.html#cb20-23"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
+<span id="cb20-24"><a href="colecta-y-organización-de-datos.html#cb20-24"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-25"><a href="colecta-y-organización-de-datos.html#cb20-25"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span></code></pre></div>
+<p>Libro de campo para colecta de información, el cual sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos para evaluar los experimentos con nuestra tablet o celular.</p>
+<div id="htmlwidget-18c2be1c87e4c8af0449" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18c2be1c87e4c8af0449">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental<\/caption>","data":[[101,102,103,104,105,106,107,108,109,110,111,112,113,201,202,203,204,205,206,207,208,209,210,211,212,213,301,302,303,304,305,306,307,308,309,310,311,312,313,401,402,403,404,405,406,407,408,409,410,411,412,413],["I","I","I","I","I","I","I","I","I","I","I","I","I","II","II","II","II","II","II","II","II","II","II","II","II","II","III","III","III","III","III","III","III","III","III","III","III","III","III","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV"],["8","0","12","18","4","2","6","10","22","20","14","16","24","16","20","18","6","12","22","24","8","0","10","4","2","14","8","22","0","14","12","24","4","6","20","10","18","2","16","0","12","6","16","24","18","10","2","20","4","22","8","14"],["8hrs","0hrs","12hrs","18hrs","4hrs","2hrs","6hrs","10hrs","22hrs","20hrs","14hrs","16hrs","24hrs","16hrs","20hrs","18hrs","6hrs","12hrs","22hrs","24hrs","8hrs","0hrs","10hrs","4hrs","2hrs","14hrs","8hrs","22hrs","0hrs","14hrs","12hrs","24hrs","4hrs","6hrs","20hrs","10hrs","18hrs","2hrs","16hrs","0hrs","12hrs","6hrs","16hrs","24hrs","18hrs","10hrs","2hrs","20hrs","4hrs","22hrs","8hrs","14hrs"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>ID<\/th>\n      <th>Block<\/th>\n      <th>IBTH<\/th>\n      <th>IBT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":0}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>La distribución de nuestro experimento en el campo o invernadero seria la siguiente.</p>
+<div id="htmlwidget-ebac2739681c5f33d0d8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ebac2739681c5f33d0d8">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)<\/caption>","data":[[101,213,301,413],[102,212,302,412],[103,211,303,411],[104,210,304,410],[105,209,305,409],[106,208,306,408],[107,207,307,407],[108,206,308,406],[109,205,309,405],[110,204,310,404],[111,203,311,403],[112,202,312,402],[113,201,313,401]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>V1<\/th>\n      <th>V2<\/th>\n      <th>V3<\/th>\n      <th>V4<\/th>\n      <th>V5<\/th>\n      <th>V6<\/th>\n      <th>V7<\/th>\n      <th>V8<\/th>\n      <th>V9<\/th>\n      <th>V10<\/th>\n      <th>V11<\/th>\n      <th>V12<\/th>\n      <th>V13<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="hipótesis" class="section level2">
-<h2><span class="header-section-number">2.2</span> Hipótesis</h2>
-<p>Es la pregunta de investigación escrita en un parrafo, la cual debe ser redactada como una pregunta o como una afirmación a la idea que se desea proponer.</p>
+<div id="etiquetas-de-unidades-experimentales" class="section level2">
+<h2><span class="header-section-number">5.2</span> Etiquetas de unidades experimentales</h2>
+<p>El etiquetado de las unidades experimentales es una actividad que siempre se deja de lado, y muchas veces por el trabajo que genera. Pues piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto.</p>
 </div>
-<div id="fundamento" class="section level2">
-<h2><span class="header-section-number">2.3</span> Fundamento</h2>
-<p>Escribir los fundamento o razones lógicas para sustentar la idea. Posteriormente se puede adicionar afirmaciones o descubirmientos contenidos en documentos o artículos cientificos a los fundamentos en forma de cita bibliográfica.</p>
+<div id="libro-de-colecta-de-datos" class="section level2">
+<h2><span class="header-section-number">5.3</span> Libro de colecta de datos</h2>
+<p>Diseño de libro de colecta de datos.</p>
 </div>
-<div id="objetivos" class="section level2">
-<h2><span class="header-section-number">2.4</span> Objetivos</h2>
-<p>Las acciones o pasos para llegar al cumplimiento de la meta. Deber ser escrita en forma de acción. (ie. Se evaluará…, Se estimará…, Se realizaran…, etc)</p>
+<div id="evaluacion-de-experimentos" class="section level2">
+<h2><span class="header-section-number">5.4</span> Evaluacion de experimentos</h2>
+<p>Independientemente del tipo de diseño que hayas elegido, este será utilizado para analizar los datos, la informacion sera tomada e inserida al libro de campo para cada unidad experimental.</p>
+<p>Los materiales que necesitamos son los siguientes:</p>
+<ol style="list-style-type: decimal">
+<li>Libro de campo o fieldbook (fb)</li>
+<li>Libro de colecta de datos impreso</li>
+<li>Tablet o celular</li>
+<li>ScanPet app <a href="https://play.google.com/store/apps/details?id=com.maiko.xscanpet&amp;hl=es-419" class="uri">https://play.google.com/store/apps/details?id=com.maiko.xscanpet&amp;hl=es-419</a></li>
+</ol>
 </div>
-<div id="plan-experimental" class="section level2">
-<h2><span class="header-section-number">2.5</span> Plan experimental</h2>
-<p>Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de investigación. Esto será la base para el desarrollo de los Materiales y Métodos que encontramos en los trabajo de investigación.</p>
 </div>
-<div id="proyecto-de-investigación" class="section level2 unnumbered">
-<h2>Proyecto de investigación</h2>
-<p>Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se construirá el flujo de tranajo lo que puede posteriormente plasmarse en un proyecto de investigación para un trabajo de tesis o artículo.</p>
+<h3> References</h3>
+<div id="refs" class="references">
+<div id="ref-R-agricolae">
+<p>de Mendiburu, F. 2019. Agricolae: Statistical Procedures for Agricultural Research (en línea). s.l., s.e. Disponible en <a href="https://CRAN.R-project.org/package=agricolae">https://CRAN.R-project.org/package=agricolae</a>.</p>
 </div>
 </div>
             </section>
@@ -251,8 +353,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="plex-ejemplo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="diseño-experimental.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="plex-ejemplo-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
