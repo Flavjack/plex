@@ -24,7 +24,7 @@ csl: https://www.zotero.org/styles/iica-catie
 source("cnfg/setup.r")
 
 sheets_auth(T)
-url <- "https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232"
+url <- "https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=0"
 gs <- as_sheets_id(url)
 # browseURL(url)
 
@@ -81,11 +81,9 @@ Inicialmente puede ser un bosquejo de como se llevará acabo el trabajo de inves
 Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendra una idea de como se construirá el flujo de tranajo lo que puede posteriormente plasmarse en un proyecto de investigación para un trabajo de tesis o artículo.
 
 
-# Plex :: ejemplo 
+## Plex :: ejemplo (caso de la vida real!)
 
-Para ejemplicar todo lo que estamos desarrollando en este manual vamos usar un trabajo que presenté como una publicación para la revista de la Universidad Agraria la Molina [@lozano-isla2017Germination].
-
-## Caso de la vida real!
+Para ejemplificar todo lo que estamos desarrollando en este manual vamos usar un trabajo que presenté como una publicación para la revista de la Universidad Agraria la Molina [@lozano-isla2017Germination].
 
 ### Idea
 
@@ -336,15 +334,9 @@ Vamos a crear el diseño experimental de nuestra idea de investigación haciendo
 En base a nuestro plan experimental tenemos la siguiente información
 
 ```{r dse}
-
-tibble::tribble(
-           ~Variables, ~Abbreviation, ~"Units/Class",                         ~Description,
-     "Identificacion",          "ID",     "Factor",  "Unique identification for each EU",
-         "Repetition",         "RPT",     "Factor",                      "4 repetitions",
-    "Imbibition time",         "IBT",     "Factor",    "13 imbibition time each 2 hours"
-  ) %>% 
+gs %>% 
+  read_sheet("dse") %>% 
   kable(caption = "Información básica para el experimento")
-
 ```
 
 Con la información de la tabla \ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
@@ -370,11 +362,16 @@ fb <- fbd$book %>%
                         "1" = "I",
                         "2" = "II",
                         "3" = "III",
-                        "4" = "IV"))
+                        "4" = "IV")) %>% 
+  mutate(bar_code = paste("PE2015", ID, Block, IBTH, sep = "_")) %>% 
+  select(bar_code, everything())
 
 fds <- zigzag(fbd)
 fds <- matrix(fds[,1],byrow=TRUE,ncol=13) %>% 
   as.data.frame()
+
+
+writexl::write_xlsx(fb, path = "img/files/fb.xlsx")
 
 ```
 
@@ -392,17 +389,94 @@ web_table(fds, title = "Distribución del experimento en un Diseño en Bloque Co
 
 ## Etiquetas de unidades experimentales
 
-El etiquetado de las unidades experimentales es una actividad que siempre se deja de lado, y muchas veces por el trabajo que genera. Pues piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto.
+El etiquetado de las unidades experimentales es una actividad que muchas veces es deja de lado por el trabajo que genera. Pues piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto. Además nos permitirá usar una tablet o telefono para colectar los datos de cada unidad experimental.
 
+Herramientas necesarias para las etiquetas:
+
+1. Libro de campo o fieldbook en formato xlsx o csv.
+1. Web-App: Next Generation Label System Printer <https://lpsng.rsj.de/>
+1. Impresora de gigantografía para las etiquetas.
+1. Modelo base para las etiqueta (sugerencia) <https://lpsng.rsj.de/jqedit.html#02a34156-6bbc-4dfd-e66a-7aaa5955c058>
+
+```{block, echo = T, type='rmd-tip' }
+<!-- caution - important - note - tip - warning -->
+
+"Next Generation Label System Printer" es la mejor apliación web que encontré para generar etiquetas de forma eficiente y fácil, asi que les recomiendo pagar la suscripción cuando la necesiten. Cuando eres usuario nuevo los primero 15 días son gratis, asi que puedes probar la app.
+
+> Generalmente pago la sucripción al inicio de cada experimento, donde genero todas las etiquetas para mi experimentos y una vez generadas puedo imprimirlas cuando desee durante la ejecución.
+
+```
+
+```{r, fig.cap="Suscription recomendada para la creación de las etiquetas"}
+fig <- "rsj"
+gs %>% 
+  read_sheet("fig") %>% 
+  filter(figure == fig) %>% 
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+```
+
+El libro de campo debe contener por lo menos las siguientes columnas:
+
+- Un columna con códigos de identificación únicos, que nos permitan generar los codigos de barras para nuestras unidades experimentales.
+- Columnas con los factores del experimento.
+
+```{block, echo = T, type='rmd-caution' }
+<!-- caution - important - note - tip - warning -->
+
+En el caso del ejemplo del libro de campo del tiempo de imbibición de semillas en *Jatropha curcas* la columna **"bar_code"** es la columna conteniendo los valores unicos para las etiquetas. Los valores para las etiquetas siempe deben iniciar con un caracter (texto) y nunca con un número ya que generará error al momento de la lectura del codigo de barras. En este caso adicioné el texto **"PE2015"** para hacer referencia al lugar (Pernambuco) y año del experimento (2015), cabe mencionar que el separador entre columnas es "_" ya que de esta forma en caso de perder el libro de campo con el separador de texto de excel o gsheet me permite reconstruir el libro de campo completo.
+
+Evitar que el libro contenga otros datos como el nombre de las variables ya que dificultará el desarrollo de las etiquetas y el libro colector de datos.
+```
+
+### Video :: etiquetas
+
+
+### Ejemplo :: etiquetas
+
+<!-- <embed src="img/files/mensh_&_kording_2017.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->
 
 ## Libro de colecta de datos
 
-Diseño de libro de colecta de datos.
+Diseño de libro de colecta de datos o libro de campo impreso, el el libro que me servirá de soporte para las evaluaciones así como contener toda la información impresa del experimento em caso de no tener acceso a la internet o no contar con una tablet o teléfono inteligente no sera ningun inconveniente para la toma de datos.
 
+Herramientas necesarias para las etiquetas:
+
+1. Libro de campo o fieldbook en formato xlsx o csv.
+1. Web-App: Next Generation Label System Printer <https://lpsng.rsj.de/>
+1. Impresora normal
+1. Modelo base para las el libro de campo (sugerencia) <https://lpsng.rsj.de/jqedit.html#ac64b019-6040-441a-ae5d-9bbfc9856b36>
+
+
+```{block, echo = T, type='rmd-important' }
+<!-- caution - important - note - tip - warning -->
+
+Las columnas para llenar a mano para genera el libro de campo esta introducido en el diseño como imagen.
+
+<https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396>
+```
+
+```{r, fig.cap="Imagen insertada en el libro de colecta para la toma de datos"}
+fig <- "flb"
+gs %>% 
+  read_sheet("fig") %>% 
+  filter(figure == fig) %>% 
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+```
+
+### Video :: libro de colecta de datos
+
+
+### Ejemplo :: libro de colecta de datos
+
+<!-- <embed src="img/files/mensh_&_kording_2017.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->
 
 ## Evaluacion de experimentos
 
-Independientemente del tipo de diseño que hayas elegido, este será utilizado para analizar los datos, la informacion sera tomada e inserida al libro de campo para cada unidad experimental.
+Independientemente del tipo de diseño que hayas elegido el cual será utilizado para analizar los datos colectados. La informacion debe ser tomada e inserida al libro de campo para cada unidad experimental y/o individuo.
 
 Los materiales que necesitamos son los siguientes:
 
@@ -412,7 +486,7 @@ Los materiales que necesitamos son los siguientes:
 1. ScanPet app <https://play.google.com/store/apps/details?id=com.maiko.xscanpet&hl=es-419>
 
 
-# Plex :: ejemplo
+## Plex :: ejemplo
 
 ```{r}
 shiny::HTML(
