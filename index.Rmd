@@ -85,6 +85,8 @@ Luego del desarrollo de los puntos mencionados en la estructura del plan experim
 
 Para ejemplificar todo lo que estamos desarrollando en este manual vamos usar un trabajo que presenté como una publicación para la revista de la Universidad Agraria la Molina [@lozano-isla2017Germination].
 
+<embed src="files/Lozano-Isla2017.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
 ### Idea
 
 Mientras me encontraba trabajando en mi proyecto de tesis para la maestria en Brasil tenia que hacer algunos cursos y uno de ellos era "Fisiología de las semillas" que era dictado por mi asesor el Dr. Francisco Pompelli, el curso consistia en el desarrollo de un pequeño experimento y la redacción de un mini-paper como trabajo final.
@@ -247,7 +249,13 @@ A continuación se realizará una descripción de lo que debe contener cada pest
 Esta pestanha es clave y debe ser completada en su totalidad. Al inicio del plan experimental y revisarla a la conclusión. Esta información es valiosa al momento de redactar algun reporte o escribir un artículo ya que permite tener toda la información a la mano, asi como tambien es muy importante ya que contiene los objetivos del trabajo lo que permitirá a otros colaboradores entender el trabajo.
 
 ```{r fbinfo, fig.cap= "Datos mínimos y obligatorios en el hoja de información (info) del libro de campo (fieldbook)"}
-include_graphics("img/fb_info.png")
+fig <- "fbinfo"
+gs %>% 
+  read_sheet("fig") %>% 
+  filter(figure == fig) %>% 
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
 ```
 
 ### Variables (var)
@@ -255,7 +263,13 @@ include_graphics("img/fb_info.png")
 Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, asi como estandarizar las variables y hacerlas fácil de colectar. Se realizará una lista de las variables a evaluar durante el experimento, tambien se adicionara las abreviaturas de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).
 
 ```{r fbvar, fig.cap="Ejemplo de como debe estructurarse la pestaña de las variables (var)"}
-include_graphics("img/fb_var.png")
+fig <- "fbvar"
+gs %>% 
+  read_sheet("fig") %>% 
+  filter(figure == fig) %>% 
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
 ```
   
 ```{block2, echo = T, type='rmd-note' }
@@ -319,10 +333,14 @@ shiny::HTML(
 1. *Crear una copia*
 1. Renombrar el archivo
 
-```{r figtmpl, fig.cap="Proceso de como crear una copia propia de la plantilla del libro de campo (fieldbook)"}
-
-include_graphics("img/fb_tmpl.png")
-
+```{r fbtmpl, fig.cap="Proceso de como crear una copia propia de la plantilla del libro de campo (fieldbook)"}
+fig <- "fbtmpl"
+gs %>% 
+  read_sheet("fig") %>% 
+  filter(figure == fig) %>% 
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
 ```
 
 # Colecta y organización de datos
@@ -370,9 +388,7 @@ fds <- zigzag(fbd)
 fds <- matrix(fds[,1],byrow=TRUE,ncol=13) %>% 
   as.data.frame()
 
-
-writexl::write_xlsx(fb, path = "img/files/fb.xlsx")
-
+writexl::write_xlsx(fb, path = "files/fb.xlsx")
 ```
 
 Libro de campo para colecta de información, el cual sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos para evaluar los experimentos con nuestra tablet o celular.
