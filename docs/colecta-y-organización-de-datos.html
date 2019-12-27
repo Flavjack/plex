@@ -198,8 +198,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#video-libro-de-colecta-de-datos"><i class="fa fa-check"></i><b>4.3.1</b> Video :: libro de colecta de datos</a></li>
 <li class="chapter" data-level="4.3.2" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#ejemplo-libro-de-colecta-de-datos"><i class="fa fa-check"></i><b>4.3.2</b> Ejemplo :: libro de colecta de datos</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#evaluacion-de-experimentos"><i class="fa fa-check"></i><b>4.4</b> Evaluacion de experimentos</a></li>
-<li class="chapter" data-level="4.5" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#plex-ejemplo"><i class="fa fa-check"></i><b>4.5</b> Plex :: ejemplo</a></li>
+<li class="chapter" data-level="4.4" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#evaluacion-de-experimentos"><i class="fa fa-check"></i><b>4.4</b> Evaluacion de experimentos</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#video-configuracion-de-scanpet-app"><i class="fa fa-check"></i><b>4.4.1</b> Video :: configuracion de ScanPet app</a></li>
+<li class="chapter" data-level="4.4.2" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#video-evaluación-de-experimentos"><i class="fa fa-check"></i><b>4.4.2</b> Video :: evaluación de experimentos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#plex-libro-de-campo"><i class="fa fa-check"></i><b>4.5</b> Plex :: libro de campo</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
 <li class="divider"></li>
@@ -251,10 +254,24 @@ Description
 <tbody>
 <tr>
 <td style="text-align:left;">
-Identificacion
+Bar code
 </td>
 <td style="text-align:left;">
-ID
+bar_code
+</td>
+<td style="text-align:left;">
+Factor
+</td>
+<td style="text-align:left;">
+Unique bar code identification for each EU
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Plots identification
+</td>
+<td style="text-align:left;">
+plots
 </td>
 <td style="text-align:left;">
 Factor
@@ -265,10 +282,10 @@ Unique identification for each EU
 </tr>
 <tr>
 <td style="text-align:left;">
-Repetition
+Block
 </td>
 <td style="text-align:left;">
-RPT
+block
 </td>
 <td style="text-align:left;">
 Factor
@@ -282,7 +299,7 @@ Factor
 Imbibition time
 </td>
 <td style="text-align:left;">
-IBT
+imb
 </td>
 <td style="text-align:left;">
 Factor
@@ -386,29 +403,49 @@ Figure 4.2: Suscription recomendada para la creación de las etiquetas
 </div>
 <div id="ejemplo-etiquetas" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Ejemplo :: etiquetas</h3>
-<embed src="files/etiquetas.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+<embed src="files/etiquetas.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 </div>
 </div>
 <div id="libro-de-colecta-de-datos" class="section level2">
 <h2><span class="header-section-number">4.3</span> Libro de colecta de datos</h2>
-<p>Diseño de libro de colecta de datos o libro de campo impreso, el el libro que me servirá de soporte para las evaluaciones así como contener toda la información impresa del experimento em caso de no tener acceso a la internet o no contar con una tablet o teléfono inteligente no sera ningun inconveniente para la toma de datos.</p>
-<p>Herramientas necesarias para las etiquetas:</p>
+<p>Diseño de libro de colecta de datos o libro de campo fisico, es el documento que me servirá de soporte para las evaluaciones de los experimentos así como contener toda la información impresa del experimento en caso de no tener acceso a la internet o no contar con una tablet o teléfono permitiendonos colectar la información sin ningun inconveniente.</p>
+<p>Herramientas necesarias para el libro de campo:</p>
 <ol style="list-style-type: decimal">
 <li>Libro de campo o fieldbook en formato xlsx o csv.</li>
-<li>Web-App: Next Generation Label System Printer <a href="https://lpsng.rsj.de/" class="uri">https://lpsng.rsj.de/</a></li>
-<li>Impresora normal</li>
+<li>Web-App: Next Generation Label System Printer <a href="https://lpsng.rsj.de/" class="uri">https://lpsng.rsj.de/</a>.</li>
 <li>Modelo base para las el libro de campo (sugerencia) <a href="https://lpsng.rsj.de/jqedit.html#ac64b019-6040-441a-ae5d-9bbfc9856b36" class="uri">https://lpsng.rsj.de/jqedit.html#ac64b019-6040-441a-ae5d-9bbfc9856b36</a></li>
+<li>Impresora normal.</li>
 </ol>
+<div class="rmd-tip">
+<!-- caution - important - note - tip - warning -->
+<p>
+<strong>Cuál es la información mínima que debe contener mi libro de campo?</strong>
+</p>
+<ul>
+<li>
+Diseño de libro de campo con los códigos de barras.
+</li>
+<li>
+Diseño experimental o croquis del experimento.
+</li>
+<li>
+Lista de las variables que se evaluará en el trabajo.
+</li>
+</ul>
+<p>
+Toda esta información debe ser impresa y anillada. Puede ser incluida otros datos o información relevante de acuerdo a los requerimientos del trabajo de investigación.
+</p>
+</div>
 <div class="rmd-important">
 <!-- caution - important - note - tip - warning -->
 <p>
-Las columnas para llenar a mano para genera el libro de campo esta introducido en el diseño como imagen.
+Las columnas para la colecta de datos usadas el diseño del libro de campo esta introducida como imagen, y pueden ver el diseño en el link.
 </p>
 <p>
 <a href="https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396" class="uri">https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396</a>
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-19"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-20"></span>
 <img src="https://lh3.googleusercontent.com/-Kh7oLr1KV-1nLXMBETLNVWQjjRL9qwdYoZoskesgTEwyqsurm-x7g79XKT0LfbwHGb9fe3KiRetpW6tknmAvdVbcpxcdDpnAVpgindhf7-8Rqd3F0bzsUkc4iMCNbFlM7YtLt0BKxUy5rCXbfmr8ZPHsj3KVrWL6ihfL8ttJOJ45qmkAWzPGr8O6FvDnD0VGqdKWXFMzX0-4epKE-jjmfjYzgKbvvo22EykrxG8btuEvM_mspKkZ0zliQPB82SdXdtUI-1tY1BQvR6mXTa9UJJbReHIprcrP3HlMo3cLzJLn9EF7k8RMvPL_mA9lAjq_FSjwrQCth_f2tvNfXzC-X_IlgbdZx4e5ynDDlABE8_xnbcwp6OSh0CjfS3LUjzKsv7iexRaiyNklgtQUWSWUT-kySLe9xGTAlZrKtInkQiXfN0TugTqTgiHl1raaK1afV8NU5GFNAkLPzmprBSA8nenxDqe5vEUqouV0EySBhTQ14OvaL3o8j6TUuRwk43vjidLGRH8SmLcU1yhXnSctiNwrneepQzp5rJOyD5megwXAyGEsLIac_CZLeVf1Nwi_R7lZGynve2FS8fDmTDnTYN_2ywRiyOhwcG47CsTti59fmoI50C0DFvsp4igVNajllAxdVF6tT3nt4veMxnqm_zC2QjOOB8eXNuFK3-9eqzkuqpsb-pHdLU=w699-h264-no" alt="Imagen insertada en el libro de colecta para la toma de datos" width="98%" />
 <p class="caption">
 Figure 4.3: Imagen insertada en el libro de colecta para la toma de datos
@@ -416,10 +453,12 @@ Figure 4.3: Imagen insertada en el libro de colecta para la toma de datos
 </div>
 <div id="video-libro-de-colecta-de-datos" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Video :: libro de colecta de datos</h3>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/mcqER5sO4N4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
 <div id="ejemplo-libro-de-colecta-de-datos" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Ejemplo :: libro de colecta de datos</h3>
-<!-- <embed src="img/files/mensh_&_kording_2017.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->
+<embed src="files/fillbook.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 </div>
 </div>
 <div id="evaluacion-de-experimentos" class="section level2">
@@ -427,14 +466,23 @@ Figure 4.3: Imagen insertada en el libro de colecta para la toma de datos
 <p>Independientemente del tipo de diseño que hayas elegido el cual será utilizado para analizar los datos colectados. La informacion debe ser tomada e inserida al libro de campo para cada unidad experimental y/o individuo.</p>
 <p>Los materiales que necesitamos son los siguientes:</p>
 <ol style="list-style-type: decimal">
-<li>Libro de campo o fieldbook (fb)</li>
-<li>Libro de colecta de datos impreso</li>
-<li>Tablet o celular</li>
+<li>Libro de colecta de datos.</li>
+<li>Libro de colecta de datos impreso.</li>
+<li>Tablet o celular.</li>
 <li>ScanPet app <a href="https://play.google.com/store/apps/details?id=com.maiko.xscanpet&amp;hl=es-419" class="uri">https://play.google.com/store/apps/details?id=com.maiko.xscanpet&amp;hl=es-419</a></li>
 </ol>
+<div id="video-configuracion-de-scanpet-app" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Video :: configuracion de ScanPet app</h3>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/UD60rPlAHHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
-<div id="plex-ejemplo" class="section level2">
-<h2><span class="header-section-number">4.5</span> Plex :: ejemplo</h2>
+<div id="video-evaluación-de-experimentos" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Video :: evaluación de experimentos</h3>
+<!-- <iframe width="100%" height="450" src="https://www.youtube.com/embed/7K5j0Z-u27A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</div>
+</div>
+<div id="plex-libro-de-campo" class="section level2">
+<h2><span class="header-section-number">4.5</span> Plex :: libro de campo</h2>
 
 <iframe src="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
 

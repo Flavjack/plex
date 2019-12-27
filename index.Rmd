@@ -85,7 +85,7 @@ Luego del desarrollo de los puntos mencionados en la estructura del plan experim
 
 Para ejemplificar todo lo que estamos desarrollando en este manual vamos usar un trabajo que presenté como una publicación para la revista de la Universidad Agraria la Molina [@lozano-isla2017Germination].
 
-<embed src="files/Lozano-Isla2017.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+<embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 
 ### Idea
 
@@ -463,24 +463,36 @@ gs %>%
 
 ### Ejemplo :: etiquetas
 
-<embed src="files/etiquetas.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+<embed src="files/etiquetas.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 
 ## Libro de colecta de datos
 
-Diseño de libro de colecta de datos o libro de campo impreso, el el libro que me servirá de soporte para las evaluaciones así como contener toda la información impresa del experimento em caso de no tener acceso a la internet o no contar con una tablet o teléfono inteligente no sera ningun inconveniente para la toma de datos.
+Diseño de libro de colecta de datos o libro de campo fisico, es el documento que me servirá de soporte para las evaluaciones de los experimentos así como contener toda la información impresa del experimento en caso de no tener acceso a la internet o no contar con una tablet o teléfono permitiendonos colectar la información sin ningun inconveniente.
 
-Herramientas necesarias para las etiquetas:
+Herramientas necesarias para el libro de campo:
 
 1. Libro de campo o fieldbook en formato xlsx o csv.
-1. Web-App: Next Generation Label System Printer <https://lpsng.rsj.de/>
-1. Impresora normal
+1. Web-App: Next Generation Label System Printer <https://lpsng.rsj.de/>.
 1. Modelo base para las el libro de campo (sugerencia) <https://lpsng.rsj.de/jqedit.html#ac64b019-6040-441a-ae5d-9bbfc9856b36>
+1. Impresora normal.
 
+```{block, echo = T, type='rmd-tip' }
+<!-- caution - important - note - tip - warning -->
+
+**Cuál es la información mínima que debe contener mi libro de campo?**
+
+- Diseño de libro de campo con los códigos de barras.
+- Diseño experimental o croquis del experimento.
+- Lista de las variables que se evaluará en el trabajo.
+
+Toda esta información debe ser impresa y anillada. Puede ser incluida otros datos o información relevante de acuerdo a los requerimientos del trabajo de investigación.
+
+```
 
 ```{block, echo = T, type='rmd-important' }
 <!-- caution - important - note - tip - warning -->
 
-Las columnas para llenar a mano para genera el libro de campo esta introducido en el diseño como imagen.
+Las columnas para la colecta de datos usadas el diseño del libro de campo esta introducida como imagen, y pueden ver el diseño en el link.
 
 <https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396>
 ```
@@ -497,10 +509,11 @@ gs %>%
 
 ### Video :: libro de colecta de datos
 
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/mcqER5sO4N4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Ejemplo :: libro de colecta de datos
 
-<!-- <embed src="img/files/mensh_&_kording_2017.pdf" width="100%" height="600" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"> -->
+<embed src="files/fillbook.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 
 ## Evaluacion de experimentos
 
@@ -508,13 +521,20 @@ Independientemente del tipo de diseño que hayas elegido el cual será utilizado
 
 Los materiales que necesitamos son los siguientes:
 
-1. Libro de campo o fieldbook (fb)
-1. Libro de colecta de datos impreso
-1. Tablet o celular
+1. Libro  de colecta de datos.
+1. Libro de colecta de datos impreso.
+1. Tablet o celular.
 1. ScanPet app <https://play.google.com/store/apps/details?id=com.maiko.xscanpet&hl=es-419>
 
+### Video :: configuracion de ScanPet app
 
-## Plex :: ejemplo
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/UD60rPlAHHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Video :: evaluación de experimentos
+
+<!-- <iframe width="100%" height="450" src="https://www.youtube.com/embed/7K5j0Z-u27A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+## Plex :: libro de campo
 
 ```{r}
 shiny::HTML(
