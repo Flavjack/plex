@@ -32,7 +32,7 @@
   
   <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
 <link rel="prev" href="diseño-experimental.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="redacción-de-documentos-científicos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -205,7 +205,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#plex-libro-de-campo"><i class="fa fa-check"></i><b>4.5</b> Plex :: libro de campo</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+<li class="chapter" data-level="5" data-path="redacción-de-documentos-científicos.html"><a href="redacción-de-documentos-científicos.html"><i class="fa fa-check"></i><b>5</b> Redacción de documentos científicos</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
 <li class="divider"></li>
 <li> <a href="https://www.zotero.org/flavjack" target="blank"> ZOTERO </a> </li>
 
@@ -311,7 +312,7 @@ Factor
 </tr>
 </tbody>
 </table>
-<p>Con la información de la tabla (tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.</p>
+<p>Con la información de la tabla <a href="colecta-y-organización-de-datos.html#tab:dse">4.1</a> diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="colecta-y-organización-de-datos.html#cb20-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb20-2"><a href="colecta-y-organización-de-datos.html#cb20-2"></a><span class="kw">library</span>(agricolae)</span>
 <span id="cb20-3"><a href="colecta-y-organización-de-datos.html#cb20-3"></a></span>
@@ -472,6 +473,78 @@ Figure 4.3: Imagen insertada en el libro de colecta de datos para la toma de inf
 <li>Tablet o celular.</li>
 <li>ScanPet app <a href="https://play.google.com/store/apps/details?id=com.maiko.xscanpet&amp;hl=es-419" class="uri">https://play.google.com/store/apps/details?id=com.maiko.xscanpet&amp;hl=es-419</a></li>
 </ol>
+<p>Para la evaluación de los experimentos se recomienda que las variables en el libro de colecta de datos tengan la siguiente estructura separado por sub guiones "_":</p>
+<ol style="list-style-type: decimal">
+<li>Abreviación del nombre de la variable (3 a 4 letras).</li>
+<li>Dias despues de la siembra de la evaluación (DDS).</li>
+<li>Número de la sub muestra que se van evaluar.</li>
+</ol>
+<table>
+<caption>
+<span id="tab:vrnms">Table 4.2: </span>Ejemplo de los nombres de las variables para el libro de colecta de datos.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Nombre de la variable
+</th>
+<th style="text-align:left;">
+Abreviación
+</th>
+<th style="text-align:right;">
+DDS
+</th>
+<th style="text-align:right;">
+Muestras
+</th>
+<th style="text-align:left;">
+Nombre columnas
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Seed Coat Hardness
+</td>
+<td style="text-align:left;">
+sch
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+sch_0_1, sch_0_2, sch_0_3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Electrical conductivity
+</td>
+<td style="text-align:left;">
+elc
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+elc_0_1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span id="fig:vrnm"></span>
+<img src="https://lh3.googleusercontent.com/2B_1V3ACEQJ6uj9Rqbv0Yuyybyi1XG-AlFuiUIUT8ygqRXwpTGuofq3_fiPyDIoF1y67020jzauTg3fIhroZMQy70TsF6IocP-724ZzQClGJk_LUm5hFxNGepb7bvZSvdXXW_KguC-yw9IJ3NB4mrW-rMuCvuSeotY3TLTkiB73AULQzt6NtumYyLAegVorgUnnNLN-ij9utVitmoBpZEakf2XsMGEdj1PVXVeSvsXPYW7IuQgLYOsoPKKZzCvDa9c0IiD10iFCd33iDH7iLmVhd0Vdx4WlVziQS4MfjYAC_-jqSzBVB1-yANqhs76_02_ix9H8Fopsch8Tl4Ff3cTYNDa02EuIE4rYzl0KHuFcvV_L4CfPXQM20lZEybVmVVbexMPVK0GX_it7glp4EpqlCfHmw0_BLMtUBTh8OvG0TsCKOLKTpILPGr2nyYlfVX6lhPnWaoa4QeO8zFnVEbuWIWvWzQauvGwSuBAN61IRTCbfJaDs22DUBgAM-tsEczCOLL10dEhL5pwAft4fHkQg11zMUjz4WnrxfKp9F2-0j1rxTg32sueKH6chw4JYfzDJNfbXO-88fEu4bpsBkOy8hywiioQDcuYwSosPFYBOkvYbEvJbxooaI7qWutH3RqB_oD0JDSJon7aouGXQCtrJnBJur3Of8eDsXZHwnAL6d7675w2ZYgO0=w853-h321-no" alt="Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test" width="98%" />
+<p class="caption">
+Figure 4.4: Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test
+</p>
+</div>
 <div id="video-configuracion-de-scanpet-app" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Video :: configuracion de ScanPet app</h3>
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/UD60rPlAHHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -484,13 +557,14 @@ Figure 4.3: Imagen insertada en el libro de colecta de datos para la toma de inf
 </div>
 <div id="plex-libro-de-campo" class="section level2">
 <h2><span class="header-section-number">4.5</span> Plex :: libro de campo</h2>
-<p>Libro de campo con datos reales de un experimento conteniendo toda la información que se explicó hasta el momento, desde la conceptcion de la idea, planificación y colecta de datos. Información que dió como resultado la publicación: “Germination behavior of <em>Jatropha curcas</em> L. after different imbibition times” en la revista Peruvian Journal of Agronomy <span class="citation">(Lozano-Isla et al. <a href="#ref-lozano-isla2017Germination" role="doc-biblioref">2017</a>)</span>.</p>
-<p>20150607PE (J. Curcas - Imbibition time): <a href="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" class="uri">https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232</a></p>
+<p>Libro de campo con datos reales de un experimento conteniendo toda la información que se explicó hasta el momento, desde la concepción de la idea, planificación y colecta de datos.</p>
+<p>20150607PE (J. Curcas - Imbibition time)
+<a href="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" class="uri">https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232</a></p>
 
 <iframe src="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
 
-
-<div style="page-break-after: always;"></div>
+<p>La información de este experimento dió como resultado la publicación: “Germination behavior of <em>Jatropha curcas</em> L. after different imbibition times” en la revista Peruvian Journal of Agronomy <span class="citation">(Lozano-Isla et al. <a href="#ref-lozano-isla2017Germination" role="doc-biblioref">2017</a>)</span>.</p>
+<embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 </div>
 </div>
 <h3> References</h3>
@@ -508,7 +582,7 @@ Figure 4.3: Imagen insertada en el libro de colecta de datos para la toma de inf
         </div>
       </div>
 <a href="diseño-experimental.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="redacción-de-documentos-científicos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

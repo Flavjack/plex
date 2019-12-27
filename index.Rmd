@@ -341,8 +341,6 @@ gs %>%
 
 ## Exportar plantilla de evaluación
 
-
-
 Para esta sección vamos a usar nuestra idea de investigación "*Jatropha curcas* imbibition time" y vamos a crear el diseño experimental haciendo uso del paquete agricolae [@R-agricolae] que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.
 
 En base a nuestro plan experimental tenemos la siguiente información
@@ -353,7 +351,7 @@ gs %>%
   kable(caption = "Información básica para el experimento")
 ```
 
-Con la información de la tabla \ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
+Con la información de la tabla \@ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
 
 ```{r, echo = TRUE}
 library(tidyverse)
@@ -523,6 +521,30 @@ Los materiales necesarios para evaluar los experimentos con nuestos dispositivos
 1. Tablet o celular.
 1. ScanPet app <https://play.google.com/store/apps/details?id=com.maiko.xscanpet&hl=es-419>
 
+Para la evaluación de los experimentos se recomienda que las variables en el libro de colecta de datos tengan la siguiente estructura separado por sub guiones "_":
+
+1. Abreviación del nombre de la variable (3 a 4 letras).
+1. Dias despues de la siembra de la evaluación (DDS).
+1. Número de la sub muestra que se van evaluar.
+
+```{r vrnms}
+gs %>% 
+  read_sheet("vrnms") %>% 
+  kable(caption = "Ejemplo de los nombres de las variables para el libro de colecta de datos.")
+```
+
+```{r vrnm, fig.cap="Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test"}
+
+fig <- "vrnm"
+gs %>% 
+  read_sheet("fig") %>% 
+  filter(figure == fig) %>% 
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+
+```
+
 ### Video :: configuracion de ScanPet app
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/UD60rPlAHHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -533,9 +555,10 @@ Los materiales necesarios para evaluar los experimentos con nuestos dispositivos
 
 ## Plex :: libro de campo
 
-Libro de campo con datos reales de un experimento conteniendo toda la información que se explicó hasta el momento, desde la conceptcion de la idea, planificación y colecta de datos. Información que dió como resultado la publicación: "Germination behavior of *Jatropha curcas* L. after different imbibition times" en la revista Peruvian Journal of Agronomy [@lozano-isla2017Germination].
+Libro de campo con datos reales de un experimento conteniendo toda la información que se explicó hasta el momento, desde la concepción de la idea, planificación y colecta de datos. 
 
-20150607PE (J. Curcas - Imbibition time): <https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232>
+20150607PE (J. Curcas - Imbibition time)
+<https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232>
 
 ```{r}
 shiny::HTML(
@@ -544,3 +567,11 @@ shiny::HTML(
 '  
 )
 ```
+
+La información de este experimento dió como resultado la publicación: "Germination behavior of *Jatropha curcas* L. after different imbibition times" en la revista Peruvian Journal of Agronomy [@lozano-isla2017Germination].
+
+<embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+# Redacción de documentos científicos
+
+
