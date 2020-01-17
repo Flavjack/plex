@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Herramientas para la Investigación Científica</title>
   <meta name="description" content="Plan experimental" />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Herramientas para la Investigación Científica" />
   <meta property="og:type" content="book" />
@@ -52,7 +52,7 @@
 
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.10/datatables.js"></script>
+<script src="libs/datatables-binding-0.11/datatables.js"></script>
 <link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
@@ -232,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="subtitle"><em>Plan experimental (PLEX)</em></h2>
 <p class="author"><em>Flavio Lozano-Isla <span class="math inline">\(^{1*}\)</span></em></p>
 <p class="author"><em><span class="math inline">\(^{1}\)</span> Agr. MSc, E-mail: <a href="mailto:flavjack@gmail.com" class="email">flavjack@gmail.com</a></em></p>
-<p class="date"><em>27 Dic. 2019 23:30:19</em></p>
+<p class="date"><em>17 Ene. 2020 22:41:02</em></p>
 </div>
 <div id="introducción" class="section level1">
 <h1><span class="header-section-number">1</span> Introducción</h1>
@@ -242,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no dejes de escribir a mi correo: <a href="mailto:flavjack@gmail.com" class="email">flavjack@gmail.com</a>. Disculpen por los errores ortográficos, los cuales ire corrigiendo a medida que vaya avanzando el documento, primero deseo que la ideas fluyan. Mencionar tambien que lo estoy escribiendo por la consola en R por lo que no es fácil de acceder al corrector ortográfico :), gracias por su comprension. Voy asustituir la “Ñ” por la “NH” por que los teclados alemanes no posee esa caracter xD.
 </p>
 </div>
-<p>Me interesé en escribir el presente manual por 2 razones. i) Para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida. ii) Por que mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios anho, me pasé dias ordenando bases de datos de otros estudiantes ayudaron a colectar y más que organizar parece que hubiese estado tratano de descifrar jeroglíficos, ya que parece que solo él que lo escribió sabe que significa, lo que consume mucho tiempo y es cansativo, por lo que decidí darme una pausa y escribir.</p>
+<p>Me interesé en escribir el presente manual por 2 razones. i) Para guiar a estudiantes o profesionales en como planear un proyecto de investigación de una manera facil y rápida. ii) Mientras escribia mi proyecto de doctorado y organizaba la información de los experimentos de varios años, me pasé dias ordenando bases de datos que diversos estudiantes ayudaron a colectar, y más que organizar, parece que estaria tratano de descifrar jeroglíficos, ya que al parecer, solo él que escribió sabe lo que significa, lo que consume mucho tiempo y es cansativo. Entonces decidí darme una pausa y escribir.</p>
 <p>Con frecuencia estudiantes me escriben ya que tienen dudas para iniciar su proyecto de investigación o dar forma a un idea, algunos me hacen muchas preguntas y afirmaciones, tales como: Cómo planteo mi proyecto de investigación?, Qué tipo de análisis debo usar?, mi asesor no tiene tiempo para ayudarme, no se como iniciar mi trabajo, estoy perdido ingeniero, etc… y la verdad me gustaria apoyarlos de forma personalizada a cada uno de ellos y muchas veces no cuento con el tiempo suficiente para hacerlo, entonces emprendí la idea de hacer este manual que puede servir de guía a los que por primera vez esten desarrollando un proyecto de investigación o algunas recomendaciones para los que ya tiene experiencia.</p>
 <p>Uno de mis mentores al cual recuerdo siempre el Ing. Raúl Eyzaguirre me dijo en algun momento: “El proceso de investigación tiene muchos errores (horrores xD) durante su ejecución, pero mismo así la ciencia siempre avanza.” ironizando la forma en como muchos investigadores hacen ciencia y los problemas que tienen que resolver los que analizan la información al final de las investigaciones. O cuando algun investigador venia con una base de datos su oficina y le decia “Por favor, haz todo los analisis necesario para este trabajo” sin si quiera saber ellos mismo cual es la interrogante o hipotesis que desean responder con su investigación, cosa que es muy comun entre muchos investigadores, que emprender algo sin tener una idea clara de lo que estan buscando y tienen la esperanza de encontrar algo en el camino, lo que mi asesor de doctorado lo llamo: “fishing expedition” (Una investigación realizada con la esperanza, aunque no con el propósito declarado, de descubrir alguna información). O como cuando escuché por ahí “Traer un trabajo de investigación culminado es como traer un cadaver, lo unico que puedo hacer es la autopsia y decirte que fue lo que sucedió” lo que hace referencia a que muchas veces emprendemos una investigación sin saber el objetivo del trabajo, por lo que no es recomendable iniciar una trabajo investigación sin tener una idea clara de lo que deseamos encontrar o responder con nuestro trabajo lo que puede llevar a la perdida de tiempo y recursos.</p>
 <p>Ser investigador es un trabajo basado en la disciplina, perseverancia y la mejora continua que se va ganando con el tiempo y la experiencia y muchas veces se logra a base de prueba y error (horrores tambien xD), así que no te sientas aturdido o decepcionados si recien estas comenzando… recuerda que para que un arbol sea grande y fuerte en algun momento fue un pequenho retonho que tuvo que luchar contra muchas condiciones adversas… Trataré en este documento ser lo mas breve y conciso para no ser cansativo con los que deseen leer el manual.</p>
@@ -253,7 +253,7 @@ Antes de iniciar a leer este manuscrito, si tienes alguna duda o sugerencia no d
 <h3> References</h3>
 <div id="refs" class="references">
 <div id="ref-kamoun2013GOHREP">
-<p>Kamoun, S. 2013. GOHREP - How to Plan and Manage a Research Project (en línea). s.l., s.e. Disponible en <a href="https://kamounlab.dreamhosters.com/pdfs/GOHREP.pdf">https://kamounlab.dreamhosters.com/pdfs/GOHREP.pdf</a>.</p>
+<p>Kamoun, S. 2013. GOHREP - How to plan and manage a research project (en línea). s.l., s.e. Disponible en <a href="https://kamounlab.dreamhosters.com/pdfs/GOHREP.pdf">https://kamounlab.dreamhosters.com/pdfs/GOHREP.pdf</a>.</p>
 </div>
 </div>
             </section>
