@@ -206,7 +206,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#plex-libro-de-campo"><i class="fa fa-check"></i><b>4.5</b> Plex :: libro de campo</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="redacción-de-documentos-científicos.html"><a href="redacción-de-documentos-científicos.html"><i class="fa fa-check"></i><b>5</b> Redacción de documentos científicos</a></li>
-<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
 <li class="divider"></li>
 <li> <a href="https://www.zotero.org/flavjack" target="blank"> ZOTERO </a> </li>
 
@@ -313,32 +312,32 @@ Factor
 </tbody>
 </table>
 <p>Con la información de la tabla <a href="colecta-y-organización-de-datos.html#tab:dse">4.1</a> diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="colecta-y-organización-de-datos.html#cb22-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb22-2"><a href="colecta-y-organización-de-datos.html#cb22-2"></a><span class="kw">library</span>(agricolae)</span>
-<span id="cb22-3"><a href="colecta-y-organización-de-datos.html#cb22-3"></a></span>
-<span id="cb22-4"><a href="colecta-y-organización-de-datos.html#cb22-4"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
-<span id="cb22-5"><a href="colecta-y-organización-de-datos.html#cb22-5"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb22-6"><a href="colecta-y-organización-de-datos.html#cb22-6"></a></span>
-<span id="cb22-7"><a href="colecta-y-organización-de-datos.html#cb22-7"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
-<span id="cb22-8"><a href="colecta-y-organización-de-datos.html#cb22-8"></a>                  <span class="dt">r =</span> rep,</span>
-<span id="cb22-9"><a href="colecta-y-organización-de-datos.html#cb22-9"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
-<span id="cb22-10"><a href="colecta-y-organización-de-datos.html#cb22-10"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
-<span id="cb22-11"><a href="colecta-y-organización-de-datos.html#cb22-11"></a></span>
-<span id="cb22-12"><a href="colecta-y-organización-de-datos.html#cb22-12"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb22-13"><a href="colecta-y-organización-de-datos.html#cb22-13"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">imbt =</span> <span class="kw">paste0</span>(imb, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb22-14"><a href="colecta-y-organización-de-datos.html#cb22-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">block =</span> <span class="kw">recode</span>(block,</span>
-<span id="cb22-15"><a href="colecta-y-organización-de-datos.html#cb22-15"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
-<span id="cb22-16"><a href="colecta-y-organización-de-datos.html#cb22-16"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
-<span id="cb22-17"><a href="colecta-y-organización-de-datos.html#cb22-17"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
-<span id="cb22-18"><a href="colecta-y-organización-de-datos.html#cb22-18"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb22-19"><a href="colecta-y-organización-de-datos.html#cb22-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bar_code =</span> <span class="kw">paste</span>(<span class="st">&quot;PE2015&quot;</span>, plots, block, imb, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb22-20"><a href="colecta-y-organización-de-datos.html#cb22-20"></a><span class="st">  </span><span class="kw">select</span>(bar_code, <span class="kw">everything</span>())</span>
-<span id="cb22-21"><a href="colecta-y-organización-de-datos.html#cb22-21"></a></span>
-<span id="cb22-22"><a href="colecta-y-organización-de-datos.html#cb22-22"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
-<span id="cb22-23"><a href="colecta-y-organización-de-datos.html#cb22-23"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb22-24"><a href="colecta-y-organización-de-datos.html#cb22-24"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
-<span id="cb22-25"><a href="colecta-y-organización-de-datos.html#cb22-25"></a></span>
-<span id="cb22-26"><a href="colecta-y-organización-de-datos.html#cb22-26"></a>writexl<span class="op">::</span><span class="kw">write_xlsx</span>(<span class="dt">x =</span> fb, <span class="dt">path =</span> <span class="st">&quot;files/fb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="colecta-y-organización-de-datos.html#cb24-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb24-2"><a href="colecta-y-organización-de-datos.html#cb24-2"></a><span class="kw">library</span>(agricolae)</span>
+<span id="cb24-3"><a href="colecta-y-organización-de-datos.html#cb24-3"></a></span>
+<span id="cb24-4"><a href="colecta-y-organización-de-datos.html#cb24-4"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb24-5"><a href="colecta-y-organización-de-datos.html#cb24-5"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb24-6"><a href="colecta-y-organización-de-datos.html#cb24-6"></a></span>
+<span id="cb24-7"><a href="colecta-y-organización-de-datos.html#cb24-7"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
+<span id="cb24-8"><a href="colecta-y-organización-de-datos.html#cb24-8"></a>                  <span class="dt">r =</span> rep,</span>
+<span id="cb24-9"><a href="colecta-y-organización-de-datos.html#cb24-9"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
+<span id="cb24-10"><a href="colecta-y-organización-de-datos.html#cb24-10"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
+<span id="cb24-11"><a href="colecta-y-organización-de-datos.html#cb24-11"></a></span>
+<span id="cb24-12"><a href="colecta-y-organización-de-datos.html#cb24-12"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-13"><a href="colecta-y-organización-de-datos.html#cb24-13"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">imbt =</span> <span class="kw">paste0</span>(imb, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-14"><a href="colecta-y-organización-de-datos.html#cb24-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">block =</span> <span class="kw">recode</span>(block,</span>
+<span id="cb24-15"><a href="colecta-y-organización-de-datos.html#cb24-15"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
+<span id="cb24-16"><a href="colecta-y-organización-de-datos.html#cb24-16"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
+<span id="cb24-17"><a href="colecta-y-organización-de-datos.html#cb24-17"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
+<span id="cb24-18"><a href="colecta-y-organización-de-datos.html#cb24-18"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-19"><a href="colecta-y-organización-de-datos.html#cb24-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bar_code =</span> <span class="kw">paste</span>(<span class="st">&quot;PE2015&quot;</span>, plots, block, imb, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-20"><a href="colecta-y-organización-de-datos.html#cb24-20"></a><span class="st">  </span><span class="kw">select</span>(bar_code, <span class="kw">everything</span>())</span>
+<span id="cb24-21"><a href="colecta-y-organización-de-datos.html#cb24-21"></a></span>
+<span id="cb24-22"><a href="colecta-y-organización-de-datos.html#cb24-22"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
+<span id="cb24-23"><a href="colecta-y-organización-de-datos.html#cb24-23"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-24"><a href="colecta-y-organización-de-datos.html#cb24-24"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
+<span id="cb24-25"><a href="colecta-y-organización-de-datos.html#cb24-25"></a></span>
+<span id="cb24-26"><a href="colecta-y-organización-de-datos.html#cb24-26"></a>writexl<span class="op">::</span><span class="kw">write_xlsx</span>(<span class="dt">x =</span> fb, <span class="dt">path =</span> <span class="st">&quot;files/fb.xlsx&quot;</span>)</span></code></pre></div>
 <p>El libro de campo para colecta de la información sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos que nos permitirá la evaluación de los experimentos con nuestras tablets o teléfonos inteligentes.</p>
 <div id="htmlwidget-18c2be1c87e4c8af0449" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-18c2be1c87e4c8af0449">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental<\/caption>","data":[["PE2015_101_I_8","PE2015_102_I_0","PE2015_103_I_12","PE2015_104_I_18","PE2015_105_I_4","PE2015_106_I_2","PE2015_107_I_6","PE2015_108_I_10","PE2015_109_I_22","PE2015_110_I_20","PE2015_111_I_14","PE2015_112_I_16","PE2015_113_I_24","PE2015_201_II_16","PE2015_202_II_20","PE2015_203_II_18","PE2015_204_II_6","PE2015_205_II_12","PE2015_206_II_22","PE2015_207_II_24","PE2015_208_II_8","PE2015_209_II_0","PE2015_210_II_10","PE2015_211_II_4","PE2015_212_II_2","PE2015_213_II_14","PE2015_301_III_8","PE2015_302_III_22","PE2015_303_III_0","PE2015_304_III_14","PE2015_305_III_12","PE2015_306_III_24","PE2015_307_III_4","PE2015_308_III_6","PE2015_309_III_20","PE2015_310_III_10","PE2015_311_III_18","PE2015_312_III_2","PE2015_313_III_16","PE2015_401_IV_0","PE2015_402_IV_12","PE2015_403_IV_6","PE2015_404_IV_16","PE2015_405_IV_24","PE2015_406_IV_18","PE2015_407_IV_10","PE2015_408_IV_2","PE2015_409_IV_20","PE2015_410_IV_4","PE2015_411_IV_22","PE2015_412_IV_8","PE2015_413_IV_14"],[101,102,103,104,105,106,107,108,109,110,111,112,113,201,202,203,204,205,206,207,208,209,210,211,212,213,301,302,303,304,305,306,307,308,309,310,311,312,313,401,402,403,404,405,406,407,408,409,410,411,412,413],["I","I","I","I","I","I","I","I","I","I","I","I","I","II","II","II","II","II","II","II","II","II","II","II","II","II","III","III","III","III","III","III","III","III","III","III","III","III","III","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV"],["8","0","12","18","4","2","6","10","22","20","14","16","24","16","20","18","6","12","22","24","8","0","10","4","2","14","8","22","0","14","12","24","4","6","20","10","18","2","16","0","12","6","16","24","18","10","2","20","4","22","8","14"],["8hrs","0hrs","12hrs","18hrs","4hrs","2hrs","6hrs","10hrs","22hrs","20hrs","14hrs","16hrs","24hrs","16hrs","20hrs","18hrs","6hrs","12hrs","22hrs","24hrs","8hrs","0hrs","10hrs","4hrs","2hrs","14hrs","8hrs","22hrs","0hrs","14hrs","12hrs","24hrs","4hrs","6hrs","20hrs","10hrs","18hrs","2hrs","16hrs","0hrs","12hrs","6hrs","16hrs","24hrs","18hrs","10hrs","2hrs","20hrs","4hrs","22hrs","8hrs","14hrs"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>bar_code<\/th>\n      <th>plots<\/th>\n      <th>block<\/th>\n      <th>imb<\/th>\n      <th>imbt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
@@ -567,7 +566,7 @@ Figure 4.4: Nombre de las variables de evaluación en el libro de colecta de dat
 <embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 </div>
 </div>
-<h3> References</h3>
+<h3> Redacción de documentos científicos</h3>
 <div id="refs" class="references">
 <div id="ref-R-agricolae">
 <p>de Mendiburu, F. 2019. Agricolae: Statistical Procedures for Agricultural Research (en línea). s.l., s.e. Disponible en <a href="https://CRAN.R-project.org/package=agricolae">https://CRAN.R-project.org/package=agricolae</a>.</p>
