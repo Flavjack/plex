@@ -17,18 +17,17 @@ always_allow_html: yes
 link-citations: true
 colorlinks: yes
 bibliography: [cnfg/book.bib, cnfg/pkgs.bib]
-csl: https://www.zotero.org/styles/iica-catie
+csl: https://www.zotero.org/styles/apa
 ---
 
-```{r dataset}
+```{r dataset, include=FALSE}
 # source("cnfg/debug.r")
 source("cnfg/setup.r")
-
 sheets_auth(T)
 url <- "https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=0"
 gs <- as_sheets_id(url)
 # browseURL(url)
-
+xl <- gs %>% drive_download("files/plex.xlsx", overwrite = T) %>% pluck(2)
 ```
 
 # Introducción
@@ -181,13 +180,13 @@ Google sheets: <https://docs.google.com/spreadsheets/u/0/>
 
 Iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque paresca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algun tiempo se nos dificulta encotrarlo. Para nombrar los libros de campos les sugiero usar la siguiente nomenclatura.
 
+### Nombre del lugar
+
+Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
+
 ### Fecha
 
 En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo y una forma facil de filtrar si tenemos varios trabajos durante el mismo anho.
-
-### Abreviacion de lugar
-
-Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
 
 ### Breve descripción
 
@@ -200,11 +199,11 @@ Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir en
 
 **Nombre de libro de campo:** 
 
-20150607PE (J. Curcas - Imbibition time)
+RECIFE-2015-06-07 (J. Curcas - Imbibition time)
 
 **Interpretacion:**
 
-Experimento de tiempo de imibicion en *Jatropha Curcas* que se desarrollo en Junio de 2015.
+Experimento de tiempo de imibicion en *Jatropha Curcas* que se desarrollo en Junio de 2015 en la ciudad de Recife, Brasil.
 
 ```
 
@@ -228,7 +227,7 @@ Si estás trabajando con datos, debió haber en algun momento en el que tenías 
 
 ```
 
-## Pestanhas en el libro de campo
+## Pestañas en el libro de campo
 
 ```{block, echo = T, type='rmd-warning'}
 <!-- caution - important - note - tip - warning -->
@@ -245,30 +244,46 @@ A continuación se realizará una descripción de lo que debe contener cada una 
 
 Esta pestanha es clave y debe ser completada en su totalidad ya que esta información es valiosa al momento de redactar algun reporte o escribir un artículo, permitiendonos tener toda la información a la mano, asi como tambien contener los objetivos del trabajo lo que permitirá a a los demás colaboradores entender el trabajo.
 
-```{r fbinfo, fig.cap= "Datos mínimos y obligatorios en el hoja de información (info) del libro de campo o *fieldbook*"}
+```{r fbinfo, fig.cap= '(ref:fbinfo)'}
 fig <- "fbinfo"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
+# \@ref(tab:) 
 ```
+(ref:`r fig`) `r title`
 
 ### Variables (var)
 
 Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, así como estandarizar el nombre de las variables y estandarizar la colecta de datos. Se realizará una lista de las variables a evaluar durante el experimento y se adicionará las abreviaturas del nombre de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).
 
-```{r fbvar, fig.cap="Ejemplo de como debe estructurarse la pestaña de las variables (var)"}
+```{r fbvar, fig.cap= '(ref:fbvar)'}
 fig <- "fbvar"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
+# \@ref(tab:) 
 ```
-  
+(ref:`r fig`) `r title`
+
 ```{block2, echo = T, type='rmd-note' }
 
 Todo trabajo que este relacionado con la descripción de algun cultivo se debe tener en cuenta el uso de los *descriptores* como patron para determinar los nombres de la variables. La pestaña de variables de contener como mínimo las siguientes columnas:
@@ -327,15 +342,23 @@ shiny::HTML(
 1. *Crear una copia*
 1. Renombrar el archivo
 
-```{r fbtmpl, fig.cap="Proceso de como crear una copia de la plantilla del libro de campo o fieldbook"}
+```{r fbtmpl, fig.cap= '(ref:fbtmpl)'}
 fig <- "fbtmpl"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
+# \@ref(tab:) 
 ```
+(ref:`r fig`) `r title`
 
 # Colecta y organización de datos
 
@@ -343,12 +366,26 @@ gs %>%
 
 Para esta sección vamos a usar nuestra idea de investigación "*Jatropha curcas* imbibition time" y vamos a crear el diseño experimental haciendo uso del paquete agricolae [@R-agricolae] que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.
 
-En base a nuestro plan experimental tenemos la siguiente información
+En base a nuestro plan experimental tenemos la siguiente información:
 
 ```{r dse}
-gs %>% 
-  read_sheet("dse") %>% 
-  kable(caption = "Información básica para el experimento")
+tab <- "dse"
+sheet <- "tab"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(description) %>% 
+  as_vector()
+note <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(note) %>% 
+  as_vector()
+xl %>% 
+  read_excel(tab) %>% 
+  kable(caption = title) %>% 
+  add_footnote(notation = "symbol", label = note)
+# \@ref(tab:) 
 ```
 
 Con la información de la tabla \@ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
@@ -431,25 +468,41 @@ Evitar que el libro de campo contenga otros datos como el nombre de las variable
 
 ```
 
-```{r, fig.cap="Configuración de modelo base para las etiqueta"}
+```{r conflbl, fig.cap= '(ref:conflbl)'}
 fig <- "conflbl"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
+# \@ref(tab:) 
 ```
+(ref:`r fig`) `r title`
 
-```{r, out.width="50%", fig.cap="Suscription recomendada para la creación de las etiquetas"}
+```{r rsj, fig.cap= '(ref:rsj)', , out.width="50%"}
 fig <- "rsj"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
+# \@ref(tab:) 
 ```
+(ref:`r fig`) `r title`
 
 ### Video :: etiquetas
 
@@ -492,15 +545,23 @@ Las columnas para la colecta de datos usadas el diseño del libro de campo esta 
 
 ```
 
-```{r, fig.cap="Imagen insertada en el libro de colecta de datos para la toma de información experimental"}
+```{r flb, fig.cap= '(ref:flb)'}
 fig <- "flb"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
+# \@ref(tab:) 
 ```
+(ref:`r fig`) `r title`
 
 ### Video :: libro de colecta de datos
 
@@ -527,23 +588,43 @@ Para la evaluación de los experimentos se recomienda que las variables en el li
 1. Dias despues de la siembra de la evaluación (DDS).
 1. Número de la sub muestra que se van evaluar.
 
-```{r vrnms}
-gs %>% 
-  read_sheet("vrnms") %>% 
-  kable(caption = "Ejemplo de los nombres de las variables para el libro de colecta de datos.")
+```{r vrnmt}
+tab <- "vrnmt"
+sheet <- "tab"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(description) %>% 
+  as_vector()
+note <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(note) %>% 
+  as_vector()
+xl %>% 
+  read_excel(tab) %>% 
+  kable(caption = title) %>% 
+  add_footnote(notation = "symbol", label = note)
+# \@ref(tab:) 
 ```
 
-```{r vrnm, fig.cap="Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test"}
-
-fig <- "vrnm"
-gs %>% 
-  read_sheet("fig") %>% 
-  filter(figure == fig) %>% 
+```{r vrnmf, fig.cap= '(ref:vrnmf)'}
+fig <- "vrnmf"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
   select(url) %>% 
   as_vector() %>% 
   include_graphics()
-
+# \@ref(tab:) 
 ```
+(ref:`r fig`) `r title`
 
 ### Video :: configuracion de ScanPet app
 
@@ -575,3 +656,9 @@ La información de este experimento dió como resultado la publicación: "Germin
 # Redacción de documentos científicos
 
 
+
+
+
+`r if (knitr::is_html_output()){'
+# References
+<div id="refs"></div>'}`

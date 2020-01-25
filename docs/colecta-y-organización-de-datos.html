@@ -171,12 +171,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="diseño-experimental.html"><a href="diseño-experimental.html"><i class="fa fa-check"></i><b>3</b> Diseño experimental</a><ul>
 <li class="chapter" data-level="3.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#libro-de-campo-fieldbook"><i class="fa fa-check"></i><b>3.1</b> Libro de campo “Fieldbook”</a></li>
 <li class="chapter" data-level="3.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#nombre-del-libro-de-campo"><i class="fa fa-check"></i><b>3.2</b> Nombre del libro de campo</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#fecha"><i class="fa fa-check"></i><b>3.2.1</b> Fecha</a></li>
-<li class="chapter" data-level="3.2.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#abreviacion-de-lugar"><i class="fa fa-check"></i><b>3.2.2</b> Abreviacion de lugar</a></li>
+<li class="chapter" data-level="3.2.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#nombre-del-lugar"><i class="fa fa-check"></i><b>3.2.1</b> Nombre del lugar</a></li>
+<li class="chapter" data-level="3.2.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#fecha"><i class="fa fa-check"></i><b>3.2.2</b> Fecha</a></li>
 <li class="chapter" data-level="3.2.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#breve-descripción"><i class="fa fa-check"></i><b>3.2.3</b> Breve descripción</a></li>
 <li class="chapter" data-level="" data-path="diseño-experimental.html"><a href="diseño-experimental.html#ejemplo"><i class="fa fa-check"></i>Ejemplo</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#pestanhas-en-el-libro-de-campo"><i class="fa fa-check"></i><b>3.3</b> Pestanhas en el libro de campo</a><ul>
+<li class="chapter" data-level="3.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#pestañas-en-el-libro-de-campo"><i class="fa fa-check"></i><b>3.3</b> Pestañas en el libro de campo</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="diseño-experimental.html"><a href="diseño-experimental.html#informacion-info"><i class="fa fa-check"></i><b>3.3.1</b> Informacion (info)</a></li>
 <li class="chapter" data-level="3.3.2" data-path="diseño-experimental.html"><a href="diseño-experimental.html#variables-var"><i class="fa fa-check"></i><b>3.3.2</b> Variables (var)</a></li>
 <li class="chapter" data-level="3.3.3" data-path="diseño-experimental.html"><a href="diseño-experimental.html#libro-de-campo-fb"><i class="fa fa-check"></i><b>3.3.3</b> Libro de campo (fb)</a></li>
@@ -206,6 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="colecta-y-organización-de-datos.html"><a href="colecta-y-organización-de-datos.html#plex-libro-de-campo"><i class="fa fa-check"></i><b>4.5</b> Plex :: libro de campo</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="redacción-de-documentos-científicos.html"><a href="redacción-de-documentos-científicos.html"><i class="fa fa-check"></i><b>5</b> Redacción de documentos científicos</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
 <li class="divider"></li>
 <li> <a href="https://www.zotero.org/flavjack" target="blank"> ZOTERO </a> </li>
 
@@ -230,8 +231,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">4</span> Colecta y organización de datos</h1>
 <div id="exportar-plantilla-de-evaluación" class="section level2">
 <h2><span class="header-section-number">4.1</span> Exportar plantilla de evaluación</h2>
-<p>Para esta sección vamos a usar nuestra idea de investigación “<em>Jatropha curcas</em> imbibition time” y vamos a crear el diseño experimental haciendo uso del paquete agricolae <span class="citation">(de Mendiburu <a href="#ref-R-agricolae" role="doc-biblioref">2019</a>)</span> que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.</p>
-<p>En base a nuestro plan experimental tenemos la siguiente información</p>
+<p>Para esta sección vamos a usar nuestra idea de investigación “<em>Jatropha curcas</em> imbibition time” y vamos a crear el diseño experimental haciendo uso del paquete agricolae <span class="citation">(de Mendiburu, <a href="references.html#ref-R-agricolae" role="doc-biblioref">2020</a>)</span> que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.</p>
+<p>En base a nuestro plan experimental tenemos la siguiente información:</p>
 <table>
 <caption>
 <span id="tab:dse">Table 4.1: </span>Información básica para el experimento
@@ -310,34 +311,41 @@ Factor
 </td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border:0;" colspan="100%">
+<sup>*</sup> NA
+</td>
+</tr>
+</tfoot>
 </table>
 <p>Con la información de la tabla <a href="colecta-y-organización-de-datos.html#tab:dse">4.1</a> diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="colecta-y-organización-de-datos.html#cb24-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb24-2"><a href="colecta-y-organización-de-datos.html#cb24-2"></a><span class="kw">library</span>(agricolae)</span>
-<span id="cb24-3"><a href="colecta-y-organización-de-datos.html#cb24-3"></a></span>
-<span id="cb24-4"><a href="colecta-y-organización-de-datos.html#cb24-4"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
-<span id="cb24-5"><a href="colecta-y-organización-de-datos.html#cb24-5"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb24-6"><a href="colecta-y-organización-de-datos.html#cb24-6"></a></span>
-<span id="cb24-7"><a href="colecta-y-organización-de-datos.html#cb24-7"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
-<span id="cb24-8"><a href="colecta-y-organización-de-datos.html#cb24-8"></a>                  <span class="dt">r =</span> rep,</span>
-<span id="cb24-9"><a href="colecta-y-organización-de-datos.html#cb24-9"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
-<span id="cb24-10"><a href="colecta-y-organización-de-datos.html#cb24-10"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
-<span id="cb24-11"><a href="colecta-y-organización-de-datos.html#cb24-11"></a></span>
-<span id="cb24-12"><a href="colecta-y-organización-de-datos.html#cb24-12"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb24-13"><a href="colecta-y-organización-de-datos.html#cb24-13"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">imbt =</span> <span class="kw">paste0</span>(imb, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb24-14"><a href="colecta-y-organización-de-datos.html#cb24-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">block =</span> <span class="kw">recode</span>(block,</span>
-<span id="cb24-15"><a href="colecta-y-organización-de-datos.html#cb24-15"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
-<span id="cb24-16"><a href="colecta-y-organización-de-datos.html#cb24-16"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
-<span id="cb24-17"><a href="colecta-y-organización-de-datos.html#cb24-17"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
-<span id="cb24-18"><a href="colecta-y-organización-de-datos.html#cb24-18"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb24-19"><a href="colecta-y-organización-de-datos.html#cb24-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bar_code =</span> <span class="kw">paste</span>(<span class="st">&quot;PE2015&quot;</span>, plots, block, imb, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb24-20"><a href="colecta-y-organización-de-datos.html#cb24-20"></a><span class="st">  </span><span class="kw">select</span>(bar_code, <span class="kw">everything</span>())</span>
-<span id="cb24-21"><a href="colecta-y-organización-de-datos.html#cb24-21"></a></span>
-<span id="cb24-22"><a href="colecta-y-organización-de-datos.html#cb24-22"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
-<span id="cb24-23"><a href="colecta-y-organización-de-datos.html#cb24-23"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb24-24"><a href="colecta-y-organización-de-datos.html#cb24-24"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
-<span id="cb24-25"><a href="colecta-y-organización-de-datos.html#cb24-25"></a></span>
-<span id="cb24-26"><a href="colecta-y-organización-de-datos.html#cb24-26"></a>writexl<span class="op">::</span><span class="kw">write_xlsx</span>(<span class="dt">x =</span> fb, <span class="dt">path =</span> <span class="st">&quot;files/fb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="colecta-y-organización-de-datos.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="colecta-y-organización-de-datos.html#cb1-2"></a><span class="kw">library</span>(agricolae)</span>
+<span id="cb1-3"><a href="colecta-y-organización-de-datos.html#cb1-3"></a></span>
+<span id="cb1-4"><a href="colecta-y-organización-de-datos.html#cb1-4"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb1-5"><a href="colecta-y-organización-de-datos.html#cb1-5"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb1-6"><a href="colecta-y-organización-de-datos.html#cb1-6"></a></span>
+<span id="cb1-7"><a href="colecta-y-organización-de-datos.html#cb1-7"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
+<span id="cb1-8"><a href="colecta-y-organización-de-datos.html#cb1-8"></a>                  <span class="dt">r =</span> rep,</span>
+<span id="cb1-9"><a href="colecta-y-organización-de-datos.html#cb1-9"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
+<span id="cb1-10"><a href="colecta-y-organización-de-datos.html#cb1-10"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
+<span id="cb1-11"><a href="colecta-y-organización-de-datos.html#cb1-11"></a></span>
+<span id="cb1-12"><a href="colecta-y-organización-de-datos.html#cb1-12"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-13"><a href="colecta-y-organización-de-datos.html#cb1-13"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">imbt =</span> <span class="kw">paste0</span>(imb, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-14"><a href="colecta-y-organización-de-datos.html#cb1-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">block =</span> <span class="kw">recode</span>(block,</span>
+<span id="cb1-15"><a href="colecta-y-organización-de-datos.html#cb1-15"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
+<span id="cb1-16"><a href="colecta-y-organización-de-datos.html#cb1-16"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
+<span id="cb1-17"><a href="colecta-y-organización-de-datos.html#cb1-17"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
+<span id="cb1-18"><a href="colecta-y-organización-de-datos.html#cb1-18"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-19"><a href="colecta-y-organización-de-datos.html#cb1-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bar_code =</span> <span class="kw">paste</span>(<span class="st">&quot;PE2015&quot;</span>, plots, block, imb, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-20"><a href="colecta-y-organización-de-datos.html#cb1-20"></a><span class="st">  </span><span class="kw">select</span>(bar_code, <span class="kw">everything</span>())</span>
+<span id="cb1-21"><a href="colecta-y-organización-de-datos.html#cb1-21"></a></span>
+<span id="cb1-22"><a href="colecta-y-organización-de-datos.html#cb1-22"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
+<span id="cb1-23"><a href="colecta-y-organización-de-datos.html#cb1-23"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-24"><a href="colecta-y-organización-de-datos.html#cb1-24"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
+<span id="cb1-25"><a href="colecta-y-organización-de-datos.html#cb1-25"></a></span>
+<span id="cb1-26"><a href="colecta-y-organización-de-datos.html#cb1-26"></a>writexl<span class="op">::</span><span class="kw">write_xlsx</span>(<span class="dt">x =</span> fb, <span class="dt">path =</span> <span class="st">&quot;files/fb.xlsx&quot;</span>)</span></code></pre></div>
 <p>El libro de campo para colecta de la información sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos que nos permitirá la evaluación de los experimentos con nuestras tablets o teléfonos inteligentes.</p>
 <div id="htmlwidget-18c2be1c87e4c8af0449" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-18c2be1c87e4c8af0449">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental<\/caption>","data":[["PE2015_101_I_8","PE2015_102_I_0","PE2015_103_I_12","PE2015_104_I_18","PE2015_105_I_4","PE2015_106_I_2","PE2015_107_I_6","PE2015_108_I_10","PE2015_109_I_22","PE2015_110_I_20","PE2015_111_I_14","PE2015_112_I_16","PE2015_113_I_24","PE2015_201_II_16","PE2015_202_II_20","PE2015_203_II_18","PE2015_204_II_6","PE2015_205_II_12","PE2015_206_II_22","PE2015_207_II_24","PE2015_208_II_8","PE2015_209_II_0","PE2015_210_II_10","PE2015_211_II_4","PE2015_212_II_2","PE2015_213_II_14","PE2015_301_III_8","PE2015_302_III_22","PE2015_303_III_0","PE2015_304_III_14","PE2015_305_III_12","PE2015_306_III_24","PE2015_307_III_4","PE2015_308_III_6","PE2015_309_III_20","PE2015_310_III_10","PE2015_311_III_18","PE2015_312_III_2","PE2015_313_III_16","PE2015_401_IV_0","PE2015_402_IV_12","PE2015_403_IV_6","PE2015_404_IV_16","PE2015_405_IV_24","PE2015_406_IV_18","PE2015_407_IV_10","PE2015_408_IV_2","PE2015_409_IV_20","PE2015_410_IV_4","PE2015_411_IV_22","PE2015_412_IV_8","PE2015_413_IV_14"],[101,102,103,104,105,106,107,108,109,110,111,112,113,201,202,203,204,205,206,207,208,209,210,211,212,213,301,302,303,304,305,306,307,308,309,310,311,312,313,401,402,403,404,405,406,407,408,409,410,411,412,413],["I","I","I","I","I","I","I","I","I","I","I","I","I","II","II","II","II","II","II","II","II","II","II","II","II","II","III","III","III","III","III","III","III","III","III","III","III","III","III","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV"],["8","0","12","18","4","2","6","10","22","20","14","16","24","16","20","18","6","12","22","24","8","0","10","4","2","14","8","22","0","14","12","24","4","6","20","10","18","2","16","0","12","6","16","24","18","10","2","20","4","22","8","14"],["8hrs","0hrs","12hrs","18hrs","4hrs","2hrs","6hrs","10hrs","22hrs","20hrs","14hrs","16hrs","24hrs","16hrs","20hrs","18hrs","6hrs","12hrs","22hrs","24hrs","8hrs","0hrs","10hrs","4hrs","2hrs","14hrs","8hrs","22hrs","0hrs","14hrs","12hrs","24hrs","4hrs","6hrs","20hrs","10hrs","18hrs","2hrs","16hrs","0hrs","12hrs","6hrs","16hrs","24hrs","18hrs","10hrs","2hrs","20hrs","4hrs","22hrs","8hrs","14hrs"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>bar_code<\/th>\n      <th>plots<\/th>\n      <th>block<\/th>\n      <th>imb<\/th>\n      <th>imbt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
@@ -385,18 +393,20 @@ El diseño de las etiquetas esta basada en una configuración de impresion de 1x
 </p>
 </blockquote>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
+<div class="figure" style="text-align: center"><span id="fig:conflbl"></span>
 <img src="https://lh3.googleusercontent.com/LEQehxv7RcUbiIrS-lenkH_WiUu2CANG2SSAzIpxmZhGbTTDVSrCFQIezI5NbKMvpC23Rz38NrO9NDpaYLNwsAqNJwxzW83MGHXoYIW2DIv3dweMFOrjUwoK8TdaqPCQHbfKSoe0zHG4XvoioUVssqmYbFdjcAvcaaxco4R9bHmSnbMYegwvJS6_wKVQlf-hMMNcgHmQWiLUMIIIXS23OapCx0X6K7fTMpQHNKcpiC6QxefpO29vM0tq7o7SAnb1JNmK7Q9GgliokisFdRSm5qnDXUuolaU-ZiaJt-n8WQ0yNgpWEhhkKqiSM8OCFp1ncWbhtBFt0XsfazlSsjI3I2HwqN3bvHDWHAh0Oyx9b_yk4gUIEb2Hlc_wG2OKkOufi5jvMO4R0u4hWWPvssvtsLgho1PKpheauRKUry3TuP4WPVSQerRAZ7k8GzMaUOJSRJgiWSi3qlN1wzKne0MWey41PpI6fTT_cGzmJ0WdRfy4lqaNQGjKLw0cqJHkRY9Y-y3xN2PqW3r5r8A0fKUys7AL1qvoWvYNx-C4FipN3n4hZjLMZCO86Cz-52M6mLtrgUGr1s-ZzCZXol_HTSW1vmUBreYAaLCgv5mc044QL4e_yAb7InidE4FXYIG3i2SiL3Ymhcx0eN0CuqYwgdva0VaddZynJoynGEca2Nw9DfMbaodZ-TKqvFs=w1435-h653-no" alt="Configuración de modelo base para las etiqueta" width="98%" />
 <p class="caption">
 Figure 4.1: Configuración de modelo base para las etiqueta
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
+
+<div class="figure" style="text-align: center"><span id="fig:rsj"></span>
 <img src="https://lh3.googleusercontent.com/S4h-D_4_9beQUZ0EP42wv_ASAcMss_9gngpdD6BqI9aeYsHcjSU3xMG2N0DznEy6TSA6bvUG8NANz1sIacyeqb3CNKOFUd5kC6JIWHtnK6IUAodeNE_HXFn42yo9H9Wt1WrzLO3JvwWVMk8mfRijbCpEctmWEDl0QJQ4-luAmUvDmKP6F_6zBnQx3Bov3CIIJ85c12nU6B-xt_nql51v_IOllp_INvaUoMCjmE8BdOZxZCOYvf36b8lUot9yIU5KuXMEKP1Rk3Xy9TaHjON43xKLAUcND-jwmlruQGX9x604fRrwoZWs9fqD7d1kkT02DVvYwelz5RMkngXst8vtNpxCHHdgEfK_fmq1mtB_6MppKbmTa2eFid1gz6FMrmcGBD8ENe-Wqo2f9aY2-g0kE1rMNxccwt1Sq_x_uVTuGNeYO8MYf1MPDC6GfIpwQtDkVEqTomi7NyzC3y2JcWqWmNJvmzotixAQlAHaVjjxmM5TN_Per3A7f0AXhoqfrKgqDCHlI35zU7qfCkSLUhteWABboP3GUTgJLvzdl4xlpdUXbu6ANOctCwP2_n9liMA0M0zW0czkBrMt-1GYioucKzIp9JrlpqXZoJfpd8YsDjIoqbFrd5A6PnnHrOspJ4ciVzGNHcPL0dfmWEZroi4NPn7Vr8ynAODRJD6f_1x-GwgR-kV4EO3ItcE=w580-h862-no" alt="Suscription recomendada para la creación de las etiquetas" width="50%" />
 <p class="caption">
 Figure 4.2: Suscription recomendada para la creación de las etiquetas
 </p>
 </div>
+
 <div id="video-etiquetas" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Video :: etiquetas</h3>
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/7K5j0Z-u27A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -446,12 +456,13 @@ Las columnas para la colecta de datos usadas el diseño del libro de campo esta 
 <a href="https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396" class="uri">https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396</a>
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-20"></span>
+<div class="figure" style="text-align: center"><span id="fig:flb"></span>
 <img src="https://lh3.googleusercontent.com/-Kh7oLr1KV-1nLXMBETLNVWQjjRL9qwdYoZoskesgTEwyqsurm-x7g79XKT0LfbwHGb9fe3KiRetpW6tknmAvdVbcpxcdDpnAVpgindhf7-8Rqd3F0bzsUkc4iMCNbFlM7YtLt0BKxUy5rCXbfmr8ZPHsj3KVrWL6ihfL8ttJOJ45qmkAWzPGr8O6FvDnD0VGqdKWXFMzX0-4epKE-jjmfjYzgKbvvo22EykrxG8btuEvM_mspKkZ0zliQPB82SdXdtUI-1tY1BQvR6mXTa9UJJbReHIprcrP3HlMo3cLzJLn9EF7k8RMvPL_mA9lAjq_FSjwrQCth_f2tvNfXzC-X_IlgbdZx4e5ynDDlABE8_xnbcwp6OSh0CjfS3LUjzKsv7iexRaiyNklgtQUWSWUT-kySLe9xGTAlZrKtInkQiXfN0TugTqTgiHl1raaK1afV8NU5GFNAkLPzmprBSA8nenxDqe5vEUqouV0EySBhTQ14OvaL3o8j6TUuRwk43vjidLGRH8SmLcU1yhXnSctiNwrneepQzp5rJOyD5megwXAyGEsLIac_CZLeVf1Nwi_R7lZGynve2FS8fDmTDnTYN_2ywRiyOhwcG47CsTti59fmoI50C0DFvsp4igVNajllAxdVF6tT3nt4veMxnqm_zC2QjOOB8eXNuFK3-9eqzkuqpsb-pHdLU=w699-h264-no" alt="Imagen insertada en el libro de colecta de datos para la toma de información experimental" width="98%" />
 <p class="caption">
 Figure 4.3: Imagen insertada en el libro de colecta de datos para la toma de información experimental
 </p>
 </div>
+
 <div id="video-libro-de-colecta-de-datos" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Video :: libro de colecta de datos</h3>
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/mcqER5sO4N4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -480,7 +491,7 @@ Figure 4.3: Imagen insertada en el libro de colecta de datos para la toma de inf
 </ol>
 <table>
 <caption>
-<span id="tab:vrnms">Table 4.2: </span>Ejemplo de los nombres de las variables para el libro de colecta de datos.
+<span id="tab:vrnmt">Table 4.2: </span>Ejemplo de los nombres de las variables para el libro de colecta de datos.
 </caption>
 <thead>
 <tr>
@@ -537,13 +548,21 @@ elc_0_1
 </td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border:0;" colspan="100%">
+<sup>*</sup> NA
+</td>
+</tr>
+</tfoot>
 </table>
-<div class="figure" style="text-align: center"><span id="fig:vrnm"></span>
+<div class="figure" style="text-align: center"><span id="fig:vrnmf"></span>
 <img src="https://lh3.googleusercontent.com/2B_1V3ACEQJ6uj9Rqbv0Yuyybyi1XG-AlFuiUIUT8ygqRXwpTGuofq3_fiPyDIoF1y67020jzauTg3fIhroZMQy70TsF6IocP-724ZzQClGJk_LUm5hFxNGepb7bvZSvdXXW_KguC-yw9IJ3NB4mrW-rMuCvuSeotY3TLTkiB73AULQzt6NtumYyLAegVorgUnnNLN-ij9utVitmoBpZEakf2XsMGEdj1PVXVeSvsXPYW7IuQgLYOsoPKKZzCvDa9c0IiD10iFCd33iDH7iLmVhd0Vdx4WlVziQS4MfjYAC_-jqSzBVB1-yANqhs76_02_ix9H8Fopsch8Tl4Ff3cTYNDa02EuIE4rYzl0KHuFcvV_L4CfPXQM20lZEybVmVVbexMPVK0GX_it7glp4EpqlCfHmw0_BLMtUBTh8OvG0TsCKOLKTpILPGr2nyYlfVX6lhPnWaoa4QeO8zFnVEbuWIWvWzQauvGwSuBAN61IRTCbfJaDs22DUBgAM-tsEczCOLL10dEhL5pwAft4fHkQg11zMUjz4WnrxfKp9F2-0j1rxTg32sueKH6chw4JYfzDJNfbXO-88fEu4bpsBkOy8hywiioQDcuYwSosPFYBOkvYbEvJbxooaI7qWutH3RqB_oD0JDSJon7aouGXQCtrJnBJur3Of8eDsXZHwnAL6d7675w2ZYgO0=w853-h321-no" alt="Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test" width="98%" />
 <p class="caption">
 Figure 4.4: Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test
 </p>
 </div>
+
 <div id="video-configuracion-de-scanpet-app" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Video :: configuracion de ScanPet app</h3>
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/UD60rPlAHHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -562,17 +581,8 @@ Figure 4.4: Nombre de las variables de evaluación en el libro de colecta de dat
 
 <iframe src="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
 
-<p>La información de este experimento dió como resultado la publicación: “Germination behavior of <em>Jatropha curcas</em> L. after different imbibition times” en la revista Peruvian Journal of Agronomy <span class="citation">(Lozano-Isla et al. <a href="#ref-lozano-isla2017Germination" role="doc-biblioref">2017</a>)</span>.</p>
+<p>La información de este experimento dió como resultado la publicación: “Germination behavior of <em>Jatropha curcas</em> L. after different imbibition times” en la revista Peruvian Journal of Agronomy <span class="citation">(Lozano-Isla et al., <a href="references.html#ref-lozano-isla2017Germination" role="doc-biblioref">2017</a>)</span>.</p>
 <embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-</div>
-</div>
-<h3> Redacción de documentos científicos</h3>
-<div id="refs" class="references">
-<div id="ref-R-agricolae">
-<p>de Mendiburu, F. 2019. Agricolae: Statistical Procedures for Agricultural Research (en línea). s.l., s.e. Disponible en <a href="https://CRAN.R-project.org/package=agricolae">https://CRAN.R-project.org/package=agricolae</a>.</p>
-</div>
-<div id="ref-lozano-isla2017Germination">
-<p>Lozano-Isla, F; Miranda, P; Pompelli, MF. 2017. Germination behavior of <em>Jatropha</em> <em>curcas</em> L. after different imbibition times. Peruvian Journal of Agronomy 1(1):32-38. DOI: <a href="https://doi.org/10.21704/pja.v1i1.1065">https://doi.org/10.21704/pja.v1i1.1065</a>.</p>
 </div>
 </div>
             </section>
