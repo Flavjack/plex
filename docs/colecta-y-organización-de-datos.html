@@ -50,21 +50,22 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.11/datatables.js"></script>
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="libs/jszip-1.10.19/jszip.min.js"></script>
-<link href="libs/dt-ext-buttons-1.10.19/css/buttons.dataTables.min.css" rel="stylesheet" />
-<script src="libs/dt-ext-buttons-1.10.19/js/dataTables.buttons.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.19/js/buttons.flash.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
-<script src="libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
-<link href="libs/dt-ext-scroller-1.10.19/css/scroller.dataTables.min.css" rel="stylesheet" />
-<script src="libs/dt-ext-scroller-1.10.19/js/dataTables.scroller.min.js"></script>
+<script src="libs/datatables-binding-0.12/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="libs/jszip-1.10.20/jszip.min.js"></script>
+<link href="libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
+<link href="libs/dt-ext-scroller-1.10.20/css/scroller.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-scroller-1.10.20/js/dataTables.scroller.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
@@ -233,7 +234,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Exportar plantilla de evaluación</h2>
 <p>Para esta sección vamos a usar nuestra idea de investigación “<em>Jatropha curcas</em> imbibition time” y vamos a crear el diseño experimental haciendo uso del paquete agricolae <span class="citation">(de Mendiburu, <a href="references.html#ref-R-agricolae" role="doc-biblioref">2020</a>)</span> que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.</p>
 <p>En base a nuestro plan experimental tenemos la siguiente información:</p>
-<table>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:dse">Table 4.1: </span>Información básica para el experimento
 </caption>
@@ -311,14 +313,8 @@ Factor
 </td>
 </tr>
 </tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border:0;" colspan="100%">
-<sup>*</sup> NA
-</td>
-</tr>
-</tfoot>
 </table>
+</div>
 <p>Con la información de la tabla <a href="colecta-y-organización-de-datos.html#tab:dse">4.1</a> diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="colecta-y-organización-de-datos.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="colecta-y-organización-de-datos.html#cb1-2"></a><span class="kw">library</span>(agricolae)</span>
@@ -350,8 +346,222 @@ Factor
 <div id="htmlwidget-18c2be1c87e4c8af0449" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-18c2be1c87e4c8af0449">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental<\/caption>","data":[["PE2015_101_I_8","PE2015_102_I_0","PE2015_103_I_12","PE2015_104_I_18","PE2015_105_I_4","PE2015_106_I_2","PE2015_107_I_6","PE2015_108_I_10","PE2015_109_I_22","PE2015_110_I_20","PE2015_111_I_14","PE2015_112_I_16","PE2015_113_I_24","PE2015_201_II_16","PE2015_202_II_20","PE2015_203_II_18","PE2015_204_II_6","PE2015_205_II_12","PE2015_206_II_22","PE2015_207_II_24","PE2015_208_II_8","PE2015_209_II_0","PE2015_210_II_10","PE2015_211_II_4","PE2015_212_II_2","PE2015_213_II_14","PE2015_301_III_8","PE2015_302_III_22","PE2015_303_III_0","PE2015_304_III_14","PE2015_305_III_12","PE2015_306_III_24","PE2015_307_III_4","PE2015_308_III_6","PE2015_309_III_20","PE2015_310_III_10","PE2015_311_III_18","PE2015_312_III_2","PE2015_313_III_16","PE2015_401_IV_0","PE2015_402_IV_12","PE2015_403_IV_6","PE2015_404_IV_16","PE2015_405_IV_24","PE2015_406_IV_18","PE2015_407_IV_10","PE2015_408_IV_2","PE2015_409_IV_20","PE2015_410_IV_4","PE2015_411_IV_22","PE2015_412_IV_8","PE2015_413_IV_14"],[101,102,103,104,105,106,107,108,109,110,111,112,113,201,202,203,204,205,206,207,208,209,210,211,212,213,301,302,303,304,305,306,307,308,309,310,311,312,313,401,402,403,404,405,406,407,408,409,410,411,412,413],["I","I","I","I","I","I","I","I","I","I","I","I","I","II","II","II","II","II","II","II","II","II","II","II","II","II","III","III","III","III","III","III","III","III","III","III","III","III","III","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV"],["8","0","12","18","4","2","6","10","22","20","14","16","24","16","20","18","6","12","22","24","8","0","10","4","2","14","8","22","0","14","12","24","4","6","20","10","18","2","16","0","12","6","16","24","18","10","2","20","4","22","8","14"],["8hrs","0hrs","12hrs","18hrs","4hrs","2hrs","6hrs","10hrs","22hrs","20hrs","14hrs","16hrs","24hrs","16hrs","20hrs","18hrs","6hrs","12hrs","22hrs","24hrs","8hrs","0hrs","10hrs","4hrs","2hrs","14hrs","8hrs","22hrs","0hrs","14hrs","12hrs","24hrs","4hrs","6hrs","20hrs","10hrs","18hrs","2hrs","16hrs","0hrs","12hrs","6hrs","16hrs","24hrs","18hrs","10hrs","2hrs","20hrs","4hrs","22hrs","8hrs","14hrs"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>bar_code<\/th>\n      <th>plots<\/th>\n      <th>block<\/th>\n      <th>imb<\/th>\n      <th>imbt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>La distribución de nuestro experimento en el campo o invernadero tendría el siguiente esquema.</p>
-<div id="htmlwidget-ebac2739681c5f33d0d8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ebac2739681c5f33d0d8">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)<\/caption>","data":[[101,213,301,413],[102,212,302,412],[103,211,303,411],[104,210,304,410],[105,209,305,409],[106,208,306,408],[107,207,307,407],[108,206,308,406],[109,205,309,405],[110,204,310,404],[111,203,311,403],[112,202,312,402],[113,201,313,401]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>V1<\/th>\n      <th>V2<\/th>\n      <th>V3<\/th>\n      <th>V4<\/th>\n      <th>V5<\/th>\n      <th>V6<\/th>\n      <th>V7<\/th>\n      <th>V8<\/th>\n      <th>V9<\/th>\n      <th>V10<\/th>\n      <th>V11<\/th>\n      <th>V12<\/th>\n      <th>V13<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-13">Table 4.2: </span>Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+V1
+</th>
+<th style="text-align:right;">
+V2
+</th>
+<th style="text-align:right;">
+V3
+</th>
+<th style="text-align:right;">
+V4
+</th>
+<th style="text-align:right;">
+V5
+</th>
+<th style="text-align:right;">
+V6
+</th>
+<th style="text-align:right;">
+V7
+</th>
+<th style="text-align:right;">
+V8
+</th>
+<th style="text-align:right;">
+V9
+</th>
+<th style="text-align:right;">
+V10
+</th>
+<th style="text-align:right;">
+V11
+</th>
+<th style="text-align:right;">
+V12
+</th>
+<th style="text-align:right;">
+V13
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+104
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+106
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+112
+</td>
+<td style="text-align:right;">
+113
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+213
+</td>
+<td style="text-align:right;">
+212
+</td>
+<td style="text-align:right;">
+211
+</td>
+<td style="text-align:right;">
+210
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:right;">
+208
+</td>
+<td style="text-align:right;">
+207
+</td>
+<td style="text-align:right;">
+206
+</td>
+<td style="text-align:right;">
+205
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:right;">
+203
+</td>
+<td style="text-align:right;">
+202
+</td>
+<td style="text-align:right;">
+201
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+301
+</td>
+<td style="text-align:right;">
+302
+</td>
+<td style="text-align:right;">
+303
+</td>
+<td style="text-align:right;">
+304
+</td>
+<td style="text-align:right;">
+305
+</td>
+<td style="text-align:right;">
+306
+</td>
+<td style="text-align:right;">
+307
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+309
+</td>
+<td style="text-align:right;">
+310
+</td>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:right;">
+312
+</td>
+<td style="text-align:right;">
+313
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+413
+</td>
+<td style="text-align:right;">
+412
+</td>
+<td style="text-align:right;">
+411
+</td>
+<td style="text-align:right;">
+410
+</td>
+<td style="text-align:right;">
+409
+</td>
+<td style="text-align:right;">
+408
+</td>
+<td style="text-align:right;">
+407
+</td>
+<td style="text-align:right;">
+406
+</td>
+<td style="text-align:right;">
+405
+</td>
+<td style="text-align:right;">
+404
+</td>
+<td style="text-align:right;">
+403
+</td>
+<td style="text-align:right;">
+402
+</td>
+<td style="text-align:right;">
+401
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="etiquetado-de-unidades-experimentales" class="section level2">
 <h2><span class="header-section-number">4.2</span> Etiquetado de unidades experimentales</h2>
@@ -489,9 +699,10 @@ Figure 4.3: Imagen insertada en el libro de colecta de datos para la toma de inf
 <li>Dias despues de la siembra de la evaluación (DDS).</li>
 <li>Número de la sub muestra que se van evaluar.</li>
 </ol>
-<table>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:vrnmt">Table 4.2: </span>Ejemplo de los nombres de las variables para el libro de colecta de datos.
+<span id="tab:vrnmt">Table 4.3: </span>Ejemplo de los nombres de las variables para el libro de colecta de datos.
 </caption>
 <thead>
 <tr>
@@ -548,14 +759,8 @@ elc_0_1
 </td>
 </tr>
 </tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border:0;" colspan="100%">
-<sup>*</sup> NA
-</td>
-</tr>
-</tfoot>
 </table>
+</div>
 <div class="figure" style="text-align: center"><span id="fig:vrnmf"></span>
 <img src="https://lh3.googleusercontent.com/2B_1V3ACEQJ6uj9Rqbv0Yuyybyi1XG-AlFuiUIUT8ygqRXwpTGuofq3_fiPyDIoF1y67020jzauTg3fIhroZMQy70TsF6IocP-724ZzQClGJk_LUm5hFxNGepb7bvZSvdXXW_KguC-yw9IJ3NB4mrW-rMuCvuSeotY3TLTkiB73AULQzt6NtumYyLAegVorgUnnNLN-ij9utVitmoBpZEakf2XsMGEdj1PVXVeSvsXPYW7IuQgLYOsoPKKZzCvDa9c0IiD10iFCd33iDH7iLmVhd0Vdx4WlVziQS4MfjYAC_-jqSzBVB1-yANqhs76_02_ix9H8Fopsch8Tl4Ff3cTYNDa02EuIE4rYzl0KHuFcvV_L4CfPXQM20lZEybVmVVbexMPVK0GX_it7glp4EpqlCfHmw0_BLMtUBTh8OvG0TsCKOLKTpILPGr2nyYlfVX6lhPnWaoa4QeO8zFnVEbuWIWvWzQauvGwSuBAN61IRTCbfJaDs22DUBgAM-tsEczCOLL10dEhL5pwAft4fHkQg11zMUjz4WnrxfKp9F2-0j1rxTg32sueKH6chw4JYfzDJNfbXO-88fEu4bpsBkOy8hywiioQDcuYwSosPFYBOkvYbEvJbxooaI7qWutH3RqB_oD0JDSJon7aouGXQCtrJnBJur3Of8eDsXZHwnAL6d7675w2ZYgO0=w853-h321-no" alt="Nombre de las variables de evaluación en el libro de colecta de datos. Donde: sch: Seed Coat Hardness, hpt: Hydrogen potential, elc: Electrical conductivity, tct: Tetrazolium Chloride Test" width="98%" />
 <p class="caption">

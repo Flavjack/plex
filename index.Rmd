@@ -12,7 +12,8 @@ site: bookdown::bookdown_site
 documentclass: book
 bookdown::gitbook:
 output: 
-  bookdown::html_document2: default
+  bookdown::word_document2: 
+    reference_docx: cnfg/style_article.docx
 always_allow_html: yes
 link-citations: true
 colorlinks: yes
@@ -388,7 +389,8 @@ note <- xl %>%
 xl %>% 
   read_excel(tab) %>% 
   kable(caption = title) %>% 
-  add_footnote(notation = "symbol", label = note)
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 # \@ref(tab:) 
 ```
 
@@ -432,7 +434,10 @@ web_table(fb, title = "Libro de campo o fieldbook para colecta de datos de acuer
 La distribución de nuestro experimento en el campo o invernadero tendría el siguiente esquema.
 
 ```{r}
-web_table(fds, title = "Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)")
+fds %>%
+  kable(caption = "Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)") %>% 
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 ```
 
 ## Etiquetado de unidades experimentales
@@ -608,7 +613,8 @@ note <- xl %>%
 xl %>% 
   read_excel(tab) %>% 
   kable(caption = title) %>% 
-  add_footnote(notation = "symbol", label = note)
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 # \@ref(tab:) 
 ```
 
