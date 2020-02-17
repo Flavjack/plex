@@ -6,6 +6,8 @@ Si tienes alguna duda o sugerencia no dejes de escribirme a mi correo: flavjack@
 
 ## Links
 
+Plex (manuscript) .: https://flavjack.github.io/plex/
+
 Rticles (github) .: https://github.com/Flavjack/rticles
 
 Rticles (example) .: https://flavjack.github.io/rticles/
