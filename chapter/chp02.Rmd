@@ -1,0 +1,220 @@
+# Diseño experimental
+
+```{block, echo = T, type='rmd-important'}
+<!-- caution - important - note - tip - warning -->
+
+En esta sección se utilizará algunas terminologías en ingles, asi que si tienes algunas dudas puedes usar el traductor, recuerda que si deseas ser un investigador por lo menos debes manejar algunos términos básicos en ingles y mejor si puedes aprenderlo, esto te ayudará a tener a la mano mucha información reciente.
+
+```
+
+El planeamineto de un experimento es parte crucial para definir el éxito de un trabajo de investigación, mismo que se realice un plan de trabajo no nos asegura el éxito del trabajo ya que acontencen diferentes imprevistos pero al menos podemos recudir la incertidumbre y no estar a la dereiva durante su ejecución. Para ayudar a la reducción de la incertidumbre introduciremos el termino **fieldbook** que significa **“libro de campo”** es donde organizaremos toda la información de nuestra investigación, y sera desarrollada en una hoja de calculo virtual, la cual contendrá una pestanha con los datos mínimos o información de nuestro trabajo de investigación y los datos colectados, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la identificación y reorganizacion de los datos.
+
+```{block, echo = T, type='rmd-note' }
+<!-- caution - important - note - tip - warning -->
+
+Muchas veces organizamos los información de manera que es más facil para nuestra comprension "humana", lo que al final genera problemas ya que debemos reorganizarla debido a que las computadoras presentan una estructura especial para leer y analizar los datos.
+
+```
+
+## Libro de campo "Fieldbook"
+
+```{block, echo = T, type='rmd-important' }
+<!-- caution - important - note - tip - warning -->
+
+Para esta sección haremos uso de hojas cálculo, y por experiencia propia les recomiendo dejar de usar excel para colectar los datos de experimentos, en este caso es mejor hacer uso de las hojas de cálculo virtuales de google, ya que presentan algunas ventajas que enumeraré a continuación:
+
+1. Permite manejar y visualizar el historial de cambio durante la colecta de datos.
+1. Permite guardar diferentes versiones del documento en una misma línea de tiempo.
+1. Se puede trabar en forma grupal sin generar conflictos entre los usarios.
+1. Se puede colectar la información directamente haciendo uso de los celulares.
+1. Se puede importar directamente la información a R con el paquete googlesheet4 [@R-googlesheets4].
+1. Permite descargar en disversos formatos (pdf, xslx, csv, etc).
+
+Google sheets: <https://docs.google.com/spreadsheets/u/0/>
+
+```
+
+## Nombre del libro de campo
+
+Iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque paresca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algun tiempo se nos dificulta encotrarlo. Para nombrar los libros de campos les sugiero usar la siguiente nomenclatura.
+
+### Nombre del lugar
+
+Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
+
+### Fecha
+
+En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo y una forma facil de filtrar si tenemos varios trabajos durante el mismo anho.
+
+### Breve descripción
+
+Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre paretesis y no muy extenso.
+
+### Ejemplo {-}
+
+```{block, echo = T, type='rmd-note' }
+<!-- caution - important - note - tip - warning -->
+
+**Nombre de libro de campo:** 
+
+RECIFE-2015-06-07 (J. Curcas - Imbibition time)
+
+**Interpretacion:**
+
+Experimento de tiempo de imibicion en *Jatropha Curcas* que se desarrollo en Junio de 2015 en la ciudad de Recife, Brasil.
+
+```
+
+```{block, echo = T, type='rmd-tip'}
+<!-- caution - important - note - tip - warning -->
+
+Es muy común que al revisar la base de datos de algunos investigadores y estudiantes me encuentro con varios archivos con diferentes copias de los datos y distintos nombres para los archivos intermedios. 
+  
+- datos
+- datos_originales
+- datos_V01
+- datos_V02
+- data_V01
+- data_DDMMYY
+- final_data
+- ultima_data
+- datos_sin_outliers
+- y muchos otros xD...
+
+Si estás trabajando con datos, debió haber en algun momento en el que tenías un archivo con un nombre único, pero ahora probablemente tiene varias copias del mismo archivo y es una práctica que debemos evitar.
+
+```
+
+## Pestañas en el libro de campo
+
+```{block, echo = T, type='rmd-warning'}
+<!-- caution - important - note - tip - warning -->
+
+No es recomendable crear diversas hoja de calculo o diferentes archicos para un experimento, es mejor adicionar pestanhas al documento, de esta forma toda tú información estará en un solo documento, y será facil de manejar y compartir entre tus colaboradores.
+
+```
+
+Para el libro de campo (fieldbook) se sugiere que por lo menos esté constituido por 7 pestanhas ensenciales, las cuales pueden ser incrementadas de acuerdo a las necesidades de cada experimento (i.e. informacion metereologica, planilla de riego, análisis de suelo, etc).
+
+A continuación se realizará una descripción de lo que debe contener cada una de las 7 pestanhas recomendadas.
+
+### Informacion (info)
+
+Esta pestanha es clave y debe ser completada en su totalidad ya que esta información es valiosa al momento de redactar algun reporte o escribir un artículo, permitiendonos tener toda la información a la mano, asi como tambien contener los objetivos del trabajo lo que permitirá a a los demás colaboradores entender el trabajo.
+
+```{r fbinfo, fig.cap= '(ref:fbinfo)'}
+fig <- "fbinfo"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+
+### Variables (var)
+
+Esta pestanha es clave para entener el libro de campo y las abreviaciones que usemos, así como estandarizar el nombre de las variables y estandarizar la colecta de datos. Se realizará una lista de las variables a evaluar durante el experimento y se adicionará las abreviaturas del nombre de las variables las cuales iran como encabezados en la hoja del libro de campo (fb).
+
+```{r fbvar, fig.cap= '(ref:fbvar)'}
+fig <- "fbvar"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+
+```{block2, echo = T, type='rmd-note' }
+
+Todo trabajo que este relacionado con la descripción de algun cultivo se debe tener en cuenta el uso de los *descriptores* como patron para determinar los nombres de la variables. La pestaña de variables de contener como mínimo las siguientes columnas:
+  
+- *Variables.* Nombre completo de la variable.
+- *Abbreviation.* Nomenclatura que se usará en el libro de colecta de datos, así evitar el uso del nombre completo.
+- *Unit/Class.* Se debe especificar la unidad o tipo de la variable para entender la escala de medición. Se debe usar el Sistema Internacional de Medidas.
+- *Description.* Especificar alguna información adicional de la variable o de donde se extrajo la metodología para le medición.
+
+Esta es la estructura básica sugerida para hacer la pestanha de variables en un libro de campo y es importante para que los otros miembros del equipo puedan entender como fue tomadá la información.
+
+```
+  
+### Libro de campo (fb)
+
+Pestanha que contendra el disenho o la base de datos de la información a colectar. Se puede introducir el tipo de diseño experimental (ie. DCA, DBCA, DCL) los cual puede ser generado con el paquete agricolae [@R-agricolae] en el software estadistico R [@R-base].
+
+### Disenho de campo (fds)
+
+Será utilizado en caso de existir una distribución espacial del trabajo de investigación o si se presenta algun disenho estadistico (ie. DCA, DBCA, DCL) lo que permitira guiarse durante las actividades de colecta de información como croquist del trabajo. 
+
+```{block, echo = T, type='rmd-tip' }
+<!-- caution - important - note - tip - warning -->
+
+Se recomienda editar el diseño de campo en la misma hoja virtual y no introducirla como una imagen. Ya que dificultará su exportación para su uso como croquis en forma impresa.
+```
+
+### Cronograma (crn)
+
+Pestanha dedicada al planeamiento de la cronología de las actividades y evaluaciones para organizar las acciones durante el experimento (ie. uso de materiales, prestamos de equipos, disponibilidad de espacios, etc).
+
+### Diario (dry)
+
+Es la bitácora del investigador, donde se informará de lo que va aconteciendo durante el desarrollo del experimento (lo bueno, lo malo y lo feo). Se sugiere registrar el día y el conteo en dias despues del inicio del experimento.
+
+### Presupuesto (bdg)
+
+Muchos investigadores omiten esta parte durante la planificación de sus proyectos de investigación, si bien el trabajo puede llevarse acabo dentro de una institución de investigación que cubra todo los gasto y materiales, es recomendable tener una estimación de los costos ya que en el futuro podras planear tus trabajos con costos realistas y no quedarse sin fondos durante la ejecución del proyecto (problema usual con muchos investigadores).
+
+## Template :: libro de campo (Fieldbook)
+
+Para poder acceder al modelo sugerido del libro de campo deben hacer una copia del documento para ustedes mismos. Con esto tendran acceso al documento y podran modificar de acuerdo a sus necesidades.
+
+```{r}
+shiny::HTML(
+'
+<iframe src="https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
+'  
+)
+```
+
+### Cómo crear una copia de la plantilla?
+
+1. Ir a link: <https://docs.google.com/spreadsheets/d/1Y6Wrwz5LyFh0nge8DyOhfLGmRu0N7rQKN9Vv7UoBQ60/edit#gid=661894213>
+1. Ir a *archivos*
+1. *Crear una copia*
+1. Renombrar el archivo
+
+```{r fbtmpl, fig.cap= '(ref:fbtmpl)'}
+fig <- "fbtmpl"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+

@@ -17,8 +17,8 @@ bookdown::gitbook:
     search: yes
     info: no
     download: 
-      # - ["rticles.docx", "word"]
-      # - ["files.zip", "files"]
+      - ["rticles.docx", "word"]
+      - ["files.zip", "files"]
     sharing:
       github: yes
       twitter: no

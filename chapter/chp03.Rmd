@@ -1,0 +1,300 @@
+# Colecta y organización de datos
+
+## Exportar plantilla de evaluación
+
+Para esta sección vamos a usar nuestra idea de investigación "*Jatropha curcas* imbibition time" y vamos a crear el diseño experimental haciendo uso del paquete agricolae [@R-agricolae] que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.
+
+En base a nuestro plan experimental tenemos la siguiente información:
+
+```{r dse}
+tab <- "dse"
+sheet <- "tab"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(description) %>% 
+  as_vector()
+note <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(note) %>% 
+  as_vector()
+xl %>% 
+  read_excel(tab) %>% 
+  kable(caption = title) %>% 
+  kable_styling(.) %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+# \@ref(tab:) 
+```
+
+Con la información de la tabla \@ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
+
+```{r, echo = TRUE}
+library(tidyverse)
+library(agricolae)
+
+imb <- seq(from = 0, to = 24, by = 2)
+rep <- 4
+
+fbd <- design.rcbd(trt = imb,
+                  r = rep,
+                  seed = 20, 
+                  serie = 2)
+
+fb <- fbd$book %>% 
+  mutate(imbt = paste0(imb, "hrs")) %>% 
+  mutate(block = recode(block,
+                        "1" = "I",
+                        "2" = "II",
+                        "3" = "III",
+                        "4" = "IV")) %>% 
+  mutate(bar_code = paste("PE2015", plots, block, imb, sep = "_")) %>% 
+  select(bar_code, everything())
+
+fds <- zigzag(fbd)
+fds <- matrix(fds[,1],byrow=TRUE,ncol=13) %>% 
+  as.data.frame()
+
+writexl::write_xlsx(x = fb, path = "files/fb.xlsx")
+```
+
+El libro de campo para colecta de la información sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos que nos permitirá la evaluación de los experimentos con nuestras tablets o teléfonos inteligentes.
+
+```{r}
+web_table(fb, caption = "Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental")
+```
+
+La distribución de nuestro experimento en el campo o invernadero tendría el siguiente esquema.
+
+```{r}
+fds %>%
+  kable(caption = "Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)") %>% 
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+## Etiquetado de unidades experimentales
+
+El etiquetado de las unidades experimentales es una actividad que muchas veces es deja de lado por el trabajo que genera. Piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto. Además nos permitirá usar una tablet o telefono inteligente para colectar los datos de cada unidad experimental.
+
+Herramientas necesarias para las etiquetas:
+
+1. Libro de campo o fieldbook en formato xlsx o csv.
+1. Web-App: Next Generation Label System Printer <https://lpsng.rsj.de/>
+1. Modelo base para las etiqueta (sugerencia) <https://lpsng.rsj.de/jqedit.html#02a34156-6bbc-4dfd-e66a-7aaa5955c058>
+1. Impresora o servicio de gigantografía para las etiquetas.
+
+El libro de campo debe contener por lo menos las siguientes columnas:
+
+- Un columna con códigos de identificación únicos, que nos permitan generar los codigos de barras para nuestras unidades experimentales.
+- Columnas con los factores del experimento.
+
+```{block, echo = T, type='rmd-caution' }
+<!-- caution - important - note - tip - warning -->
+
+En el caso del ejemplo del libro de campo para tiempo de imbibición de semillas en *Jatropha curcas* la columna **"bar_code"** es la columna que conteniene los valores unicos para las etiquetas. Los códigos para las etiquetas siempe deben iniciar con un caracter (texto) y nunca con un número ya que generará error al momento de la lectura del codigo de barras. En este caso adicioné el texto **"PE2015"** para hacer referencia al lugar de ejecución del experimiento (Pernambuco) y año del experimento (2015), cabe mencionar que el separador entre columnas es "_" ya que de esta forma en caso de perder el libro de campo con el separador de texto de excel o gsheet nos permitirá reconstruir el libro de campo completo.
+
+Evitar que el libro de campo contenga otros datos como el nombre de las variables ya que dificultará el desarrollo de las etiquetas y el libro colector de datos.
+
+```
+
+
+```{block, echo = T, type='rmd-tip' }
+<!-- caution - important - note - tip - warning -->
+
+"Next Generation Label System Printer" es la mejor apliación web que encontré para generar etiquetas de forma fácil y eficiente, asi que les recomiendo pagar la suscripción cuando la necesiten. Para nuevos usuario los primero 15 días son gratis, asi que puedes probar la app.
+
+> Generalmente pago la sucripción al inicio de cada experimento, donde genero todas las etiquetas para mi experimentos y una vez generadas puedo imprimirlas cuando desee durante la ejecución del trabajo.
+
+> El diseño de las etiquetas esta basada en una configuración de impresion de 1x1 metro en gigantografía. El precio promedio de la gigantografía a full color en alta resolución por metro cuadrado es de 4 a 6 dolares. La resolución de la impresion es muy importante ya que permitirá que codigo de barra pueda ser leido adecudamente.  
+
+```
+
+```{r conflbl, fig.cap= '(ref:conflbl)'}
+fig <- "conflbl"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+
+```{r rsj, fig.cap= '(ref:rsj)', , out.width="50%"}
+fig <- "rsj"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+
+### Video :: etiquetas
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/7K5j0Z-u27A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Ejemplo :: etiquetas
+
+<embed src="files/etiquetas.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+## Libro de colecta de datos
+
+Diseño de libro de colecta de datos o libro de campo fisico, es el documento que me servirá de soporte para las evaluaciones de los trabajos de investigación así como contener toda la información impresa del experimento en caso de no tener acceso a la internet o no contar con una dispositivo inteligente permitiendonos colectar la información sin ningun inconveniente.
+
+Herramientas necesarias para el libro de campo:
+
+1. Libro de campo o fieldbook en formato xlsx o csv.
+1. Web-App: Next Generation Label System Printer <https://lpsng.rsj.de/>.
+1. Modelo base para las el libro de campo (sugerencia) <https://lpsng.rsj.de/jqedit.html#ac64b019-6040-441a-ae5d-9bbfc9856b36>
+1. Impresora normal.
+
+```{block, echo = T, type='rmd-tip' }
+<!-- caution - important - note - tip - warning -->
+
+**Cuál es la información mínima que debe contener mi libro de campo?**
+
+- Diseño de libro de campo con los códigos de barras.
+- Diseño experimental o croquis del experimento.
+- Lista de las variables que se evaluará en el trabajo.
+
+Toda esta información debe ser impresa y anillada en un solo documento. Se puede incluir al libro de campo otros datos o información relevante de acuerdo a los requerimientos del trabajo de investigación.
+
+```
+
+```{block, echo = T, type='rmd-important' }
+<!-- caution - important - note - tip - warning -->
+
+Las columnas para la colecta de datos usadas el diseño del libro de campo esta introducida como imagen, y pueden ver el diseño en el link.
+
+<https://docs.google.com/spreadsheets/d/1Igazkim4tARQphN-Dl0Cd-fYcTgxp2rm1819gTMrUvE/edit#gid=1432953396>
+
+```
+
+```{r flb, fig.cap= '(ref:flb)'}
+fig <- "flb"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+
+### Video :: libro de colecta de datos
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/mcqER5sO4N4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Ejemplo :: libro de colecta de datos
+
+<embed src="files/fillbook.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+## Evaluación de experimentos
+
+Independientemente del tipo de diseño que hayas elegido el cual será utilizado para analizar los datos colectados. La informacion debe ser tomada e inserida al libro de campo para cada unidad experimental.
+
+Los materiales necesarios para evaluar los experimentos con nuestos dispositivos inteligentes son los siguientes:
+
+1. Libro  de colecta de datos.
+1. Libro de colecta de datos impreso.
+1. Tablet o celular.
+1. ScanPet app <https://play.google.com/store/apps/details?id=com.maiko.xscanpet&hl=es-419>
+
+Para la evaluación de los experimentos se recomienda que las variables en el libro de colecta de datos tengan la siguiente estructura separado por sub guiones "_":
+
+1. Abreviación del nombre de la variable (3 a 4 letras).
+1. Dias despues de la siembra de la evaluación (DDS).
+1. Número de la sub muestra que se van evaluar.
+
+```{r vrnmt}
+tab <- "vrnmt"
+sheet <- "tab"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(description) %>% 
+  as_vector()
+note <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(table == tab) %>%
+  select(note) %>% 
+  as_vector()
+xl %>% 
+  read_excel(tab) %>% 
+  kable(caption = title) %>% 
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+# \@ref(tab:) 
+```
+
+```{r vrnmf, fig.cap= '(ref:vrnmf)'}
+fig <- "vrnmf"
+sheet <- "fig"
+title <- xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(description) %>% 
+  as_vector()
+xl %>% 
+  read_excel(sheet) %>% 
+  filter(figure == fig) %>%
+  select(url) %>% 
+  as_vector() %>% 
+  include_graphics()
+# \@ref(tab:) 
+```
+(ref:`r fig`) `r title`
+
+### Video :: configuracion de ScanPet app
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/UD60rPlAHHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Video :: evaluación de experimentos
+
+<!-- <iframe width="100%" height="450" src="https://www.youtube.com/embed/7K5j0Z-u27A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+## Plex :: libro de campo
+
+Libro de campo con datos reales de un experimento conteniendo toda la información que se explicó hasta el momento, desde la concepción de la idea, planificación y colecta de datos. 
+
+20150607PE (J. Curcas - Imbibition time)
+<https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232>
+
+```{r}
+shiny::HTML(
+'
+<iframe src="https://docs.google.com/spreadsheets/d/1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=1981295232" style="width: 100%; height: 450px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
+'  
+)
+```
+
+La información de este experimento dió como resultado la publicación: "Germination behavior of *Jatropha curcas* L. after different imbibition times" en la revista Peruvian Journal of Agronomy [@lozano-isla2017Germination].
+
+<embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+
+
