@@ -35,24 +35,28 @@ xl <- gs %>% drive_download("files/plex.xlsx", overwrite = T) %>% pluck(2)
 xl <- "../files/plex.xlsx"
 ```
 
+<!-- # Introducción -->
 ```{r intro, child = 'chapter/intro.Rmd'}
-# Introducción
 ``` 
 
-```{r chp01, child = 'chapter/chp01.Rmd'}
-# Estructura del plan experimental
+<!-- # Herramientas -->
+```{r chp01, child = 'chapter/tools.Rmd'}
 ``` 
 
-```{r chp02, child = 'chapter/chp02.Rmd'} 
-# Diseño experimental
+<!-- # Estructura del plan experimental -->
+```{r chp01, child = 'chapter/estructura.Rmd'}
 ``` 
 
-```{r chp03, child = 'chapter/chp03.Rmd'}
-# Colecta y organización de datos
+<!-- # Diseño experimental -->
+```{r chp02, child = 'chapter/disenho.Rmd'} 
 ``` 
 
-```{r chp04, child = 'chapter/chp04.Rmd'}
-# Redacción de documentos científicos
+<!-- # Colecta y organización de datos -->
+```{r chp03, child = 'chapter/datos.Rmd'}
+``` 
+
+<!-- # Redacción de documentos científicos -->
+```{r chp04, child = 'chapter/writing.Rmd'}
 ``` 
 
 `r if (knitr::is_html_output()){'

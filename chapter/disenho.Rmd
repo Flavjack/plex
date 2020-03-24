@@ -7,12 +7,12 @@ En esta sección se utilizará algunas terminologías en ingles, asi que si tien
 
 ```
 
-El planeamineto de un experimento es parte crucial para definir el éxito de un trabajo de investigación, mismo que se realice un plan de trabajo no nos asegura el éxito del trabajo ya que acontencen diferentes imprevistos pero al menos podemos recudir la incertidumbre y no estar a la dereiva durante su ejecución. Para ayudar a la reducción de la incertidumbre introduciremos el termino **fieldbook** que significa **“libro de campo”** es donde organizaremos toda la información de nuestra investigación, y sera desarrollada en una hoja de calculo virtual, la cual contendrá una pestanha con los datos mínimos o información de nuestro trabajo de investigación y los datos colectados, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la identificación y reorganizacion de los datos.
+El planeamiento de un experimento es parte crucial para definir el éxito de un trabajo de investigación, mismo que se realice un plan de trabajo no nos asegura el éxito del trabajo ya que acontecen diferentes imprevistos pero al menos podemos recudir la incertidumbre y no estar a la deriva durante su ejecución. Para ayudar a la reducción de la incertidumbre introduciremos el termino **fieldbook** que significa **“libro de campo”** es donde organizaremos toda la información de nuestra investigación, y sera desarrollada en una hoja de calculo virtual, la cual contendrá una pestaña con los datos mínimos o información de nuestro trabajo de investigación y los datos colectados, de esta manera ahorrar tiempo en el procesamiento y análisis de los datos, ya que muchas veces no son los análisis los que consume el tiempo del investigador, si no la identificación y reorganizaron de los datos.
 
 ```{block, echo = T, type='rmd-note' }
 <!-- caution - important - note - tip - warning -->
 
-Muchas veces organizamos los información de manera que es más facil para nuestra comprension "humana", lo que al final genera problemas ya que debemos reorganizarla debido a que las computadoras presentan una estructura especial para leer y analizar los datos.
+Muchas veces organizamos los información de manera que es más fácil para nuestra comprensión "humana", lo que al final genera problemas ya que debemos reorganizarla debido a que las computadoras presentan una estructura especial para leer y analizar los datos.
 
 ```
 
@@ -25,7 +25,7 @@ Para esta sección haremos uso de hojas cálculo, y por experiencia propia les r
 
 1. Permite manejar y visualizar el historial de cambio durante la colecta de datos.
 1. Permite guardar diferentes versiones del documento en una misma línea de tiempo.
-1. Se puede trabar en forma grupal sin generar conflictos entre los usarios.
+1. Se puede trabar en forma grupal sin generar conflictos entre los usuarios.
 1. Se puede colectar la información directamente haciendo uso de los celulares.
 1. Se puede importar directamente la información a R con el paquete googlesheet4 [@R-googlesheets4].
 1. Permite descargar en disversos formatos (pdf, xslx, csv, etc).
@@ -36,19 +36,19 @@ Google sheets: <https://docs.google.com/spreadsheets/u/0/>
 
 ## Nombre del libro de campo
 
-Iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque paresca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algun tiempo se nos dificulta encotrarlo. Para nombrar los libros de campos les sugiero usar la siguiente nomenclatura.
+Iniciaremos con definir el nombre del libro de campo, ya que muchas veces aunque parezca sencillo colocar un nombres a un documento es un gran reto, y luego de transcurrido algún tiempo se nos dificulta encontrarlo. Para nombrar los libros de campos les sugiero usar la siguiente nomenclatura.
 
 ### Nombre del lugar
 
-Permite facilitar la identificacion del lugar donde se realizó el experimento o trabajo de investigación.
+Permite facilitar la identificación del lugar donde se realizó el experimento o trabajo de investigación.
 
 ### Fecha
 
-En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los dias despues del inicio de trabajo y una forma facil de filtrar si tenemos varios trabajos durante el mismo anho.
+En el formato internacional (YYYYMMDD), usualmente la fecha esta relacionada al inicio o establecimiento del experimento lo que nos ayudara a contar los días después del inicio de trabajo y una forma fácil de filtrar si tenemos varios trabajos durante el mismo año.
 
 ### Breve descripción
 
-Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre paretesis y no muy extenso.
+Palabras claves o ayuda memoria para recordar el nombre del trabajo, puede ir entre parentesis y no muy extenso.
 
 ### Ejemplo {-}
 

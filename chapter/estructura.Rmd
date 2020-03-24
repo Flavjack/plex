@@ -1,0 +1,86 @@
+# Estructura del plan experimental
+
+Para iniciar con la formulación de la idea de trabajo, inicialmente no es necesario incluir referencias bibliográficas y puede ser escrita con tus propias palabras para facilitar que fluyan las ideas. A medida que la idea se va tornando más estructurada se puede ir incluyendo referencias para sustentarlas. Para estructurar la idea de un plan experimental o trabajo de investigación se sugiere que debe contener como mínimo la siguiente estructura. 
+
+## Idea
+
+Todo trabajo de investigación inicia con una idea o interrogante a un problema o pregunta que se desea resolver y esa es la base para dar inicio a una investigación.
+
+## Meta
+
+El objetivo principal del trabajo, debe ser escrita como un título provisional de la investigación. Conteniendo la mayor cantidad de informacion posible en la oración.
+
+## Hipótesis
+
+Es la pregunta de investigación escrita en un párrafo, la cual debe ser redactada como una pregunta o como una afirmación a la idea que se desea proponer.
+
+## Fundamento
+
+Escribir los fundamento o razones lógicas para sustentar la idea. Posteriormente se puede adicionar información de documentos o artículos científicos en forma de citas bibliográficas que ayuden a fundamentar la hipótesis o preguntas de investigación.
+
+## Objetivos 
+
+Las acciones que se llevaran acabo para el cumplimiento de la meta. Deber ser escrita en forma de acción. (ie. Se evaluará..., Se estimará..., Se realizaran..., etc)
+
+## Plan
+
+Un bosquejo de la metodología de como se llevará acabo el trabajo de investigación. Esto será la base para el desarrollo de los Materiales y Métodos que encontramos en los trabajo de investigación.
+
+## Proyecto de investigación {-}
+
+Luego del desarrollo de los puntos mencionados en la estructura del plan experimental, se tendrá una idea de como se construirá el flujo de trabajo lo que puede posteriormente plasmarse en un proyecto de investigación para un trabajo de tesis o artículo científico.
+
+## Plex :: Caso de la vida real!
+
+Para ejemplificar todo lo que estamos desarrollando en este manual vamos usar un trabajo que presenté como una publicación para la revista científica "Peruvian Journal of Agronomy" de la Universidad Agraria la Molina [@lozano-isla2017Germination].
+
+<embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+### Idea
+
+Mientras me encontraba trabajando en mi proyecto de tesis para la maestría en Brasil tenia que hacer algunos cursos y uno de ellos era "Fisiología de las semillas" que era dictado por mi asesor el Dr. Francisco Pompelli, el curso consistía en el desarrollo de un pequeño experimento y la redacción de un mini-paper como trabajo final.
+
+Durante el curso el profesor presentó el tema de la influencia de la imbibición de la semillas en el proceso de germinación lo que me pareció interesante y que un experimento en eso no iría a tomar mucho tiempo ya que solo tenia 3 meses para hacer todo el experimento y redactar mi reporte.
+
+En ese momento estaba trabajando con el cultivo de *Jatropha curcas* un planta con potencial para bio-combustible y entonces me pregunte cuál sera el tiempo de imbibición máxima que puede tolerar las semillas  de *Jatropha curcas* sin causarle algún tipo de daño fisiológico durante la germinación, dando así inicio la idea del trabajo de investigación.
+
+### Meta
+
+Evaluar el proceso de germinación de *Jatropha curcas* bajo diferentes tiempos de imbibición.
+
+### Hipótesis
+
+Cuál sera el máximo tiempo de imbibición que puede soportar las semillas de *jatropha curcas* sin que presenten daños a nivel fisiológico durante la germinación?.
+
+### Fundamento
+
+La mayoria de semillas presentan un tiempo máximo de imbibición, y si es superado puede generar daños fisiológicos durante la germinación reduciendo el porcentaje de germinación y tiempo de germinación.
+
+### Objetivos 
+
+- Determinar el mejor tiempo de imbibición para semillas de *Jatropha curcas*.
+- Evaluar la germinación de semillas de *Jatropha curcas* sometidas a distintos tiempos de imbibición.
+- Evaluar las características morfológicas y fisiológicas durante la imbibición de semillas de *Jatropha curcas*.
+
+### Plan
+
+1. Materiales
+    - Biológico. Semillas de *Jatropha curcas*.
+    - Laboratorio. Agua destilada, vasos plásticos.
+    - Invernadero. Arena, bandejas para germinación.
+
+1. Diseño experimental. Diseño en Bloques Completos al Azar con 4 repeticiones y 13 tiempos de imbibición de 0 a 24 horas con intervalos de 2 horas entre cada tratamiento.
+
+1. Metodología. Se pondrá semillas de *Jatropha curcas* en distintos tiempos de imbibición en laboratorio y luego de cada tiempo de imbibicón las semillas se pondran en bandejas para evaluar el proceso de germinación en invernadero.
+
+1. Variables a evaluar
+    - pH de la solución de imbibición.
+    - Conductividad eléctrica de la solución de imbibición (mS)
+    - Contenido relativo de agua de las semillas (%)
+    - Porcentaje de germinación (%)
+    - Tiempo medio de germinación (días)
+    
+1. Manos a la obra!
+
+Teniendo esta información como base del plan experimental se procederá al desarrollo del libro de campo o fieldbook.
+

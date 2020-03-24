@@ -1,0 +1,129 @@
+# Herramientas
+
+Antes de iniciar cualquier tipo de trabajo o plan experimental, vamos a instalar y tener acceso a todas la herramientas que necesitamos. Todas las herramientas mostradas en este manuscrito son independientes del sistema operativo, de acceso libre y pueden ser usadas para la investigación reproducible, lo que no dificultará su uso en ninguna instancia.
+
+```{block, echo = T, type='rmd-note' }
+<!-- caution - important - note - tip - warning -->
+
+El listado de herramientas son una recomendación basada en mi experiencia y no son las únicas herramientas de acceso libre que pueden usar.
+
+```
+
+## Cuentas
+
+```{block, echo = T, type='rmd-warning' }
+<!-- caution - important - note - tip - warning -->
+
+Repito!... Repito!... Usar el mismo correo para todas las cuentas! Muchos usan correos diferentes para cada servicio y luego se hace difícil manejar los usuarios y eso dificulta tremendamente el trabajo.
+```
+
+Deben crearse una cuenta en los siguientes servicios.
+
+1. `Google (Gmail)`. Les recomiendo tener una cuenta de google ya que nos permite tener acceso a "Gsuit" que posee un conjunto de herramientas gratis en línea. Estas herramientas son un buen complemento para el trabajo en equipo y puedes acceder a ellos desde distintos dispositivos móviles.
+
+1. `Zotero`. Será nuestra biblioteca virtual, y es una de las herramientas que más usaremos, ya que nos permitirá organizar nuestro trabajo y así mismo citar los documentos en nuestros manuscritos.
+
+1. `GitHub`. Es un repositorio para código, y nos servirá para almacenar, documentar y organizar nuestros proyectos. Nos permite visualizar los historiales de nuestro trabajo, donde podemos restaurar fácilmente nuestros proyectos y compartir nuestro código con otros usuarios. Tambien nos permitirá crear pagimas web y publicar documentos en línea
+
+### Links {-}
+
+<div id=footer style="width:100%; margin:auto;">
+  <div style="display:inline-block; width:32%">
+
+  <p style="text-align:center; vertical-align:middle"> 
+  <a target="_blank" href="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2F%3Fgws_rd%3Dssl&hl=es-419&dsh=S-352003840%3A1585079101705388&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp"><img src="img/gsuit.png" style="height:180px" title="Gsuit" alt="Gsuit"></a>  
+  </p>
+  
+  </div>
+  
+  <div style="display:inline-block; width:32%">
+  
+  <p style="text-align:center; vertical-align:middle">
+  <a target="_blank" href="https://www.zotero.org/user/register"><img src="https://dutchdissenters.net/wp/wp-content/uploads/2018/01/zotero-logo.png" style="height:180px" title="Zotero" alt="Zotero"></a> 
+  </p> 
+  
+  </div>
+  
+  <div style="display:inline-block; width:32%"> 
+  
+  <p style="text-align:center; vertical-align:middle"> 
+  <a target="_blank" href="https://github.com/join?source=login"><img src="https://www.enriquedans.com/wp-content/uploads/2018/06/GitHub-Octocat.jpg" style="height:180px" title="GitHub" alt="GitHub"></a></p>
+    
+  </div>
+  
+</div>
+
+## Softwares
+
+```{block, echo = T, type='rmd-caution' }
+<!-- caution - important - note - tip - warning -->
+
+Instalar los siguientes softwares en el orden que aparecen, para evitar conflictos en el funcionamiento de cada app.
+
+```
+
+1. `Zotero`. Es un gestor de referencias bibliográficas, libre, abierto y gratuito desarrollado por el Center for History and New Media de la Universidad George Mason.
+
+1. `R CRAN`. Es un entorno y lenguaje de programación con un enfoque al análisis estadístico. El software R viene por defecto con funcionalidades básicas y para ampliar estas debemos instalar paquetes. R actualmente nos permite hacer distintas tareas comó análisis estadísticos, generación de gráficos, escritura de documentos, etc.
+
+1. `RStudio`. RStudio es un entorno de desarrollo integrado para el lenguaje de programación R, dedicado a la computación estadística y gráficos.
+
+1. `Git`. Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones. Git también nos permitirá usar `bash` en windows a través de la consola de RStudio para poder facilitar varias tareas.
+
+### Links {-}
+
+<div id=footer style="width:100%; margin:auto;">
+  
+  <div style="display:inline-block; width:24%">
+
+  <p style="text-align:center; vertical-align:middle">
+  <a target="_blank" href="https://www.zotero.org/download/"><img src="https://www.zotero.org/static/images/bs4theme/zotero-logo.1519312231.svg" style="height:50px" title="Gsuit" alt="Gsuit"></a> 
+  </p>
+  
+  </div>
+  
+  <div style="display:inline-block; width:24%">
+  
+  <p style="text-align:center; vertical-align:middle">
+  <a target="_blank" href="https://cloud.r-project.org/"><img src="https://cran.r-project.org/Rlogo.svg" style="height:60px" title="Gsuit" alt="Gsuit"></a> 
+  </p>
+  
+  </div>
+  
+  <div style="display:inline-block; width:24%"> 
+  
+  <p style="text-align:center; vertical-align:middle">
+  <a target="_blank" href="https://rstudio.com/products/rstudio/download/"><img src="https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg" style="height:60px" title="Gsuit" alt="Gsuit"></a> 
+  </p>
+    
+  </div>
+  
+  <div style="display:inline-block; width:24%"> 
+  
+  <p style="text-align:center; vertical-align:middle"> 
+  <a target="_blank" href="https://git-scm.com/downloads"><img src="https://git-scm.com/images/logo@2x.png" style="height:50px" title="Gsuit" alt="Gsuit"></a> 
+  </p>
+    
+  </div>
+  
+</div>
+
+## Extra apps
+
+Hay alguna aplicaciones básicas que no puede faltar en ninguna computadora, y las voy a en listar a continuación.
+
+- Chrome (Web Browser)
+- Foxit Reader (Documents)
+- WinRAR (Compression)
+- Google Backup and Sync (Online Storage)
+
+Para usuarios de `Windows`, esta aplicaciones y otras, puede ser instalada desde el siguiente repositorio. 
+
+<div style="display:inline-block; width:100%"> 
+
+<p style="text-align:center; vertical-align:middle"> 
+<a target="_blank" href="https://ninite.com/"><img src="https://d8f7mp21btv4f.cloudfront.net/crystal/img/brand-95c4357c0068bf934474cf8b7721890a.png" style="height:100px" title="Gsuit" alt="Gsuit"></a> 
+</p>
+  
+</div>
+

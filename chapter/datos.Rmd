@@ -2,7 +2,7 @@
 
 ## Exportar plantilla de evaluación
 
-Para esta sección vamos a usar nuestra idea de investigación "*Jatropha curcas* imbibition time" y vamos a crear el diseño experimental haciendo uso del paquete agricolae [@R-agricolae] que tambien permité hacer el diseño experimental de diversos modelos estadisticos para experimentos de ciencias biológicas y agrícolas.
+Para esta sección vamos a usar nuestra idea de investigación "*Jatropha curcas* imbibition time" y vamos a crear el diseño experimental haciendo uso del paquete agricolae [@R-agricolae] que también permite hacer el diseño experimental de diversos modelos estadísticos para experimentos de ciencias biológicas y agrícolas.
 
 En base a nuestro plan experimental tenemos la siguiente información:
 
@@ -27,7 +27,7 @@ xl %>%
 # \@ref(tab:) 
 ```
 
-Con la información de la tabla \@ref(tab:dse) diseñaremos nuesto libro de campo y la distribución del experimento en el área de trabajo.
+Con la información de la tabla \@ref(tab:dse) diseñaremos nuestro libro de campo y la distribución del experimento en el área de trabajo.
 
 ```{r, echo = TRUE}
 library(tidyverse)
@@ -75,7 +75,7 @@ fds %>%
 
 ## Etiquetado de unidades experimentales
 
-El etiquetado de las unidades experimentales es una actividad que muchas veces es deja de lado por el trabajo que genera. Piensalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto. Además nos permitirá usar una tablet o telefono inteligente para colectar los datos de cada unidad experimental.
+El etiquetado de las unidades experimentales es una actividad que muchas veces es deja de lado por el trabajo que genera. Piénsalo 2 veces antes de dejar esta actividad para el final, un etiquetado adecuado, facilitara la evaluación y toma de datos en todas las instancias del proyecto. Además nos permitirá usar una tablet o teléfono inteligente para colectar los datos de cada unidad experimental.
 
 Herramientas necesarias para las etiquetas:
 
@@ -86,13 +86,13 @@ Herramientas necesarias para las etiquetas:
 
 El libro de campo debe contener por lo menos las siguientes columnas:
 
-- Un columna con códigos de identificación únicos, que nos permitan generar los codigos de barras para nuestras unidades experimentales.
+- Un columna con códigos de identificación únicos, que nos permitan generar los códigos de barras para nuestras unidades experimentales.
 - Columnas con los factores del experimento.
 
 ```{block, echo = T, type='rmd-caution' }
 <!-- caution - important - note - tip - warning -->
 
-En el caso del ejemplo del libro de campo para tiempo de imbibición de semillas en *Jatropha curcas* la columna **"bar_code"** es la columna que conteniene los valores unicos para las etiquetas. Los códigos para las etiquetas siempe deben iniciar con un caracter (texto) y nunca con un número ya que generará error al momento de la lectura del codigo de barras. En este caso adicioné el texto **"PE2015"** para hacer referencia al lugar de ejecución del experimiento (Pernambuco) y año del experimento (2015), cabe mencionar que el separador entre columnas es "_" ya que de esta forma en caso de perder el libro de campo con el separador de texto de excel o gsheet nos permitirá reconstruir el libro de campo completo.
+En el caso del ejemplo del libro de campo para tiempo de imbibición de semillas en *Jatropha curcas* la columna **"bar_code"** es la columna que contiene los valores únicos para las etiquetas. Los códigos para las etiquetas siempre deben iniciar con un carácter (texto) y nunca con un número ya que generará error al momento de la lectura del código de barras. En este caso adicioné el texto **"PE2015"** para hacer referencia al lugar de ejecución del experimento (Pernambuco) y año del experimento (2015), cabe mencionar que el separador entre columnas es "_" ya que de esta forma en caso de perder el libro de campo con el separador de texto de excel o gsheet nos permitirá reconstruir el libro de campo completo.
 
 Evitar que el libro de campo contenga otros datos como el nombre de las variables ya que dificultará el desarrollo de las etiquetas y el libro colector de datos.
 
@@ -102,7 +102,7 @@ Evitar que el libro de campo contenga otros datos como el nombre de las variable
 ```{block, echo = T, type='rmd-tip' }
 <!-- caution - important - note - tip - warning -->
 
-"Next Generation Label System Printer" es la mejor apliación web que encontré para generar etiquetas de forma fácil y eficiente, asi que les recomiendo pagar la suscripción cuando la necesiten. Para nuevos usuario los primero 15 días son gratis, asi que puedes probar la app.
+"Next Generation Label System Printer" es la mejor aplicación web que encontré para generar etiquetas de forma fácil y eficiente, así que les recomiendo pagar la suscripción cuando la necesiten. Para nuevos usuario los primero 15 días son gratis, así que puedes probar la app.
 
 > Generalmente pago la sucripción al inicio de cada experimento, donde genero todas las etiquetas para mi experimentos y una vez generadas puedo imprimirlas cuando desee durante la ejecución del trabajo.
 
@@ -156,7 +156,7 @@ xl %>%
 
 ## Libro de colecta de datos
 
-Diseño de libro de colecta de datos o libro de campo fisico, es el documento que me servirá de soporte para las evaluaciones de los trabajos de investigación así como contener toda la información impresa del experimento en caso de no tener acceso a la internet o no contar con una dispositivo inteligente permitiendonos colectar la información sin ningun inconveniente.
+Diseño de libro de colecta de datos o libro de campo físico, es el documento que me servirá de soporte para las evaluaciones de los trabajos de investigación así como contener toda la información impresa del experimento en caso de no tener acceso a la internet o no contar con una dispositivo inteligente permitiéndonos colectar la información sin ningún inconveniente.
 
 Herramientas necesarias para el libro de campo:
 
@@ -215,9 +215,9 @@ xl %>%
 
 ## Evaluación de experimentos
 
-Independientemente del tipo de diseño que hayas elegido el cual será utilizado para analizar los datos colectados. La informacion debe ser tomada e inserida al libro de campo para cada unidad experimental.
+Independientemente del tipo de diseño que hayas elegido el cual será utilizado para analizar los datos colectados. La información debe ser tomada e inserida al libro de campo para cada unidad experimental.
 
-Los materiales necesarios para evaluar los experimentos con nuestos dispositivos inteligentes son los siguientes:
+Los materiales necesarios para evaluar los experimentos con nuestros dispositivos inteligentes son los siguientes:
 
 1. Libro  de colecta de datos.
 1. Libro de colecta de datos impreso.
@@ -227,7 +227,7 @@ Los materiales necesarios para evaluar los experimentos con nuestos dispositivos
 Para la evaluación de los experimentos se recomienda que las variables en el libro de colecta de datos tengan la siguiente estructura separado por sub guiones "_":
 
 1. Abreviación del nombre de la variable (3 a 4 letras).
-1. Dias despues de la siembra de la evaluación (DDS).
+1. Días después de la siembra de la evaluación (DDS).
 1. Número de la sub muestra que se van evaluar.
 
 ```{r vrnmt}
@@ -292,7 +292,7 @@ shiny::HTML(
 )
 ```
 
-La información de este experimento dió como resultado la publicación: "Germination behavior of *Jatropha curcas* L. after different imbibition times" en la revista Peruvian Journal of Agronomy [@lozano-isla2017Germination].
+La información de este experimento dio como resultado la publicación: "Germination behavior of *Jatropha curcas* L. after different imbibition times" en la revista Peruvian Journal of Agronomy [@lozano-isla2017Germination].
 
 <embed src="files/Lozano-Isla2017.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 
