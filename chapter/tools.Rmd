@@ -77,7 +77,7 @@ Instalar los siguientes softwares en el orden que aparecen, para evitar conflict
   <div style="display:inline-block; width:24%">
 
   <p style="text-align:center; vertical-align:middle">
-  <a target="_blank" href="https://www.zotero.org/download/"><img src="https://www.zotero.org/static/images/bs4theme/zotero-logo.1519312231.svg" style="height:50px" title="Gsuit" alt="Gsuit"></a> 
+  <a target="_blank" href="https://www.zotero.org/download/"><img src="https://www.zotero.org/static/images/bs4theme/zotero-logo.1519312231.svg" style="height:50px" title="Zotero" alt="Zotero"></a> 
   </p>
   
   </div>
@@ -85,7 +85,7 @@ Instalar los siguientes softwares en el orden que aparecen, para evitar conflict
   <div style="display:inline-block; width:24%">
   
   <p style="text-align:center; vertical-align:middle">
-  <a target="_blank" href="https://cloud.r-project.org/"><img src="https://cran.r-project.org/Rlogo.svg" style="height:60px" title="Gsuit" alt="Gsuit"></a> 
+  <a target="_blank" href="https://cloud.r-project.org/"><img src="https://cran.r-project.org/Rlogo.svg" style="height:60px" title="R cran" alt="R cran"></a> 
   </p>
   
   </div>
@@ -93,7 +93,7 @@ Instalar los siguientes softwares en el orden que aparecen, para evitar conflict
   <div style="display:inline-block; width:24%"> 
   
   <p style="text-align:center; vertical-align:middle">
-  <a target="_blank" href="https://rstudio.com/products/rstudio/download/"><img src="https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg" style="height:60px" title="Gsuit" alt="Gsuit"></a> 
+  <a target="_blank" href="https://rstudio.com/products/rstudio/download/"><img src="https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg" style="height:60px" title="Rstudio" alt="Rstudio"></a> 
   </p>
     
   </div>
@@ -101,7 +101,7 @@ Instalar los siguientes softwares en el orden que aparecen, para evitar conflict
   <div style="display:inline-block; width:24%"> 
   
   <p style="text-align:center; vertical-align:middle"> 
-  <a target="_blank" href="https://git-scm.com/downloads"><img src="https://git-scm.com/images/logo@2x.png" style="height:50px" title="Gsuit" alt="Gsuit"></a> 
+  <a target="_blank" href="https://git-scm.com/downloads"><img src="https://git-scm.com/images/logo@2x.png" style="height:50px" title="Git" alt="Git"></a> 
   </p>
     
   </div>
@@ -110,19 +110,19 @@ Instalar los siguientes softwares en el orden que aparecen, para evitar conflict
 
 ## Extra apps
 
-Hay alguna aplicaciones básicas que no puede faltar en ninguna computadora, y las voy a en listar a continuación.
+Hay alguna aplicaciones básicas que no puede faltar en ningun computador, y las voy a en listar a continuación.
 
 - Chrome (Web Browser)
 - Foxit Reader (Documents)
 - WinRAR (Compression)
 - Google Backup and Sync (Online Storage)
 
-Para usuarios de `Windows`, esta aplicaciones y otras, puede ser instalada desde el siguiente repositorio. 
+Para usuarios de `Windows`, esta aplicaciones entre otras, puede ser instalada desde el siguiente repositorio. 
 
 <div style="display:inline-block; width:100%"> 
 
 <p style="text-align:center; vertical-align:middle"> 
-<a target="_blank" href="https://ninite.com/"><img src="https://d8f7mp21btv4f.cloudfront.net/crystal/img/brand-95c4357c0068bf934474cf8b7721890a.png" style="height:100px" title="Gsuit" alt="Gsuit"></a> 
+<a target="_blank" href="https://ninite.com/"><img src="https://d8f7mp21btv4f.cloudfront.net/crystal/img/brand-95c4357c0068bf934474cf8b7721890a.png" style="height:100px" title="ninite" alt="ninite"></a> 
 </p>
   
 </div>
