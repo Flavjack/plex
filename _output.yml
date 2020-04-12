@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  includes:
+    in_header: cnfg/google_analytics.html
   css: cnfg/style.css
   split_by: chapter # options: chapter or none
   split_bib: TRUE
