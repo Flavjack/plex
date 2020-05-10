@@ -53,7 +53,7 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.12/datatables.js"></script>
+<script src="libs/datatables-binding-0.13/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -169,6 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="herramientas.html"><a href="herramientas.html#links-1"><i class="fa fa-check"></i>Links</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="herramientas.html"><a href="herramientas.html#extra-apps"><i class="fa fa-check"></i><b>1.3</b> Extra apps</a></li>
+<li class="chapter" data-level="1.4" data-path="herramientas.html"><a href="herramientas.html#chocolatey"><i class="fa fa-check"></i><b>1.4</b> Chocolatey :)</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="estructura-del-plan-experimental.html"><a href="estructura-del-plan-experimental.html"><i class="fa fa-check"></i><b>2</b> Estructura del plan experimental</a><ul>
 <li class="chapter" data-level="2.1" data-path="estructura-del-plan-experimental.html"><a href="estructura-del-plan-experimental.html#idea"><i class="fa fa-check"></i><b>2.1</b> Idea</a></li>
@@ -334,32 +335,32 @@ Factor
 </table>
 </div>
 <p>Con la información de la tabla <a href="colecta-y-organización-de-datos.html#tab:dse">4.1</a> diseñaremos nuestro libro de campo y la distribución del experimento en el área de trabajo.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="colecta-y-organización-de-datos.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="colecta-y-organización-de-datos.html#cb1-2"></a><span class="kw">library</span>(agricolae)</span>
-<span id="cb1-3"><a href="colecta-y-organización-de-datos.html#cb1-3"></a></span>
-<span id="cb1-4"><a href="colecta-y-organización-de-datos.html#cb1-4"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
-<span id="cb1-5"><a href="colecta-y-organización-de-datos.html#cb1-5"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb1-6"><a href="colecta-y-organización-de-datos.html#cb1-6"></a></span>
-<span id="cb1-7"><a href="colecta-y-organización-de-datos.html#cb1-7"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
-<span id="cb1-8"><a href="colecta-y-organización-de-datos.html#cb1-8"></a>                  <span class="dt">r =</span> rep,</span>
-<span id="cb1-9"><a href="colecta-y-organización-de-datos.html#cb1-9"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
-<span id="cb1-10"><a href="colecta-y-organización-de-datos.html#cb1-10"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
-<span id="cb1-11"><a href="colecta-y-organización-de-datos.html#cb1-11"></a></span>
-<span id="cb1-12"><a href="colecta-y-organización-de-datos.html#cb1-12"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-13"><a href="colecta-y-organización-de-datos.html#cb1-13"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">imbt =</span> <span class="kw">paste0</span>(imb, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-14"><a href="colecta-y-organización-de-datos.html#cb1-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">block =</span> <span class="kw">recode</span>(block,</span>
-<span id="cb1-15"><a href="colecta-y-organización-de-datos.html#cb1-15"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
-<span id="cb1-16"><a href="colecta-y-organización-de-datos.html#cb1-16"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
-<span id="cb1-17"><a href="colecta-y-organización-de-datos.html#cb1-17"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
-<span id="cb1-18"><a href="colecta-y-organización-de-datos.html#cb1-18"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-19"><a href="colecta-y-organización-de-datos.html#cb1-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bar_code =</span> <span class="kw">paste</span>(<span class="st">&quot;PE2015&quot;</span>, plots, block, imb, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-20"><a href="colecta-y-organización-de-datos.html#cb1-20"></a><span class="st">  </span><span class="kw">select</span>(bar_code, <span class="kw">everything</span>())</span>
-<span id="cb1-21"><a href="colecta-y-organización-de-datos.html#cb1-21"></a></span>
-<span id="cb1-22"><a href="colecta-y-organización-de-datos.html#cb1-22"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
-<span id="cb1-23"><a href="colecta-y-organización-de-datos.html#cb1-23"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-24"><a href="colecta-y-organización-de-datos.html#cb1-24"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
-<span id="cb1-25"><a href="colecta-y-organización-de-datos.html#cb1-25"></a></span>
-<span id="cb1-26"><a href="colecta-y-organización-de-datos.html#cb1-26"></a>writexl<span class="op">::</span><span class="kw">write_xlsx</span>(<span class="dt">x =</span> fb, <span class="dt">path =</span> <span class="st">&quot;files/fb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="colecta-y-organización-de-datos.html#cb2-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="colecta-y-organización-de-datos.html#cb2-2"></a><span class="kw">library</span>(agricolae)</span>
+<span id="cb2-3"><a href="colecta-y-organización-de-datos.html#cb2-3"></a></span>
+<span id="cb2-4"><a href="colecta-y-organización-de-datos.html#cb2-4"></a>imb &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">24</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb2-5"><a href="colecta-y-organización-de-datos.html#cb2-5"></a>rep &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb2-6"><a href="colecta-y-organización-de-datos.html#cb2-6"></a></span>
+<span id="cb2-7"><a href="colecta-y-organización-de-datos.html#cb2-7"></a>fbd &lt;-<span class="st"> </span><span class="kw">design.rcbd</span>(<span class="dt">trt =</span> imb,</span>
+<span id="cb2-8"><a href="colecta-y-organización-de-datos.html#cb2-8"></a>                  <span class="dt">r =</span> rep,</span>
+<span id="cb2-9"><a href="colecta-y-organización-de-datos.html#cb2-9"></a>                  <span class="dt">seed =</span> <span class="dv">20</span>, </span>
+<span id="cb2-10"><a href="colecta-y-organización-de-datos.html#cb2-10"></a>                  <span class="dt">serie =</span> <span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="colecta-y-organización-de-datos.html#cb2-11"></a></span>
+<span id="cb2-12"><a href="colecta-y-organización-de-datos.html#cb2-12"></a>fb &lt;-<span class="st"> </span>fbd<span class="op">$</span>book <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-13"><a href="colecta-y-organización-de-datos.html#cb2-13"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">imbt =</span> <span class="kw">paste0</span>(imb, <span class="st">&quot;hrs&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-14"><a href="colecta-y-organización-de-datos.html#cb2-14"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">block =</span> <span class="kw">recode</span>(block,</span>
+<span id="cb2-15"><a href="colecta-y-organización-de-datos.html#cb2-15"></a>                        <span class="st">&quot;1&quot;</span> =<span class="st"> &quot;I&quot;</span>,</span>
+<span id="cb2-16"><a href="colecta-y-organización-de-datos.html#cb2-16"></a>                        <span class="st">&quot;2&quot;</span> =<span class="st"> &quot;II&quot;</span>,</span>
+<span id="cb2-17"><a href="colecta-y-organización-de-datos.html#cb2-17"></a>                        <span class="st">&quot;3&quot;</span> =<span class="st"> &quot;III&quot;</span>,</span>
+<span id="cb2-18"><a href="colecta-y-organización-de-datos.html#cb2-18"></a>                        <span class="st">&quot;4&quot;</span> =<span class="st"> &quot;IV&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-19"><a href="colecta-y-organización-de-datos.html#cb2-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bar_code =</span> <span class="kw">paste</span>(<span class="st">&quot;PE2015&quot;</span>, plots, block, imb, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-20"><a href="colecta-y-organización-de-datos.html#cb2-20"></a><span class="st">  </span><span class="kw">select</span>(bar_code, <span class="kw">everything</span>())</span>
+<span id="cb2-21"><a href="colecta-y-organización-de-datos.html#cb2-21"></a></span>
+<span id="cb2-22"><a href="colecta-y-organización-de-datos.html#cb2-22"></a>fds &lt;-<span class="st"> </span><span class="kw">zigzag</span>(fbd)</span>
+<span id="cb2-23"><a href="colecta-y-organización-de-datos.html#cb2-23"></a>fds &lt;-<span class="st"> </span><span class="kw">matrix</span>(fds[,<span class="dv">1</span>],<span class="dt">byrow=</span><span class="ot">TRUE</span>,<span class="dt">ncol=</span><span class="dv">13</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-24"><a href="colecta-y-organización-de-datos.html#cb2-24"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
+<span id="cb2-25"><a href="colecta-y-organización-de-datos.html#cb2-25"></a></span>
+<span id="cb2-26"><a href="colecta-y-organización-de-datos.html#cb2-26"></a>writexl<span class="op">::</span><span class="kw">write_xlsx</span>(<span class="dt">x =</span> fb, <span class="dt">path =</span> <span class="st">&quot;files/fb.xlsx&quot;</span>)</span></code></pre></div>
 <p>El libro de campo para colecta de la información sera usado para las etiquetar las unidades experimentales y el libro de colecta de datos que nos permitirá la evaluación de los experimentos con nuestras tablets o teléfonos inteligentes.</p>
 <div id="htmlwidget-18c2be1c87e4c8af0449" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-18c2be1c87e4c8af0449">{"x":{"filter":"none","extensions":["Buttons","Scroller"],"caption":"<caption>Libro de campo o fieldbook para colecta de datos de acuerdo a nuestro diseño experimental<\/caption>","data":[["PE2015_101_I_8","PE2015_102_I_0","PE2015_103_I_12","PE2015_104_I_18","PE2015_105_I_4","PE2015_106_I_2","PE2015_107_I_6","PE2015_108_I_10","PE2015_109_I_22","PE2015_110_I_20","PE2015_111_I_14","PE2015_112_I_16","PE2015_113_I_24","PE2015_201_II_16","PE2015_202_II_20","PE2015_203_II_18","PE2015_204_II_6","PE2015_205_II_12","PE2015_206_II_22","PE2015_207_II_24","PE2015_208_II_8","PE2015_209_II_0","PE2015_210_II_10","PE2015_211_II_4","PE2015_212_II_2","PE2015_213_II_14","PE2015_301_III_8","PE2015_302_III_22","PE2015_303_III_0","PE2015_304_III_14","PE2015_305_III_12","PE2015_306_III_24","PE2015_307_III_4","PE2015_308_III_6","PE2015_309_III_20","PE2015_310_III_10","PE2015_311_III_18","PE2015_312_III_2","PE2015_313_III_16","PE2015_401_IV_0","PE2015_402_IV_12","PE2015_403_IV_6","PE2015_404_IV_16","PE2015_405_IV_24","PE2015_406_IV_18","PE2015_407_IV_10","PE2015_408_IV_2","PE2015_409_IV_20","PE2015_410_IV_4","PE2015_411_IV_22","PE2015_412_IV_8","PE2015_413_IV_14"],[101,102,103,104,105,106,107,108,109,110,111,112,113,201,202,203,204,205,206,207,208,209,210,211,212,213,301,302,303,304,305,306,307,308,309,310,311,312,313,401,402,403,404,405,406,407,408,409,410,411,412,413],["I","I","I","I","I","I","I","I","I","I","I","I","I","II","II","II","II","II","II","II","II","II","II","II","II","II","III","III","III","III","III","III","III","III","III","III","III","III","III","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV","IV"],["8","0","12","18","4","2","6","10","22","20","14","16","24","16","20","18","6","12","22","24","8","0","10","4","2","14","8","22","0","14","12","24","4","6","20","10","18","2","16","0","12","6","16","24","18","10","2","20","4","22","8","14"],["8hrs","0hrs","12hrs","18hrs","4hrs","2hrs","6hrs","10hrs","22hrs","20hrs","14hrs","16hrs","24hrs","16hrs","20hrs","18hrs","6hrs","12hrs","22hrs","24hrs","8hrs","0hrs","10hrs","4hrs","2hrs","14hrs","8hrs","22hrs","0hrs","14hrs","12hrs","24hrs","4hrs","6hrs","20hrs","10hrs","18hrs","2hrs","16hrs","0hrs","12hrs","6hrs","16hrs","24hrs","18hrs","10hrs","2hrs","20hrs","4hrs","22hrs","8hrs","14hrs"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>bar_code<\/th>\n      <th>plots<\/th>\n      <th>block<\/th>\n      <th>imb<\/th>\n      <th>imbt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bt","buttons":["excel","copy"],"autoWidth":true,"scroller":true,"scrollY":"50vh","scrollX":true,"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
@@ -367,7 +368,7 @@ Factor
 <div style="border: 0px;overflow-x: scroll; width:100%; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-17">Table 4.2: </span>Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)
+<span id="tab:unnamed-chunk-18">Table 4.2: </span>Distribución del experimento en un Diseño en Bloque Completos al Azar (DBCA)
 </caption>
 <thead>
 <tr>
